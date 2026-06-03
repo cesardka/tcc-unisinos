@@ -22,6 +22,7 @@ Este repositório contém o arquivo-fonte em LaTeX, imagens, referências biblio
 - `images/` — figuras utilizadas no documento
 - `attachments/` — documentos de apoio e referência
   - `attachments/plano-tcc1.md` — plano de trabalho do TCC I (escopo, metodologia, instrumentos e decisões)
+  - `attachments/autorizações/` — modelos UNISINOS de termos de confidencialidade e autorização de uso de imagem para a coleta de dados
 - `main.pdf` — versão compilada mais recente do trabalho
 
 ## Como compilar

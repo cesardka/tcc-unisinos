@@ -219,14 +219,34 @@ Seções do formulário:
 - **Seção 3 — Aspectos técnicos** (3 perguntas): problemas técnicos comuns, contextos em que funciona melhor/pior.
 - **Seção 4 — Visão geral** (3 perguntas): permanência da tendência, decisão hipotética como dono, comentário livre.
 
-### 6.3 Termo de Consentimento Livre e Esclarecido (Apêndice C)
+### 6.3 Termos de autorização e confidencialidade (Apêndice C)
 
-- Identificação do pesquisador, orientador, instituição, contato.
-- Objetivo da pesquisa, procedimentos, duração estimada.
-- Riscos mínimos (constrangimento) e benefícios (contribuição à área).
-- Garantias: anonimato, sigilo, direito de retirar consentimento, sem ônus.
-- Aderência à LGPD: dados pessoais coletados, finalidade, prazo de retenção, descarte.
-- Assinatura do participante + pesquisador.
+Modelos oficiais fornecidos pela UNISINOS estão em `attachments/autorizações/`:
+
+- **`TermoConfidencialidade.doc`** — termo de confidencialidade entre pesquisador e participante (proteção de dados sensíveis do estabelecimento, como custos, fornecedores, métricas internas). **Aplicar com gestores nas entrevistas.**
+- **`TermoAutorizacaoUsoImagem.doc`** — autorização de uso de imagem (adulto). Aplicar caso haja fotos do estabelecimento, da operação, ou do entrevistado no trabalho final.
+- **`AutorizacaoUsoObraFotografica.doc`** — autorização para uso de obras fotográficas de terceiros (ex.: fotos do site/Instagram do estabelecimento).
+- **`AutorizacaoUsoImagemMenor.doc`** — só aplicável se houver imagem de menor de idade (improvável neste TCC; descartar se não usar).
+
+**O que ainda falta produzir (não tem modelo UNISINOS direto):**
+
+- **TCLE — Termo de Consentimento Livre e Esclarecido** propriamente dito, que cobre a participação na pesquisa (entrevista/formulário) e o tratamento de dados pessoais sob a LGPD. Estrutura mínima:
+  - Identificação do pesquisador, orientador, instituição, contato;
+  - Objetivo da pesquisa, procedimentos, duração estimada;
+  - Riscos mínimos (constrangimento) e benefícios (contribuição à área);
+  - Garantias: anonimato, sigilo, direito de retirar consentimento sem ônus;
+  - Aderência à LGPD: dados pessoais coletados, finalidade, prazo de retenção, descarte;
+  - Assinatura do participante + pesquisador.
+
+**Mapeamento por instrumento:**
+
+| Instrumento                     | Documentos necessários                                                                |
+| ------------------------------- | ------------------------------------------------------------------------------------- |
+| Entrevista com gestor           | TCLE + Termo de Confidencialidade (+ Autorização de Uso de Imagem, se for fotografar) |
+| Questionário com frequentadores | Consentimento embutido como 1ª pergunta do Google Forms (versão resumida do TCLE)     |
+| Uso de fotos de terceiros       | Autorização de Uso de Obra Fotográfica                                                |
+
+> **No `main.tex`,** anexar os termos como **Apêndice C** (versões finais que serão efetivamente aplicadas em campo). Os arquivos `.doc` da UNISINOS podem ser convertidos para LaTeX ou incluídos como imagens/PDFs anexos.
 
 ### 6.4 Ferramenta para o questionário — decisão: **Google Forms**
 
