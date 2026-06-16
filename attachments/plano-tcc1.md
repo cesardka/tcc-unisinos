@@ -306,7 +306,7 @@ Custom só faria sentido se o site fosse parte da contribuição computacional d
 
 ## 9. Riscos e mitigações
 
-- **Orientador distante:** marcar reuniões formais a cada 2 semanas com pauta escrita; enviar entregáveis parciais em PDF para forçar feedback assíncrono.
+- **Orientador:** marcar reuniões formais a cada 2 semanas com pauta escrita; enviar entregáveis parciais em PDF para forçar feedback assíncrono.
 - **Coleta de dados travar em TCC II:** já no TCC I, listar nominalmente estabelecimentos-alvo e ter 1 contato confirmado por escrito.
 - **Escopo inflar:** sempre que aparecer "também seria legal estudar X" → mover para "Trabalhos Futuros".
 

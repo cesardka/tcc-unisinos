@@ -75,19 +75,18 @@ Monografia apresentada como requisito parcial para obtenção do título de Bach
 % cada palavra-chave deve ser fornecida duas vezes, uma em português e
 % outra no idioma estrangeiro (na verdade, em tantos idiomas quantos se
 % desejar).
-\palavrachave{brazilian}{UNISINOS}
-\palavrachave{brazilian}{ABNT}
-\palavrachave{brazilian}{\LaTeX}
-\palavrachave{brazilian}{Formatação de documentos}
-\palavrachave{brazilian}{QR Code}
+\palavrachave{brazilian}{Cardápio digital}
 \palavrachave{brazilian}{Transformação digital}
-\palavrachave{brazilian}{Bar}
-\palavrachave{brazilian}{Restaurante}
-\palavrachave{brazilian}{Formatação de documentos}
-\palavrachave{english}{UNISINOS}
-\palavrachave{english}{ABNT}
-\palavrachave{english}{\LaTeX}
-\palavrachave{english}{Document typesetting}
+\palavrachave{brazilian}{Autoatendimento}
+\palavrachave{brazilian}{QR Code}
+\palavrachave{brazilian}{Bares e restaurantes}
+\palavrachave{brazilian}{Estudo de caso}
+\palavrachave{english}{Digital menu}
+\palavrachave{english}{Digital transformation}
+\palavrachave{english}{Self-ordering}
+\palavrachave{english}{QR Code}
+\palavrachave{english}{Bars and restaurants}
+\palavrachave{english}{Case study}
 
 %=======================================================================
 % Início do documento.
@@ -141,7 +140,7 @@ Eu sou o conjunto dessas pessoas\\
 % A recomendação é para 150 a 500 palavras.
 %=======================================================================
 \begin{abstract}
-Este documento apresenta orientações para uso da classe \LaTeX\ de formatação de monografias para a UNISINOS\@.  Ao mesmo tempo, ele serve como exemplo de uso da classe, demonstrando os principais comandos a serem utilizados, e outras orientações mais gerais de uso do \LaTeX.  Adicionalmente, procuramos incluir no documento algumas orientações sobre a escrita da monografia em si, reunindo dicas e recomendações que contribuem para aumentar a qualidade técnica dos trabalhos acadêmicos.  O Resumo deve conter de 150 a 500~palavras e nele não deve haver citações. Sugere-se a utilização de parágrafo único.
+Este projeto de pesquisa investiga como bares e restaurantes de Porto Alegre que adotaram cardápios digitais com autoatendimento desde 2020 percebem os benefícios, riscos e desafios técnicos e operacionais dessa transição, bem como a forma com que seus clientes vivenciam essa nova interação. A pesquisa adota uma abordagem qualitativa-quantitativa por meio de um estudo de caso múltiplo envolvendo de dois a três estabelecimentos com perfis distintos de adoção, combinado com um questionário aplicado a frequentadores do setor. Espera-se contribuir para a compreensão da transformação digital em pequenos e médios estabelecimentos do food service e fornecer subsídios para o projeto de soluções de cardápio digital mais alinhadas às necessidades de gestores e clientes. Este documento corresponde à entrega do TCC I e apresenta a delimitação do tema, a fundamentação teórica preliminar, a metodologia proposta e o cronograma de execução da etapa de coleta e análise prevista para o TCC II.
 \end{abstract}
 
 %=======================================================================
@@ -153,7 +152,7 @@ Este documento apresenta orientações para uso da classe \LaTeX\ de formataçã
 %=======================================================================
 \begin{otherlanguage}{english}
 \begin{abstract}
-This document presents guidelines on the use of UNISINOS's \LaTeX\ class for academic reports and dissertations.  At the same time, it serves as an example on using the class, employing the main commands and providing further general orientations on the use of \LaTeX.  In addition, we have added guidelines for the process of writing itself, collecting tips and recommendations that contribute to the technical quality enhancement of academic monographs.  The Abstract should be composed of 150 to 500~words and must not contain any citations.  It is suggested that a single paragraph be used.
+This research project investigates how bars and restaurants in Porto Alegre that adopted digital self-ordering menus since 2020 perceive the benefits, risks and technical or operational challenges of this transition, as well as how their customers experience this new form of interaction. The research adopts a qualitative-quantitative approach through a multiple case study involving two to three establishments with different adoption profiles, combined with a survey applied to customers. The expected contribution is a better understanding of digital transformation in small and medium-sized food-service establishments and inputs for the design of digital menu solutions that are better aligned with the needs of both managers and customers. This document corresponds to the first part of the final undergraduate work (TCC I) and presents the scope, preliminary theoretical foundation, proposed methodology and execution timeline for the data collection and analysis stage planned for TCC II.
 \end{abstract}
 \end{otherlanguage}
 
@@ -172,23 +171,31 @@ This document presents guidelines on the use of UNISINOS's \LaTeX\ class for aca
 %
 % Deve ser passada como parâmetro a maior das abreviaturas utilizadas.
 %=======================================================================
-\begin{listadeabreviaturas}{seg., segs.}
-\item[ampl.] ampliado, -a
-\item[atual.] atualizado, -a
-\item[coord.] coordenador
-\item[N.~T.] Novo Testamento
-\item[seg., segs.] seguinte, -s
-\end{listadeabreviaturas}
+% Lista de abreviaturas desabilitada — não há abreviaturas relevantes neste TCC.
+% \begin{listadeabreviaturas}{seg., segs.}
+% \item[ampl.] ampliado, -a
+% \end{listadeabreviaturas}
 
 %=======================================================================
 % Lista de Siglas (opcional).
 %
 % Deve ser passada como parâmetro a maior das siglas utilizadas.
 %=======================================================================
-\begin{listadesiglas}{FAPERGS}
+\begin{listadesiglas}{ABRASEL}
 \item[ABNT] Associação Brasileira de Normas Técnicas
-\item[CAPES] Coordenação de Aperfeiçoamento de Pessoal de Nível Superior
-\item[FAPERGS] Fundação de Amparo à Pesquisa do Estado do Rio Grande do Sul
+\item[ABRASEL] Associação Brasileira de Bares e Restaurantes
+\item[CEP] Comitê de Ética em Pesquisa
+\item[KDS] Kitchen Display System
+\item[LGPD] Lei Geral de Proteção de Dados Pessoais
+\item[POA] Porto Alegre
+\item[QR] Quick Response (code)
+\item[SEBRAE] Serviço Brasileiro de Apoio às Micro e Pequenas Empresas
+\item[TAM] Technology Acceptance Model
+\item[TCC] Trabalho de Conclusão de Curso
+\item[TCLE] Termo de Consentimento Livre e Esclarecido
+\item[UNISINOS] Universidade do Vale do Rio dos Sinos
+\item[UTAUT] Unified Theory of Acceptance and Use of Technology
+\item[UX] User Experience
 \end{listadesiglas}
 
 %=======================================================================
@@ -196,11 +203,10 @@ This document presents guidelines on the use of UNISINOS's \LaTeX\ class for aca
 %
 % Deve ser passado o maior (mais largo) dos símbolos utilizados.
 %=======================================================================
-\begin{listadesimbolos}{Ca}
-\item[\textsuperscript{o}C] Graus Celsius
-\item[Al] Alumínio
-\item[Ca] Cálcio
-\end{listadesimbolos}
+% Lista de símbolos desabilitada — não há símbolos relevantes neste TCC.
+% \begin{listadesimbolos}{Ca}
+% \item[Ca] Cálcio
+% \end{listadesimbolos}
 
 %=======================================================================
 % Sumário
@@ -208,118 +214,206 @@ This document presents guidelines on the use of UNISINOS's \LaTeX\ class for aca
 \tableofcontents
 
 %=======================================================================
-% Introdução
+% 1 Introdução
 %=======================================================================
 \chapter{Introdução}
 
-% as epígrafes nos capítulos são opcionais
-\epigrafecap{The reasonable man adapts himself to the world; the unreasonable one persists in trying to adapt the world to himself. Therefore all progress depends on the unreasonable man.}{George Bernard Shaw}
+% TODO: parágrafo introdutório de abertura do capítulo (1--2 parágrafos),
+% conectando o leitor ao assunto antes de entrar nas subseções.
 
-Conforme \cite{Hexsel11}, a introdução tem o objetivo de ``\emph{introduzir} o material que vai ser apresentado em mais detalhe nas seções subseqüentes''. Na introdução você deve contextualizar o problema e mostrar por que vale a pena resolvê-lo. Você deve apresentar a solução proposta e mostrar o seu diferencial em relação aos trabalhos relacionados. Observe, porém, que na introdução você deve apenas tratar do O QUÊ e PORQUÊ, sem tratar do como \cite{Hexsel11}, que deve ser explicado na seção que descreve o trabalho desenvolvido.
+\section{Tema}
+\label{sec:tema}
 
-Geralmente, a introdução tem uma estrutura similar ao resumo e deve apresentar:
-\begin{itemize}
-	\item \textbf{Contexto e motivação:} Aqui você deve apresentar o contexto do trabalho (área de que ele se trata) e uma motivação para trabalhar nesse assunto.
-	\item \textbf{Problema:} Aqui você vai apresentar um problema, uma lacuna, observada na área e que você pretende tratar. Você deve se perguntar aqui: ``Que respostas estou disposto a responder?''. O problema deve ser definido claramente e delimitado em termos de espaço de tempo. Veja que essa parte visa alertar o leitor de que o que você está propondo é uma solução para um problema observado na área. 
-	\item \textbf{Objetivos:} Aqui você deve apresentar os objetivos do seu trabalho. Tome cuidado para não confundir objetivos com atividades.   Faça a si mesmo a pergunta: ``O que pretendo alcançar com a pesquisa?''. Você pode discernir entre objetivos gerais e objetivos específicos:
-	\begin{itemize}
-		\item Objetivo geral --- qual o propósito da pesquisa?
-		\item Objetivos específicos --- abertura do objetivo geral em outros menores (possíveis capítulos).
-	\end{itemize}
-	Veja abaixo um exemplo de objetivo retirado da monografia de~\cite{Teixeira09}:
+% TODO: apresentar o tema em ~1 página.
+% - Contexto da transformação digital no setor de bares e restaurantes.
+% - Surgimento e expansão dos cardápios digitais (QR Code, web apps) após 2020.
+% - Por que esse fenômeno chama atenção em Porto Alegre.
 
-	Com a possibilidade de acesso a base de dados XML gerada a partir do Sistema de Currículos Lattes e a necessidade de melhor reutilizar as informações existentes neste sistema, o presente trabalho tem como objetivo geral permitir o acesso do pesquisador a seus dados através de uma interface mais amigável: o padrão LaTeX. Para isto destacam-se os seguintes objetivos específicos:
-	\begin{alineas}
-		\item identificar e analisar o formato de especificação de currículos da Plataforma Lattes;
-		\item disponibilizar uma ferramenta para a geração de uma representação de dados intermediária a partir do formato especificado;
-		\item implementar a tradução dos dados colhidos em código LaTeX através da utilização da ferramenta criada;
-		\item analisar os resultados obtidos e as alternativas presentes no uso da ferramenta.
-	\end{alineas}
-\end{itemize}
+\section{Delimitação do tema}
+\label{sec:delimitacao}
+
+% TODO: delimitar escopo em quatro eixos:
+% - Geográfico: Porto Alegre/RS, 2--3 bairros (Cidade Baixa, Moinhos, Centro).
+% - Temporal: adoções entre mar/2020 e 2026, foco antes/depois da pandemia.
+% - Funcional: cardápio digital + autoatendimento via QR/web
+%   (NÃO inclui KDS, delivery, integração com iFood, ERP).
+% - Sujeitos: 1--3 estabelecimentos como casos + frequentadores via survey.
+
+\section{Problema}
+\label{sec:problema}
+
+% TODO: formular como pergunta única:
+% Como bares e restaurantes de Porto Alegre que adotaram cardápios digitais
+% com autoatendimento desde 2020 percebem os benefícios, riscos e desafios
+% dessa transição, e como seus clientes vivenciam essa interação?
+
+\section{Objetivos}
+\label{sec:objetivos}
+
+\subsection{Objetivo geral}
+\label{sec:obj-geral}
+
+% TODO: analisar, por meio de estudo de caso múltiplo, como o uso de
+% cardápios digitais com autoatendimento impacta a operação de bares
+% e restaurantes de Porto Alegre e a experiência de seus clientes.
+
+\subsection{Objetivos específicos}
+\label{sec:obj-especificos}
+
+\begin{alineas}
+	\item caracterizar o estado da arte sobre cardápios digitais, QR menus e self-ordering em food service;
+	\item levantar, com gestores de 1 a 3 estabelecimentos, as motivações, custos e desafios técnicos da adoção;
+	\item coletar, via questionário, a percepção de frequentadores quanto a usabilidade, confiança e preferências;
+	\item confrontar a percepção dos estabelecimentos com a percepção dos clientes, destacando convergências e tensões;
+	\item discutir aspectos técnicos transversais: UX em mobile web, LGPD, acessibilidade e dependência de conectividade.
+\end{alineas}
+
+\section{Justificativa}
+\label{sec:justificativa}
+
+% TODO: justificar em dois eixos:
+% - Relevância prática: setor altamente impactado pela pandemia; decisões
+%   de digitalização envolvem investimentos relevantes para PMEs.
+% - Relevância para a Ciência da Computação: o objeto é tecnológico
+%   (web mobile, QR Code, UX, LGPD); os achados podem orientar requisitos
+%   de software, padrões de UX e práticas de privacidade para o setor.
 
 %=======================================================================
-% Escrevendo o Texto
+% 2 Fundamentação Teórica
 %=======================================================================
-\chapter{Escrevendo o Texto}
+\chapter{Fundamentação Teórica}
 
-\section{Comandos do \LaTeX}
-Como regra geral, use os comandos tradicionais do \LaTeX\ para formatar seu texto.  Neste documento procuramos demonstrar os comandos mais comumente utilizados em monografias acadêmicas.
+% TODO: parágrafo de abertura indicando como as seções a seguir se
+% articulam e qual o caminho conceitual percorrido.
 
-Neste capítulo apresentamos alguns exemplos de como colocar figuras e tabelas no seu texto.
+\section{Transformação digital no setor de food service}
+\label{sec:td-foodservice}
 
-\section{Ilustrações}
+% TODO: conceito de transformação digital; impacto específico no setor
+% de bares e restaurantes; aceleração causada pela pandemia de COVID-19.
+% Apoiar com autores de TD em PMEs e relatórios setoriais (ABRASEL).
 
-\subsection{Legendas}
-As legendas das figuras devem se encontrar no topo da figura e não abaixo, como usualmente colocado. Abaixo da figura, é obrigatório colocar a fonte (mesmo que a figura tenha sido do próprio autor).
+\section{Cardápios digitais e QR Code}
+\label{sec:cardapios-qr}
 
-As legendas devem conter o tipo da ilustração (Figura, Tabela, etc), seguido de numeração simples (sem número do capítulo).
+% TODO: definição e tipologia (PDF estático, web app, app nativo);
+% histórico breve da tecnologia QR Code aplicada ao varejo; arquiteturas
+% comuns (link -> web app -> backend de cardápio).
 
-Toda figura deve ser citada no texto, como nos exemplos que seguem.
+\section{Autoatendimento e experiência do usuário em mobile}
+\label{sec:autoatendimento-ux}
 
-\subsection{Figuras}
-A Figura~\ref{fig:escrita} ilustra as fases psicológicas da escrita da dissertação, que também valem para monografia. Você vai se reconhecer no personagem. ;-)
+% TODO: conceito de self-ordering; heurísticas de usabilidade aplicadas
+% a cardápios mobile (Nielsen); acessibilidade (WCAG); fricções típicas
+% (QR não escaneia, conexão fraca, navegação confusa).
 
-\begin{figure}
-	\caption{Fases psicológicas da escrita da dissertação}
-	\label{fig:escrita}
-	\centering%
-	\begin{minipage}{.8\textwidth}
-		\includegraphics[width=\textwidth]{images/escrita.jpg}
-		\fonte{http://www.phdcomics.com/comics/archive.php?comicid=149}
-	\end{minipage}
-\end{figure}
+\section{LGPD aplicada a restaurantes}
+\label{sec:lgpd}
 
-\subsection{Tabelas}
-A Tabela~\ref{tab:estacoes} é um exemplo de tabela elaborada pelo(a) próprio(a) autor(a).
+% TODO: panorama da LGPD; dados pessoais coletados via cardápio digital
+% (e-mail, telefone, geolocalização, comportamento de navegação); base
+% legal aplicável; obrigações do controlador.
+
+\section{Trabalhos relacionados}
+\label{sec:trabalhos-relacionados}
+
+% TODO: 4--8 trabalhos (TCCs, dissertações, artigos) que tratem de
+% digitalização em restaurantes, QR menus ou adoção de tecnologia em PMEs.
+% Encerrar com quadro comparativo (foco, método, recorte, lacuna).
+
+%=======================================================================
+% 3 Metodologia
+%=======================================================================
+\chapter{Metodologia}
+
+% TODO: parágrafo de abertura indicando que a pesquisa é qualitativa-quantitativa
+% e que este capítulo descreve a abordagem, os instrumentos e os procedimentos.
+
+\section{Caracterização da pesquisa}
+\label{sec:caracterizacao}
+
+% TODO: classificar quanto à natureza (aplicada), abordagem
+% (qualitativa-quantitativa / métodos mistos), objetivos
+% (descritiva-exploratória) e procedimentos (estudo de caso múltiplo + survey).
+% Apoiar em Yin (estudo de caso) e Gil/Creswell (métodos).
+
+\section{Etapas da pesquisa}
+\label{sec:etapas}
+
+% TODO: descrever fluxo da fundamentação até a defesa.
+% Sugestão: incluir uma figura com fluxograma das etapas TCC I -> TCC II.
+
+\section{Instrumentos de coleta}
+\label{sec:instrumentos}
+
+\subsection{Entrevista semiestruturada com gestores}
+\label{sec:entrevista}
+
+% TODO: descrever a entrevista (45--60 min, gravada mediante TCLE),
+% a estrutura modular do roteiro (Blocos 0--5) e a relação com os
+% perfis A/B/C dos estabelecimentos. Remeter ao Apêndice A.
+
+\subsection{Questionário com frequentadores}
+\label{sec:questionario}
+
+% TODO: descrever o survey (Google Forms, 15--20 perguntas, meta de 80+
+% respostas), canais de distribuição (redes sociais, grupos, opcionalmente
+% QR Code nos estabelecimentos) e estrutura em 4 seções. Remeter ao Apêndice B.
+
+\section{Critérios de seleção dos estabelecimentos}
+\label{sec:criterios}
+
+% TODO: amostragem intencional com perfis
+% A (pré-2020 que adotou), B (pré-2020 que resistiu) e C (pós-2020 nascido digital).
+% Critérios de inclusão (porte pequeno/médio, tomador de decisão acessível)
+% e de exclusão (redes franqueadas, fine dining, dark kitchens).
+
+\section{Plano de análise}
+\label{sec:analise}
+
+% TODO: análise de conteúdo (Bardin) para o material qualitativo das
+% entrevistas; estatística descritiva (frequências, médias, cruzamentos)
+% para o survey. Plano de triangulação entre as duas fontes.
+
+\section{Aspectos éticos}
+\label{sec:etica}
+
+% TODO: TCLE com participantes (Apêndice C); aderência à LGPD;
+% Termo de Confidencialidade (modelo UNISINOS) com gestores;
+% Termo de Autorização de Uso de Imagem quando aplicável;
+% discussão sobre necessidade ou não de submissão ao CEP.
+
+%=======================================================================
+% 4 Cronograma
+%=======================================================================
+\chapter{Cronograma}
+
+% TODO: parágrafo introdutório descrevendo o planejamento temporal
+% da execução do TCC II (2026/2) e os marcos principais.
 
 \begin{table}
-	\caption{Período das estações do ano no Brasil}
-	\label{tab:estacoes}
+	\caption{Cronograma de execução do TCC II em 2026/2}
+	\label{tab:cronograma}
 	\centering%
-	\begin{minipage}{.6\textwidth}
-		\begin{tabular*}{\textwidth}{ll}
+	\begin{minipage}{.98\textwidth}
+		\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}cccccc}
 			\hline
-			\textbf{Meses} & \textbf{Estações do Ano}\\
+			\textbf{Atividade} & \textbf{Ago} & \textbf{Set} & \textbf{Out} & \textbf{Nov} & \textbf{Dez} & \textbf{Defesa}\\
 			\hline
-			21 de março a 21 de junho & Outono\\
-			21 de junho a 23 de setembro & Inverno\\
-			23 de setembro a 21 de dezembro & Primavera\\
-			21 de dezembro a 21 de março & Verão\\
+			Piloto dos instrumentos          & X &   &   &   &   &  \\
+			Recrutamento de estabelecimentos & X & X &   &   &   &  \\
+			Entrevistas com gestores         &   & X & X &   &   &  \\
+			Aplicação do questionário        &   & X & X & X &   &  \\
+			Transcrição e codificação        &   &   & X & X &   &  \\
+			Análise dos dados                &   &   &   & X & X &  \\
+			Redação do artigo estendido      &   &   & X & X & X &  \\
+			Revisão final                    &   &   &   &   & X &  \\
+			Defesa                           &   &   &   &   &   & X\\
 			\hline
 		\end{tabular*}
-		\fonte{Elaborada pela autora.}
+		\fonte{Elaborado pelo autor.}
 	\end{minipage}
 \end{table}
-
-\section{Resumo}
-O resumo deve conter de 100 a 500 palavras. No resumo não deve haver citações e indica-se que essa seja a última seção do texto a ser escrita. Veja abaixo uma sugestão de organização e exemplo de resumo de \cite{Moro11}.
-
-Sugestão (uma a três linhas para cada item):
-\begin{itemize}
-	\item Contexto geral e específico;
-	\item Questão/problema sendo investigado (propósito do trabalho);
-	\item Estado-da-arte (por que precisa de uma solução nova/melhor);
-	\item Solução (nome da proposta, metodologia básica sem detalhes, quais características respondem as questões iniciais, interpretação dos resultados, conclusões).
-\end{itemize}
-
-
-%=======================================================================
-% Exemplos de Citações e Referências Bibliográficas
-%=======================================================================
-\chapter{Mais um capítulo}
-Texto do capítulo.
-
-\section{Nova seção}
-Texto da nova seção. Segundo \citeonline{inproceedings}, esta é uma forma diferente de referenciar.
-
-\subsection{Subseção}
-Texto da subseção, com exemplo de citação \cite{book}.
-
-\subsection{Subseção}
-Texto da subseção, com exemplo de citação \cite{article}.
-
-\section{Nova seção}
-Texto da subseção, com exemplo de citação \cite{inproceedings}.
 
 %=======================================================================
 % Referências
@@ -327,23 +421,41 @@ Texto da subseção, com exemplo de citação \cite{inproceedings}.
 \bibliography{exemplo}
 
 %=======================================================================
-% Exemplo de Apêndice
-% O Apêndice é utilizado para apresentar material complementar elaborado
-% pelo próprio autor.  Deve seguir as mesmas regras de formatação do
-% corpo principal do documento.
+% Apêndices
 %=======================================================================
 \appendix
-\chapter{Informações Complementares}
 
-O Apêndice é o lugar para incluir textos complementares, que não são essenciais para o entendimento do assunto principal da monografia, mas que podem contribuir com informação relevante (por exemplo, uma prova matemática, uma conceituação básica, etc.).  Ele deve seguir o formato normal do documento.
+%-----------------------------------------------------------------------
+% Apêndice A --- Roteiro de entrevista com gestores
+%-----------------------------------------------------------------------
+\chapter{Roteiro de entrevista com gestores}
+\label{ap:roteiro}
 
-%=======================================================================
-% Exemplo de Anexo
-% O Anexo é utilizado para a ``inclusão de materiais não elaborados pelo
-% próprio autor, como cópias de artigos, manuais, folders, balancetes, etc.
-% e não precisam estar em conformidade com o modelo''.
-%=======================================================================
-\annex
-\chapter{Artigos Publicados}
-Existe diferença entre os Apêndices e os Anexos.  Os apêndices trazem informação escrita pelo próprio autor do trabalho, incorporando-se ao formato da monografia como um todo.  Já um anexo é um material à parte, definido/publicado por si só, e que o autor julga conveniente ser apresentado juntamente com a monografia.  Normalmente também vai apresentar formato próprio, como um artigo publicado, um folder, uma planilha, etc.
+% TODO: roteiro modular completo da entrevista semiestruturada
+% (Blocos 0 a 5), conforme attachments/plano-tcc1.md (seção 6.1).
+% Versão definitiva será produzida na fase de instrumentos.
+
+%-----------------------------------------------------------------------
+% Apêndice B --- Questionário com frequentadores
+%-----------------------------------------------------------------------
+\chapter{Questionário com frequentadores}
+\label{ap:questionario}
+
+% TODO: questionário completo (15--20 perguntas), aplicado via Google Forms,
+% organizado em quatro seções (Perfil; Experiência com cardápios digitais;
+% Aspectos técnicos; Visão geral). Ver attachments/plano-tcc1.md (seção 6.2).
+
+%-----------------------------------------------------------------------
+% Apêndice C --- Termos de consentimento e autorização
+%-----------------------------------------------------------------------
+\chapter{Termos de consentimento e autorização}
+\label{ap:termos}
+
+% TODO: incluir nesta ordem:
+% - TCLE (Termo de Consentimento Livre e Esclarecido) --- a ser redigido.
+% - Termo de Confidencialidade (modelo UNISINOS).
+% - Termo de Autorização de Uso de Imagem (modelo UNISINOS), se aplicável.
+% - Autorização de Uso de Obra Fotográfica (modelo UNISINOS), se aplicável.
+% Modelos em attachments/autorizações/.
+
 \end{document}
