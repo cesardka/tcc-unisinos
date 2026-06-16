@@ -16,7 +16,9 @@ Este repositório contém o arquivo-fonte em LaTeX, imagens, referências biblio
 
 ## Estrutura do repositório
 
-- `main.tex` — arquivo-fonte principal do trabalho
+- `main.tex` — arquivo-fonte principal (preâmbulo, pré-textuais e `\include` de capítulos e apêndices)
+- `chapters/` — capítulos numerados, um arquivo por capítulo (`01-introducao.tex`, `02-fundamentacao.tex`, `03-metodologia.tex`, `04-cronograma.tex`)
+- `appendices/` — apêndices (`A-roteiro.tex`, `B-questionario.tex`, `C-termos.tex`)
 - `UNISINOSmonografia.cls` — classe LaTeX oficial da UNISINOS para monografias
 - `exemplo.bib` — base de referências bibliográficas (BibTeX)
 - `images/` — figuras utilizadas no documento
