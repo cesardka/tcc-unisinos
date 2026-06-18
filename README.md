@@ -49,3 +49,7 @@ latexmk -pdf main.tex
 ```
 
 O PDF gerado estará em `main.pdf`.
+
+## Template e créditos
+
+A formatação deste trabalho parte do **template LaTeX oficial da UNISINOS para monografias**, distribuído pela própria universidade aos alunos de graduação. O núcleo do template — classe `UNISINOSmonografia.cls`, estrutura de pré-textuais (capa, folha de rosto, dedicatória, epígrafe, resumos, sumário) e configuração ABNT via `abntex2` — é mantido o mais próximo possível do original; as adaptações feitas neste repositório dizem respeito apenas ao conteúdo do trabalho (texto, referências, figuras e ajustes pontuais de estilo).
