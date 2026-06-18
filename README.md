@@ -20,10 +20,14 @@ Este repositório contém o arquivo-fonte em LaTeX, imagens, referências biblio
 - `chapters/` — capítulos numerados, um arquivo por capítulo (`01-introducao.tex`, `02-fundamentacao.tex`, `03-metodologia.tex`, `04-cronograma.tex`)
 - `appendices/` — apêndices (`A-roteiro.tex`, `B-questionario.tex`, `C-termos.tex`)
 - `UNISINOSmonografia.cls` — classe LaTeX oficial da UNISINOS para monografias
-- `exemplo.bib` — base de referências bibliográficas (BibTeX)
+- `referencias.bib` — base de referências bibliográficas do trabalho (BibTeX); entradas geradas a partir do fichamento em `attachments/fichamento.md`
+- `exemplo.bib` — entradas de exemplo do template UNISINOS (mantidas apenas para referência de sintaxe)
+- `bibliography/` — arquivos PDF das referências, organizados por eixo temático
 - `images/` — figuras utilizadas no documento
 - `attachments/` — documentos de apoio e referência
   - `attachments/plano-tcc1.md` — plano de trabalho do TCC I (escopo, metodologia, instrumentos e decisões)
+  - `attachments/fichamento.md` — fichamento das referências (resumo, tipo, recorte, relevância)
+  - `attachments/bibliografia-triagem.md` — triagem automatizada dos PDFs (status de extração de texto)
   - `attachments/autorizações/` — modelos UNISINOS de termos de confidencialidade e autorização de uso de imagem para a coleta de dados
 - `main.pdf` — versão compilada mais recente do trabalho
 
