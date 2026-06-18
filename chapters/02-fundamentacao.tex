@@ -1,39 +1,121 @@
 \chapter{Fundamentação Teórica}
+\label{ch:fundamentacao}
 
-% TODO: parágrafo de abertura indicando como as seções a seguir se
-% articulam e qual o caminho conceitual percorrido.
+Este capítulo apresenta o arcabouço conceitual sobre o qual a pesquisa se sustenta. A discussão é organizada em seis seções: a Seção~\ref{sec:td-foodservice} situa o fenômeno na transformação digital do setor de \emph{food service}; a Seção~\ref{sec:cardapios-qr} caracteriza os cardápios digitais e o uso do \emph{QR Code} no varejo; a Seção~\ref{sec:autoatendimento-ux} aborda o autoatendimento e a experiência do usuário em ambientes \emph{mobile}; a Seção~\ref{sec:adocao} apresenta os modelos de aceitação tecnológica (TAM, UTAUT e UTAUT2), destacando o último como referencial analítico adotado para o lado do consumidor; a Seção~\ref{sec:lgpd} trata da Lei Geral de Proteção de Dados aplicada ao recorte; e a Seção~\ref{sec:trabalhos-relacionados} encerra com a análise de trabalhos relacionados e um quadro comparativo.
 
 \section{Transformação digital no setor de food service}
 \label{sec:td-foodservice}
 
-% TODO: conceito de transformação digital; impacto específico no setor
-% de bares e restaurantes; aceleração causada pela pandemia de COVID-19.
-% Apoiar com autores de TD em PMEs e relatórios setoriais (ABRASEL).
+O termo \textbf{transformação digital} (TD) designa um processo organizacional e cultural pelo qual empresas integram tecnologias digitais a seus modelos de negócio, processos e relações com clientes, alterando substancialmente a forma como geram e capturam valor. No setor de \emph{food service} --- bares, restaurantes, lanchonetes e similares ---, a TD vinha ocorrendo de maneira incremental ao longo da última década, com a popularização de aplicativos de \emph{delivery}, sistemas de gestão integrada e meios eletrônicos de pagamento. A pandemia de COVID-19 produziu, contudo, uma inflexão dessa trajetória, ao impor restrições sanitárias que tornaram inviáveis muitas práticas presenciais e empurraram pequenos negócios para a adoção compulsória de soluções digitais \cite{costa2021implicacoes,finkler2020impactos}.
+
+Em estudo com sete pequenos negócios alimentícios no estado de Sergipe, \citeonline{costa2021implicacoes} demonstram, por meio de entrevistas semiestruturadas analisadas tematicamente, que a pandemia atuou como \emph{catalisador externo} da inserção de tecnologia, frequentemente sem que houvesse aceitação prévia dos proprietários. \citeonline{harms2021effectuation}, em pesquisa com 143 empreendedores gastronômicos em Münster, Alemanha, identificam dois caminhos de inovação de modelo de negócio sob alta incerteza: o do \emph{planning soloist}, baseado em causation (planejamento sequencial), e o do \emph{hedging networker}, baseado em effectuation (uso de recursos disponíveis e parcerias). Ambos os caminhos culminam, com frequência, em ofertas digitais coordenadas, como o ``\emph{digital beer garden}'' cooperativo descrito pelos autores.
+
+Estudos mais recentes indicam que a digitalização desencadeada pela pandemia tende a ser estrutural, e não conjuntural. \citeonline{giovanini2024pandemia}, por meio de simulação computacional com modelos baseados em agentes, mostram que a difusão de plataformas digitais de entrega sob demanda persiste mesmo após o fim do choque pandêmico, em razão de mecanismos de \emph{feedback} positivo entre consumidores e restaurantes. No campo das culturas alimentares mais amplas, \citeonline{lupton2020digitalfood} sintetizam, em coletânea publicada pela Routledge, como mídias sociais, dispositivos de \emph{self-tracking} e interfaces digitais estão remodelando práticas, identidades e poder simbólico em torno do alimento. Para o recorte deste trabalho, três implicações se destacam: (i) a digitalização no \emph{food service} brasileiro tem um marco pré e pós-2020 claramente identificável; (ii) decisões tecnológicas, especialmente em pequenas e médias empresas, são tomadas sob incerteza e com restrições de capital; e (iii) o cardápio digital, por sua visibilidade no momento de consumo, é um vetor privilegiado para observar essa transformação no nível da relação com o cliente.
 
 \section{Cardápios digitais e QR Code}
 \label{sec:cardapios-qr}
 
-% TODO: definição e tipologia (PDF estático, web app, app nativo);
-% histórico breve da tecnologia QR Code aplicada ao varejo; arquiteturas
-% comuns (link -> web app -> backend de cardápio).
+Cardápios digitais são representações eletrônicas do menu de um estabelecimento, acessíveis pelo cliente por meio de algum dispositivo, frequentemente o próprio \emph{smartphone}. Podem ser implementados em diferentes níveis de sofisticação:
+
+\begin{itemize}
+    \item \textbf{PDF estático} hospedado em servidor e acessado por \emph{link} ou \emph{QR Code} --- a forma mais simples e barata; baixa interatividade, sem capacidade de pedido;
+    \item \textbf{Aplicação \emph{web}} (\emph{web app}) responsiva, com catálogo navegável, fotos, filtros (vegano, sem glúten, etc.) e, eventualmente, fluxo de pedido --- forma predominante no Brasil pós-2020;
+    \item \textbf{Aplicativo nativo} (Android/iOS) próprio ou fornecido por plataforma --- adotado por redes maiores; menor fricção de uso, mas exige instalação prévia.
+\end{itemize}
+
+A arquitetura típica de uma solução de cardápio digital com autoatendimento envolve três camadas: (i) um \emph{front-end} \emph{web} acessado a partir do escaneamento de um \emph{QR Code} colado na mesa, que aponta para uma URL específica do estabelecimento (e, eventualmente, da mesa); (ii) um \emph{back-end} de cardápio, no qual o gestor edita itens, preços, fotos e disponibilidade; e (iii), no caso de pedido digital, uma camada de comunicação com a cozinha (impressora térmica, \emph{tablet} ou \emph{Kitchen Display System}). Soluções comerciais brasileiras como Goomer, Anota AI e Abrahão seguem variações dessa arquitetura.
+
+A literatura sobre o tema ainda é pouco consolidada no Brasil. \citeonline{santos2024gerador}, em projeto técnico apresentado em mostra de ensino técnico, descrevem o protótipo ``NoMenu'', um gerador de cardápios digitais editável pelo próprio responsável do estabelecimento, sem necessidade de profissional de TI dedicado; argumentam que a sustentabilidade (redução do uso de papel) e a personalização (alergias e restrições alimentares) são vantagens emergentes do cardápio digital. \citeonline{lima2018sistema}, ainda antes da pandemia, propuseram um aplicativo móvel para gestão de comandas e cardápio em bares e restaurantes, com foco em reduzir erros de pedido e demora no fechamento de conta. No plano internacional, \citeonline{chen2021consumer} aplicaram \emph{survey} em quatro países europeus (Reino Unido, França, Alemanha e Holanda) sobre preferências dos consumidores por uma solução inovadora de \emph{e-menu} em serviços públicos de alimentação, evidenciando que ubiquidade, personalização e qualidade da informação são atributos centrais para a aceitação.
 
 \section{Autoatendimento e experiência do usuário em mobile}
 \label{sec:autoatendimento-ux}
 
-% TODO: conceito de self-ordering; heurísticas de usabilidade aplicadas
-% a cardápios mobile (Nielsen); acessibilidade (WCAG); fricções típicas
-% (QR não escaneia, conexão fraca, navegação confusa).
+\textbf{Autoatendimento} (\emph{self-ordering} ou \emph{self-service}) designa, no \emph{food service}, qualquer arranjo em que o cliente realiza por conta própria etapas tradicionalmente intermediadas por um funcionário, como consultar o cardápio, montar o pedido, registrar a comanda e, em alguns casos, pagar. Historicamente associado a redes de \emph{fast food} via totens físicos, o autoatendimento expandiu-se com a popularização do \emph{smartphone}: o próprio dispositivo do cliente passa a ser o terminal de entrada.
+
+\citeonline{oliveira2017autoatendimento}, em pesquisa com clientes de uma rede de \emph{fast food} em São Paulo, identificaram percepção positiva quanto a \emph{conforto} e \emph{rapidez} associados ao autoatendimento, mas observaram que esse fator não foi decisivo na escolha do estabelecimento. \citeonline{fioreti2026aplicativos}, em estudo qualitativo-quantitativo recente com 100 clientes e estabelecimentos do setor, reportam que 80\% dos participantes manifestam alta intenção de uso de aplicativos de autoatendimento, com fatores positivos como conveniência (85\%), rapidez (78\%) e maior controle sobre o pedido (72\%); do lado operacional, os estabelecimentos relatam redução de até 30\% no tempo médio de atendimento e aumento de até 20\% no \emph{ticket} médio. Em paralelo, os autores destacam desafios persistentes relativos à \emph{usabilidade} das interfaces, à familiaridade tecnológica de parte dos usuários e à necessidade de treinamento das equipes.
+
+O sucesso desse tipo de interação depende fortemente da \textbf{experiência do usuário} (UX). \citeonline{maia2019usabilidade}, em revisão bibliográfica internacional baseada em Scopus e Web of Science, evidenciam que usabilidade e UX, embora frequentemente usadas como sinônimos, mantêm relação complementar e não plenamente consensual entre pesquisadores: a primeira foca em atributos objetivos do artefato (eficácia, eficiência, facilidade de aprendizagem), enquanto a segunda enfatiza dimensões subjetivas, afetivas e relacionais da interação. Para o caso de serviços móveis, \citeonline{koivumaki2008perceptions} demonstraram empiricamente que \emph{facilitadores de uso} --- familiaridade prévia, suporte percebido, qualidade do dispositivo --- influenciam significativamente as percepções de utilidade e facilidade, modulando a intenção de adoção em contexto \emph{mobile}.
+
+No domínio específico de pedidos por aplicativos, \citeonline{martiniano2022delivery}, ao realizarem 12 entrevistas em profundidade com usuários brasileiros de \emph{Mobile Food Ordering Apps} (MFOAs), identificaram cinco famílias de determinantes de uso: influenciadores, valor percebido, disponibilidade do aplicativo, predileção por um app específico e dificuldade de uso. Observaram também que as \emph{avaliações dentro do app} (sobre o restaurante) são mais relevantes para a decisão do que as avaliações globais do app na loja, e que a motivação hedônica e o estado emocional do consumidor influenciam diretamente o momento da compra. Esses achados, embora coletados em contexto de \emph{delivery}, oferecem hipóteses transferíveis para o cenário \emph{on-premise} estudado neste trabalho.
+
+\section{Adoção tecnológica: TAM, UTAUT e UTAUT2}
+\label{sec:adocao}
+
+\subsection{Do TAM original à UTAUT}
+\label{sec:tam-utaut}
+
+A compreensão sobre por que indivíduos aceitam ou rejeitam tecnologias estruturou-se na década de 1980 a partir do \textbf{Technology Acceptance Model} (TAM), proposto por \citeonline{davis1989perceived}. Derivado da Theory of Reasoned Action (TRA) de Fishbein e Ajzen, o TAM postula que a intenção de uso de uma tecnologia é determinada por duas construções centrais: a \textbf{utilidade percebida} (\emph{Perceived Usefulness}, PU) --- grau em que o indivíduo acredita que a tecnologia melhora seu desempenho --- e a \textbf{facilidade de uso percebida} (\emph{Perceived Ease of Use}, PEOU) --- grau em que ele acredita que usá-la será livre de esforço. \citeonline{davis1989useracceptance} compararam empiricamente o TAM com a TRA e mostraram que, embora o TAM seja mais específico ao domínio de tecnologia, sua capacidade preditiva é equivalente à da TRA com instrumentos mais enxutos. \citeonline{davis1993user} consolidou o modelo causal completo, conectando características do sistema (variáveis externas) às percepções (PU e PEOU), à atitude, à intenção e ao uso efetivo.
+
+Ao longo das duas décadas seguintes, o TAM tornou-se um dos modelos mais utilizados em pesquisa sobre sistemas de informação. \citeonline{king2006metaanalysis}, em meta-análise de 88 estudos empíricos, confirmaram a robustez e a validade do modelo, ressaltando, contudo, variação significativa dos efeitos em função do tipo de usuário e de sistema. \citeonline{legris2003why}, em revisão crítica anterior, já apontavam que TAM e sua extensão TAM2 explicavam aproximadamente 40\% da variância no uso efetivo, deixando uma fração substancial sem explicação --- o que motivava a integração do modelo a variáveis de mudança organizacional, social e de difusão de inovação.
+
+Como resposta a essa fragmentação, \citeonline{venkatesh2003useracceptance} propuseram a \textbf{Unified Theory of Acceptance and Use of Technology} (UTAUT), unificando oito modelos prévios (TRA, TAM, Motivational Model, Theory of Planned Behavior, modelo combinado TAM-TPB, Model of PC Utilization, Innovation Diffusion Theory e Social Cognitive Theory) em um único arcabouço. A UTAUT identifica quatro \textbf{construções nucleares} --- expectativa de performance, expectativa de esforço, influência social e condições facilitadoras --- e quatro \textbf{moderadores} (idade, gênero, experiência e voluntariedade de uso). O modelo alcança R² ajustado de cerca de 69\% na previsão da intenção de uso, desempenho consideravelmente superior ao dos modelos anteriores tomados isoladamente.
+
+\subsection{UTAUT2 e seu encaixe ao consumidor final}
+\label{sec:utaut2}
+
+A UTAUT original foi formulada para contextos \emph{organizacionais}, nos quais o uso da tecnologia é, em alguma medida, mandatório (um funcionário precisa usar o sistema da empresa). Para estender o modelo ao contexto do consumidor --- em que o uso é voluntário, frequentemente prazeroso e atravessado por hábitos pessoais ---, \citeonline{venkatesh2012consumer} propuseram a \textbf{UTAUT2}, que incorpora três novas construções ao modelo:
+
+\begin{description}
+    \item[Motivação hedônica] (\emph{hedonic motivation}): grau em que o uso da tecnologia é percebido como prazeroso ou divertido por si mesmo, e não apenas instrumental.
+    \item[Valor (custo-benefício)] (\emph{price value}): avaliação que o consumidor faz da relação entre o benefício obtido e o custo monetário, temporal ou cognitivo incorrido.
+    \item[Hábito] (\emph{habit}): grau em que o uso da tecnologia se torna automático, dispensando avaliação consciente a cada nova ocasião.
+\end{description}
+
+Os autores reportam, em dois estudos com usuários de \emph{Internet móvel} em Hong Kong, ganhos preditivos expressivos em relação à UTAUT original: o R² da intenção comportamental sobe de 56\% para 74\%, e o do comportamento de uso, de 40\% para 52\%. Esses ganhos sustentam a escolha da UTAUT2 como referencial mais apropriado para investigar a aceitação de tecnologias de consumo, como o cardápio digital com autoatendimento utilizado pelo cliente final no salão do restaurante.
+
+A literatura brasileira tem incorporado o UTAUT2 em diferentes recortes. \citeonline{martiniano2022delivery} explicitamente referenciam a UTAUT2 ao discutir o comportamento de usuários de MFOAs; \citeonline{matte2021evolucao}, em revisão sistemática de 145 artigos, mostram que o UTAUT2 figura entre as teorias de adoção mais recentes e ainda subexploradas no contexto nacional; \citeonline{gonzales2017teoria} mapearam a produção brasileira sobre o UTAUT em três grandes eventos científicos (CONTECSI, ENANPAD e ENADI) entre 2011 e 2015, observando concentração nas áreas de educação e comércio.
+
+\subsection{Críticas, revisões e literatura em português}
+\label{sec:adocao-criticas}
+
+Apesar de sua influência, o TAM e suas extensões têm sido objeto de críticas sistemáticas. \citeonline{bagozzi2007legacy} argumenta que o legado do TAM exige uma mudança de paradigma rumo a modelos mais ricos, capazes de incorporar processos decisórios, regulação emocional e ação coletiva. \citeonline{dwivedi2019reexamining}, em meta-análise de 162 estudos prévios (1600 observações), propõem um \textbf{modelo UTAUT revisado} no qual a \emph{atitude} ocupa posição central, mediando os efeitos das construções exógenas sobre a intenção comportamental e o uso. Na literatura em português, \citeonline{brito2019limitacoes} e \citeonline{batista2023consideracoes} sintetizam de forma acessível as limitações de TAM, TAM2/3 e UTAUT diante de tecnologias emergentes, defendendo a necessidade de incluir preditores adicionais conforme o domínio investigado. Para apoio didático, \citeonline{marikyan2024tam} e \citeonline{marikyan2023utaut}, no contexto do \emph{TheoryHub Book} da Newcastle University, fornecem verbetes de referência sobre o TAM e a UTAUT, respectivamente, com síntese histórica, aplicações e críticas contemporâneas.
+
+\subsection{Modelo de análise adotado neste trabalho}
+\label{sec:modelo-adotado}
+
+Considerando o recorte deste estudo --- cardápios digitais com autoatendimento acessados pelo \emph{smartphone} do próprio cliente, em contexto de consumo voluntário no salão de bares e restaurantes ---, adota-se a \textbf{UTAUT2 como referencial analítico principal para a perspectiva do consumidor}, sustentando especialmente o instrumento descrito no Apêndice~\ref{ap:questionario}. Para a perspectiva do estabelecimento, a UTAUT original \cite{venkatesh2003useracceptance} permanece referência adequada, na medida em que captura dimensões organizacionais (condições facilitadoras, influência social entre pares, expectativas de desempenho operacional). Críticas e revisões discutidas nas seções anteriores informam a interpretação dos resultados, em particular o papel central da atitude defendido por \citeonline{dwivedi2019reexamining} e os limites contextuais apontados por \citeonline{brito2019limitacoes} e \citeonline{batista2023consideracoes}.
 
 \section{LGPD aplicada a restaurantes}
 \label{sec:lgpd}
 
-% TODO: panorama da LGPD; dados pessoais coletados via cardápio digital
-% (e-mail, telefone, geolocalização, comportamento de navegação); base
-% legal aplicável; obrigações do controlador.
+A \textbf{Lei Geral de Proteção de Dados Pessoais} (Lei~13.709, de 14 de agosto de 2018, e Lei~13.853/2019), em vigência plena desde 2020, estabelece o regime jurídico de tratamento de dados pessoais no Brasil. Para o objeto deste trabalho, a LGPD é relevante porque cardápios digitais com autoatendimento, mesmo quando aparentemente simples, frequentemente coletam dados pessoais do cliente: endereço de e-mail (para envio de cupom ou recibo), telefone (para confirmação de pedido), dados de geolocalização (para roteirização ou estatísticas), informações comportamentais (itens visualizados, tempo de permanência) e, em alguns fluxos, CPF (para emissão de nota fiscal ou programas de fidelidade).
+
+\citeonline{martins2021principiologia} apresenta análise dogmática dos princípios que inspiram a LGPD, situando os dados pessoais como projeção da personalidade do titular, indissociável da dignidade humana e do livre desenvolvimento individual. \citeonline{almeida2022impactos}, em pesquisa documental, sistematizam os impactos operacionais da lei para organizações públicas e privadas, destacando obrigações como a definição clara da \emph{finalidade} do tratamento, a \emph{adequação} entre tratamento e finalidade, a \emph{necessidade} (mínimo de dados para o objetivo), a \emph{transparência} com o titular, a \emph{segurança} dos dados armazenados e a \emph{prevenção} contra incidentes. Para o setor de restaurantes, em que tradicionalmente a coleta de dados era informal e descentralizada, o cumprimento dessas obrigações representa uma nova carga de governança.
+
+Do ponto de vista das \textbf{relações de consumo}, \citeonline{boscolo2021lgpd} analisa os efeitos da LGPD na relação entre empresas e consumidores, destacando que o consentimento livre, informado e específico é a base legal mais comumente invocada em interações de varejo digital, mas que outras bases (legítimo interesse, execução de contrato, cumprimento de obrigação legal) podem ser aplicáveis a depender da finalidade. No campo específico dos cardápios digitais, \citeonline{rocha2025abusividade}, em pesquisa jurídica recente, argumenta que a \emph{exclusividade} da disponibilização de cardápios digitais via \emph{QR Code} --- sem oferecer alternativa física ao cliente que não dispõe de \emph{smartphone}, conexão de dados ou habilidade para utilizá-los --- pode configurar prática abusiva à luz do Código de Defesa do Consumidor. A autora destaca implicações para idosos, pessoas com deficiência visual e populações em vulnerabilidade digital, recomendando que o cardápio digital seja oferecido como \emph{alternativa}, não como imposição.
+
+Para este trabalho, três implicações da LGPD são especialmente relevantes: (i) o instrumento de coleta com frequentadores deve observar coleta mínima, finalidade explícita e direito de não participar; (ii) entrevistas com gestores podem incluir perguntas sobre práticas de tratamento de dados do cliente, tema sensível para alguns estabelecimentos; e (iii) a discussão dos resultados deve considerar não só a aceitabilidade técnica do cardápio digital, mas também sua compatibilidade jurídica com o regime de proteção ao consumidor.
 
 \section{Trabalhos relacionados}
 \label{sec:trabalhos-relacionados}
 
-% TODO: 4--8 trabalhos (TCCs, dissertações, artigos) que tratem de
-% digitalização em restaurantes, QR menus ou adoção de tecnologia em PMEs.
-% Encerrar com quadro comparativo (foco, método, recorte, lacuna).
+Os trabalhos selecionados a seguir foram escolhidos por sua proximidade temática (cardápios digitais, autoatendimento, comportamento do consumidor em \emph{food service}) e metodológica (estudo de caso, \emph{survey} ou métodos mistos com consumidores). A síntese busca explicitar o que cada trabalho aborda, o que deixa em aberto e como o presente TCC se posiciona em relação a eles.
+
+\citeonline{costa2022comportamento}, em Trabalho de Conclusão de Curso na FATECS (Brasília), realizaram pesquisa exploratória quantitativa com consumidores brasilienses sobre a percepção do uso de cardápio digital via \emph{QR Code} em restaurantes. Por meio de questionário em \emph{Google Forms}, identificaram \emph{descontentamento} significativo dos clientes com o cardápio digital, contrastando com a adoção generalizada pelos estabelecimentos durante a pandemia. O estudo adota apenas a perspectiva do cliente, sem abordar a operação dos restaurantes.
+
+\citeonline{silva2024design}, em TCC do curso de Design Digital da UFC--Quixadá, conduziu estudo exploratório comparativo entre cardápios virtuais e físicos em restaurantes de Quixadá/CE, focado em design e usabilidade. O recorte geográfico em município de menor porte e o enfoque em design contrastam com a abordagem aqui adotada, mais voltada a adoção tecnológica e relação cliente-estabelecimento em capital urbana.
+
+\citeonline{fioreti2026aplicativos}, em artigo na REASE com pesquisa qualitativa-quantitativa em estabelecimentos do Maranhão, combinaram estudo de caso e \emph{survey} com 100 clientes, reportando alta intenção de uso, ganhos operacionais (redução de tempo médio, aumento de \emph{ticket} médio) e desafios de usabilidade. Trata-se do trabalho metodologicamente mais próximo deste TCC, com a diferença de recorte geográfico (Nordeste \emph{versus} Sul) e de não articular explicitamente um modelo de adoção tecnológica formal.
+
+\citeonline{schmitt2021comportamiento}, em pesquisa quantitativa correlacional com 385 consumidores de Lima, Peru, investigaram o comportamento do consumidor de aplicativos móveis para restaurantes no contexto da pandemia. Identificaram a emergência da \emph{``nova segurança''} (sanitária e de dados) como construção relevante, junto à ubiquidade, personalização e qualidade da informação. O estudo limita-se a aplicativos de \emph{delivery} e ao contexto peruano.
+
+\begin{table}
+    \caption{Quadro comparativo dos trabalhos relacionados}
+    \label{tab:relacionados}
+    \centering%
+    \begin{minipage}{.98\textwidth}
+        \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}llll}
+            \hline
+            \textbf{Trabalho} & \textbf{Foco} & \textbf{Método} & \textbf{Recorte} & \textbf{Lacuna que este TCC preenche}\\
+            \hline
+            \citeonline{costa2022comportamento}    & Percepção do cliente    & Survey quantitativo & Brasília/DF, 2022     & Não inclui perspectiva do estabelecimento; sem modelo formal de adoção\\
+            \citeonline{silva2024design}            & Design e usabilidade    & Estudo exploratório  & Quixadá/CE, 2024      & Foco em design; não aborda LGPD nem modelo de adoção\\
+            \citeonline{fioreti2026aplicativos}     & Adoção + UX             & Métodos mistos       & Maranhão, 2026        & Não articula explicitamente UTAUT2; recorte regional distinto\\
+            \citeonline{schmitt2021comportamiento}  & Comportamento do consumidor & Survey correlacional & Lima/Peru, 2021       & Foco em \emph{delivery}, não \emph{on-premise}; sem perspectiva do estabelecimento\\
+            \hline
+        \end{tabular*}
+        \fonte{Elaborado pelo autor.}
+    \end{minipage}
+\end{table}
+
+A leitura conjunta desses trabalhos sugere que o presente TCC contribui na interseção de três dimensões pouco articuladas até aqui: (i) a articulação simultânea das perspectivas de gestores e clientes em um mesmo desenho de pesquisa; (ii) a adoção explícita da UTAUT2 \cite{venkatesh2012consumer} como referencial para o lado do consumidor, ampliando o repertório teórico em relação a estudos descritivos; e (iii) o recorte específico em Porto Alegre, capital com perfil gastronômico relevante e ainda pouco coberta pela literatura nacional sobre cardápios digitais com autoatendimento.
