@@ -1,4 +1,4 @@
-# TCC — Não tem mais cardápio?
+# TCC — Cadê o cardápio?
 
 > **Entendendo o impacto da digitalização de bares e restaurantes entre 2020 e 2026 em Porto Alegre**
 
