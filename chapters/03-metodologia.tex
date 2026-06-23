@@ -20,6 +20,60 @@ A pesquisa é estruturada em duas grandes fases, alinhadas à divisão entre TCC
 
 A \textbf{Fase 2} (TCC II) compreende: prospecção e contato com estabelecimentos candidatos; agendamento e condução das entrevistas com gestores; lançamento e divulgação do \emph{survey} com frequentadores; transcrição, codificação e análise das entrevistas; tabulação e análise descritiva das respostas do \emph{survey}; triangulação entre as duas fontes; redação dos capítulos de resultados e discussão; e defesa. O cronograma detalhado dessa fase está no Capítulo~\ref{ch:cronograma}.
 
+A Figura~\ref{fig:desenho-metodologico} sintetiza o desenho de pesquisa, evidenciando o caráter \emph{concorrente convergente paralelo} adotado: as duas frentes de coleta são conduzidas em paralelo na Fase 2 e integradas apenas no momento da triangulação, que produz os três artefatos de contribuição declarados na Seção~\ref{sec:justificativa}.
+
+\begin{figure}
+    \caption{Desenho metodológico do trabalho}
+    \label{fig:desenho-metodologico}
+    \centering
+    \begin{tikzpicture}[
+        font=\small,
+        node distance=8mm and 8mm,
+        every node/.style={align=center, rounded corners=2pt, draw, thick, inner sep=4pt},
+        phase/.style={fill=gray!15, font=\small\bfseries, minimum width=0.85\linewidth},
+        block/.style={fill=white, text width=4.7cm, minimum height=1.2cm},
+        qual/.style={fill=blue!8, text width=5cm, minimum height=1.6cm},
+        quant/.style={fill=orange!10, text width=5cm, minimum height=1.6cm},
+        triang/.style={fill=green!12, text width=8cm, minimum height=1cm, font=\small\bfseries},
+        output/.style={fill=yellow!18, text width=10cm, minimum height=1cm},
+        >={Stealth[length=2mm]},
+        arrow/.style={->, thick}
+    ]
+        % Phase 1
+        \node[phase] (p1) {Fase 1 --- TCC I};
+        \node[block, below=of p1] (rev) {Revisão de literatura\\ + defini\c{c}\~ao de problema e objetivos\\ + elabora\c{c}\~ao de instrumentos\\ + termos \'eticos};
+
+        % Phase 2 header
+        \node[phase, below=14mm of rev] (p2) {Fase 2 --- TCC II};
+
+        % Parallel collection branches
+        \node[qual, below left=of p2.south, xshift=-5mm] (qual) {\textbf{Coleta qualitativa}\\ Entrevistas semiestruturadas\\ com gestores de 3 estabelecimentos\\ (perfis A, B e C)};
+        \node[quant, below right=of p2.south, xshift=5mm] (quant) {\textbf{Coleta quantitativa}\\ \emph{Survey} on-line com frequentadores\\ de bares e restaurantes\\ (constructos UTAUT2, $n \geq 80$)};
+
+        % Analysis branches
+        \node[block, below=of qual, fill=blue!8] (anaqual) {An\'alise de conte\'udo\\ (Bardin)\\ com dupla codifica\c{c}\~ao piloto};
+        \node[block, below=of quant, fill=orange!10] (anaquant) {Estat\'\i{}stica descritiva\\ + cruzamentos\\ por construto UTAUT2};
+
+        % Triangulation
+        \node[triang, below=12mm of p2 |- anaqual.south, yshift=-4mm] (tri) {Triangula\c{c}\~ao (meta-infer\^encias) --- desenho concorrente convergente paralelo};
+
+        % Outputs
+        \node[output, below=of tri] (outnode) {\textbf{Tr\^es artefatos de contribui\c{c}\~ao}: cat\'alogo de FR/NFR \(\bullet\) problemas recorrentes de UX e acessibilidade \(\bullet\) taxonomia de decis\~oes arquiteturais};
+
+        % Arrows
+        \draw[arrow] (p1) -- (rev);
+        \draw[arrow] (rev) -- (p2);
+        \draw[arrow] (p2.south) -- (qual.north);
+        \draw[arrow] (p2.south) -- (quant.north);
+        \draw[arrow] (qual) -- (anaqual);
+        \draw[arrow] (quant) -- (anaquant);
+        \draw[arrow] (anaqual.south) -- (tri.north -| anaqual.south);
+        \draw[arrow] (anaquant.south) -- (tri.north -| anaquant.south);
+        \draw[arrow] (tri) -- (outnode);
+    \end{tikzpicture}
+    \fonte{Elaborado pelo autor.}
+\end{figure}
+
 \section{Instrumentos de coleta}
 \label{sec:instrumentos}
 
