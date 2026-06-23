@@ -34,7 +34,22 @@
 \usepackage{pdfpages} % inclusão de PDFs como anexos
 \usepackage{tikz} % desenhos vetoriais para o desenho metodológico
 \usetikzlibrary{positioning, arrows.meta, shapes.geometric, fit, calc}
+\usepackage{booktabs} % regras tipograficamente superiores em tabelas (toprule, midrule, bottomrule)
+\usepackage[section]{placeins} % cria barreira automática antes de cada \section, impedindo floats de vazarem para a seção seguinte
 \usepackage[hidelinks,bookmarks=true,bookmarksnumbered=true,unicode=true]{hyperref} % sumário, referências e citações clicáveis (sem cor de destaque, para impressão limpa)
+
+% Parâmetros de posicionamento de floats. Os defaults do LaTeX são
+% conservadores demais para documentos com várias tabelas grandes:
+% deixam o algoritmo recusar posições válidas e empurrar floats para
+% páginas distantes do parágrafo que os referencia, o que parte a
+% leitura. Os valores abaixo dão mais liberdade ao algoritmo.
+\renewcommand{\topfraction}{0.9}      % até 90% do topo pode ser float
+\renewcommand{\bottomfraction}{0.8}   % até 80% do rodapé pode ser float
+\renewcommand{\textfraction}{0.07}    % exige só 7% de texto na página
+\renewcommand{\floatpagefraction}{0.7} % float vai para página própria se ocupar mais de 70%
+\setcounter{topnumber}{3}              % até 3 floats no topo da página
+\setcounter{bottomnumber}{2}           % até 2 floats no rodapé
+\setcounter{totalnumber}{5}            % até 5 floats por página
 
 %=======================================================================
 % Escolha do sistema para geração de referências bibliográficas.

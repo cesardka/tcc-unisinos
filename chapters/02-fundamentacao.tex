@@ -21,19 +21,21 @@ Estudos mais recentes indicam que a digitalização desencadeada pela pandemia t
 
 Cardápios digitais são representações eletrônicas do menu de um estabelecimento, acessíveis pelo cliente por meio de algum dispositivo, frequentemente o próprio smartphone. Sob esse rótulo, contudo, agrupam-se soluções tecnológicas com capacidades bastante distintas, do simples PDF compartilhado ao sistema completo de autoatendimento integrado ao caixa e à cozinha. A Tabela~\ref{tab:tipologia-cardapio} sistematiza três tipos prototípicos identificados na prática do mercado brasileiro, conforme três dimensões essenciais: a possibilidade de o cliente realizar o \textbf{pedido} pela própria interface, a possibilidade de \textbf{pagamento} no mesmo fluxo e o grau de \textbf{integração} com sistemas de retaguarda do estabelecimento (PDV, ERP e cozinha).
 
-\begin{table}
+\begin{table}[!ht]
     \caption{Tipologia de cardápios digitais segundo capacidade de pedido, pagamento e integração}
     \label{tab:tipologia-cardapio}
     \centering%
     \begin{minipage}{.98\textwidth}
+        \small
+        \renewcommand{\arraystretch}{1.25}
         \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}cccp{4.2cm}}
-            \hline
+            \toprule
             \textbf{Tipo} & \textbf{Pedido} & \textbf{Pagamento} & \textbf{Integração} & \textbf{Exemplos brasileiros} \\
-            \hline
+            \midrule
             PDF estático      & Não & Não      & Não     & Cardápio em PDF hospedado em serviço de armazenamento (Drive, Imgur) e acessado por link ou QR Code \\
             \emph{Web menu}   & Não & Não      & Parcial & Catálogo web navegável com fotos, filtros (vegano, sem glúten) e busca, sem fluxo de pedido próprio \\
             \emph{Self-ordering} completo & Sim & Sim & Sim     & Goomer, Anota AI, Abrahão, Saipos, pedido pelo QR Code integrado à cozinha (KDS/impressora) e ao PDV/ERP \\
-            \hline
+            \bottomrule
         \end{tabular*}
         \fonte{Elaborado pelo autor a partir de \citeonline{costa2022comportamento} e \citeonline{santos2024gerador}.}
     \end{minipage}
@@ -114,15 +116,17 @@ Considerando o recorte deste estudo, cardápios digitais com autoatendimento, em
 
 A Tabela~\ref{tab:utaut2-construtos} resume os \textbf{sete construtos preditores} e o desfecho intenção comportamental da UTAUT2, com a definição adotada neste trabalho e exemplos de operacionalização, o mapeamento detalhado para itens específicos do questionário é apresentado na Tabela~\ref{tab:utaut2-mapeamento} do Capítulo~\ref{ch:metodologia}.
 
-\begin{table}
+\begin{table}[!ht]
     \caption{Construtos da UTAUT2 adotados na perspectiva do consumidor}
     \label{tab:utaut2-construtos}
     \centering%
     \begin{minipage}{.98\textwidth}
+        \small
+        \renewcommand{\arraystretch}{1.3}
         \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}p{6.0cm}p{5.4cm}}
-            \hline
+            \toprule
             \textbf{Construto} & \textbf{Definição adotada} & \textbf{Exemplo no contexto do estudo} \\
-            \hline
+            \midrule
             Expectativa de desempenho (PE) & Grau em que o cliente acredita que o cardápio digital melhora seu desempenho na tarefa de pedir & ``é mais prático que o cardápio físico''; ``ajuda a escolher mais rapidamente'' \\
             Expectativa de esforço (EE) & Grau de facilidade percebida no uso do cardápio digital & ``é fácil aprender a usar''; ``tenho dificuldade de navegar'' (invertido) \\
             Influência social (SI) & Grau em que o cliente percebe que outros importantes para ele acham que deveria usar o cardápio digital & ``pessoas próximas preferem estabelecimentos com cardápio digital''; ``avaliações em redes sociais influenciam'' \\
@@ -131,7 +135,7 @@ A Tabela~\ref{tab:utaut2-construtos} resume os \textbf{sete construtos preditore
             Valor (PV) & Avaliação do custo-benefício (tempo, dados móveis, indução de gasto) versus benefícios percebidos & ``vale a pena usar meus dados móveis''; ``me leva a gastar mais'' (invertido) \\
             Hábito (HB) & Grau em que o uso do cardápio digital se tornou automático & ``virou um hábito automático''; ``prefiro usar sem precisar pensar muito'' \\
             Intenção comportamental (BI) & Probabilidade declarada de continuar usando o cardápio digital & ``pretendo continuar usando nos próximos meses''; ``recomendaria a um amigo'' \\
-            \hline
+            \bottomrule
         \end{tabular*}
         \fonte{Elaborado pelo autor a partir de \citeonline{venkatesh2012consumer}.}
     \end{minipage}
@@ -167,20 +171,22 @@ Os trabalhos selecionados a seguir foram escolhidos por sua proximidade temátic
 
 \citeonline{schmitt2021comportamiento}, em pesquisa quantitativa correlacional com 385 consumidores de Lima, Peru, investigaram o comportamento do consumidor de aplicativos móveis para restaurantes no contexto da pandemia. Identificaram a emergência da ``nova segurança'' (sanitária e de dados) como construção relevante, junto à ubiquidade, personalização e qualidade da informação. O estudo limita-se a aplicativos de \emph{delivery} e ao contexto peruano.
 
-\begin{table}
+\begin{table}[!ht]
     \caption{Quadro comparativo dos trabalhos relacionados}
     \label{tab:relacionados}
     \centering%
     \begin{minipage}{.98\textwidth}
-        \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}llll}
-            \hline
+        \small
+        \renewcommand{\arraystretch}{1.3}
+        \begin{tabular*}{\textwidth}{@{}p{2.6cm}p{2.4cm}p{2.4cm}p{2.4cm}p{3.6cm}@{}}
+            \toprule
             \textbf{Trabalho} & \textbf{Foco} & \textbf{Método} & \textbf{Recorte} & \textbf{Lacuna que este TCC preenche}\\
-            \hline
+            \midrule
             \citeonline{costa2022comportamento}    & Percepção do cliente    & Survey quantitativo & Brasília/DF, 2022     & Não inclui perspectiva do estabelecimento; sem modelo formal de adoção\\
             \citeonline{silva2024design}            & Design e usabilidade    & Estudo exploratório  & Quixadá/CE, 2024      & Foco em design; não aborda LGPD nem modelo de adoção\\
             \citeonline{fioreti2026aplicativos}     & Adoção + UX             & Métodos mistos       & Maranhão, 2026        & Não articula explicitamente UTAUT2; recorte regional distinto\\
             \citeonline{schmitt2021comportamiento}  & Comportamento do consumidor & Survey correlacional & Lima/Peru, 2021       & Foco em \emph{delivery}, não \emph{on-premise}; sem perspectiva do estabelecimento\\
-            \hline
+            \bottomrule
         \end{tabular*}
         \fonte{Elaborado pelo autor.}
     \end{minipage}
