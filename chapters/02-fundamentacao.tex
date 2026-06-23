@@ -15,13 +15,27 @@ Estudos mais recentes indicam que a digitalização desencadeada pela pandemia t
 \section{Cardápios digitais e QR Code}
 \label{sec:cardapios-qr}
 
-Cardápios digitais são representações eletrônicas do menu de um estabelecimento, acessíveis pelo cliente por meio de algum dispositivo, frequentemente o próprio \emph{smartphone}. Podem ser implementados em diferentes níveis de sofisticação:
+Cardápios digitais são representações eletrônicas do menu de um estabelecimento, acessíveis pelo cliente por meio de algum dispositivo, frequentemente o próprio \emph{smartphone}. Sob esse rótulo, contudo, agrupam-se soluções tecnológicas com capacidades bastante distintas, do simples PDF compartilhado ao sistema completo de autoatendimento integrado ao caixa e à cozinha. A Tabela~\ref{tab:tipologia-cardapio} sistematiza três tipos prototípicos identificados na prática do mercado brasileiro, conforme três dimensões essenciais: a possibilidade de o cliente realizar o \textbf{pedido} pela própria interface, a possibilidade de \textbf{pagamento} no mesmo fluxo e o grau de \textbf{integração} com sistemas de retaguarda do estabelecimento (PDV, ERP e cozinha).
 
-\begin{itemize}
-    \item \textbf{PDF estático} hospedado em servidor e acessado por \emph{link} ou \emph{QR Code} --- a forma mais simples e barata; baixa interatividade, sem capacidade de pedido;
-    \item \textbf{Aplicação \emph{web}} (\emph{web app}) responsiva, com catálogo navegável, fotos, filtros (vegano, sem glúten, etc.) e, eventualmente, fluxo de pedido --- forma predominante no Brasil pós-2020;
-    \item \textbf{Aplicativo nativo} (Android/iOS) próprio ou fornecido por plataforma --- adotado por redes maiores; menor fricção de uso, mas exige instalação prévia.
-\end{itemize}
+\begin{table}
+    \caption{Tipologia de cardápios digitais segundo capacidade de pedido, pagamento e integração}
+    \label{tab:tipologia-cardapio}
+    \centering%
+    \begin{minipage}{.98\textwidth}
+        \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}cccp{4.2cm}}
+            \hline
+            \textbf{Tipo} & \textbf{Pedido} & \textbf{Pagamento} & \textbf{Integração} & \textbf{Exemplos brasileiros} \\
+            \hline
+            PDF estático      & Não & Não      & Não     & Cardápio em PDF hospedado em serviço de armazenamento (Drive, Imgur) e acessado por \emph{link} ou \emph{QR Code} \\
+            \emph{Web menu}   & Não & Não      & Parcial & Catálogo \emph{web} navegável com fotos, filtros (vegano, sem glúten) e busca, sem fluxo de pedido próprio \\
+            \emph{Self-ordering} completo & Sim & Sim & Sim     & Goomer, Anota AI, Abrahão, Saipos --- pedido pelo \emph{QR Code} integrado à cozinha (KDS/impressora) e ao PDV/ERP \\
+            \hline
+        \end{tabular*}
+        \fonte{Elaborado pelo autor a partir de \citeonline{costa2022comportamento} e \citeonline{santos2024gerador}.}
+    \end{minipage}
+\end{table}
+
+Para além desses três tipos prototípicos, ocorrem variantes intermediárias relevantes: \emph{web menus} podem incluir botão para envio de pedido por \emph{WhatsApp} (sem integração com a cozinha); aplicações nativas (Android/iOS) próprias ou fornecidas por plataforma são adotadas por redes maiores, com menor fricção de uso, mas exigem instalação prévia. Independentemente do tipo, todos os cardápios digitais com autoatendimento dependem da conectividade do dispositivo do cliente, o que tem implicações diretas de acessibilidade, discutidas nas Seções~\ref{sec:autoatendimento-ux} e~\ref{sec:lgpd}.
 
 A arquitetura típica de uma solução de cardápio digital com autoatendimento envolve três camadas: (i) um \emph{front-end} \emph{web} acessado a partir do escaneamento de um \emph{QR Code} colado na mesa, que aponta para uma URL específica do estabelecimento (e, eventualmente, da mesa); (ii) um \emph{back-end} de cardápio, no qual o gestor edita itens, preços, fotos e disponibilidade; e (iii), no caso de pedido digital, uma camada de comunicação com a cozinha (impressora térmica, \emph{tablet} ou \emph{Kitchen Display System}). Soluções comerciais brasileiras como Goomer, Anota AI e Abrahão seguem variações dessa arquitetura.
 
