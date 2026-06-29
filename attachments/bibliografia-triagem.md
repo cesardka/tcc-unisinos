@@ -1,22 +1,24 @@
 <!--
 Triagem automatizada da biblioteca PDF do TCC.
 Gerada por inspeção com o MCP pdf-reader.
-Última atualização: 2026-06-16
+Última atualização: 2026-06-24
 -->
 
 # Triagem da biblioteca PDF
 
-Inspeção dos **41 PDFs** em `bibliography/` para identificar quais são processáveis automaticamente (texto digital nativo) e quais precisariam de OCR.
+Inspeção dos **50 PDFs** em `bibliography/` para identificar quais são processáveis automaticamente (texto digital nativo) e quais precisariam de OCR.
 
 ## Resumo
 
 | Status                              | Quantidade | Significado                                |
 | ----------------------------------- | ---------- | ------------------------------------------ |
-| Texto digital nativo                | **38**     | Extraível sem OCR. Pronto para fichamento. |
+| Texto digital nativo                | **47**     | Extraível sem OCR. Pronto para fichamento. |
 | Misto (texto + imagens decorativas) | **1**      | Extrai normalmente; só capa é imagem.      |
 | Escaneado / só imagem               | **2**      | Precisa OCR para extrair texto.            |
 
-**Conclusão prática:** 39 dos 41 PDFs (≈95%) estão prontos para uso. **OCR não vale a pena configurar agora** — os 2 escaneados podem ser substituídos por versões digitais ou descartados conforme relevância.
+**Conclusão prática:** 48 dos 50 PDFs (96%) estão prontos para uso. **OCR não vale a pena configurar agora** — os 2 escaneados podem ser substituídos por versões digitais ou descartados conforme relevância.
+
+**Atualização 24/06/2026:** 9 PDFs novos foram adicionados (pasta `Material Novo/`, agora desfeita): 3 para `SaaS e Arquitetura/` (eixo novo), 5 para `UX e Comportamento do Consumidor/` (subtema acessibilidade/idosos) e 1 para `Metodologia/` (Creswell). Todos são texto digital nativo.
 
 ---
 
@@ -88,22 +90,36 @@ Inspeção dos **41 PDFs** em `bibliography/` para identificar quais são proces
 | ------ | ---: | ------ | -------------------------------------------------------------------------------------------------------------- |
 | ✅     |   21 | pt-BR  | Implicações da Transformação Digital nos Pequenos Negócios do Ramo Alimentício diante da Pandemia COVID-19.pdf |
 
-### Metodologia — 1 PDF
+### SaaS e Arquitetura — 3 PDFs (eixo novo, 24/06/2026)
+
+| Status | Págs | Idioma | Arquivo                                                                                                                  |
+| ------ | ---: | ------ | ------------------------------------------------------------------------------------------------------------------------ |
+| ✅     |    9 | pt-BR  | Crescimento e expansão no uso de software como serviço (SaaS) - estratégias e obstáculos para empresas de tecnologia.pdf |
+| ✅     |   39 | pt-BR  | Software as a Service - desenvolvendo aplicações Multi-tenancy com alto grau de Reuso.pdf                                |
+| ✅     |  422 | en     | Fundamentals of Software Architecture (Richards, Ford).pdf — _livro O'Reilly 2020; usado em §2.3._                       |
+
+### Metodologia — 2 PDFs
 
 | Status | Págs | Idioma | Arquivo                                                                                                                                                  |
 | ------ | ---: | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | ✅     |   67 | en-US  | Bridging the Qualitative-Quantitative Divide - Guidelines for Conducting Mixed Methods Research in Information Systems (Venkatesh, Brown, Bala 2013).pdf |
+| ✅     |  524 | en     | Designing and conducting mixed methods research.pdf — _Creswell & Plano Clark, 3ª ed., SAGE 2017._                                                       |
 
-### UX e Comportamento do Consumidor — 6 PDFs
+### UX e Comportamento do Consumidor — 11 PDFs
 
-| Status | Págs | Idioma | Arquivo                                                                                                    |
-| ------ | ---: | ------ | ---------------------------------------------------------------------------------------------------------- |
-| ✅     |   42 | –      | Comportamento do consumidor - percepção em restaurantes com QR Code.pdf                                    |
-| ✅     |   54 | –      | Design e usabilidade - cardápios virtuais e físicos em restaurantes de Quixadá.pdf                         |
-| ✅     |    2 | –      | LA CARTE - UMA FORMA MAIS TECNOLÓGICA DE PEDIR.pdf                                                         |
-| ✅     |   12 | pt-BR  | Sistema de cardápio digital para bares, restaurantes e similares.pdf                                       |
-| ✅     |   15 | pt-BR  | Usabilidade e experiência do usuário de sistemas de informação - em busca de limites e relações.pdf        |
-| ⚠️ OCR |   10 | pt-BR  | VISTAD~1.PDF — _A influência da engenharia semiótica na UX de aplicativos mobile (relevância tangencial)._ |
+| Status | Págs | Idioma | Arquivo                                                                                                                                                                                                    |
+| ------ | ---: | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ✅     |   42 | –      | Comportamento do consumidor - percepção em restaurantes com QR Code.pdf                                                                                                                                    |
+| ✅     |   54 | –      | Design e usabilidade - cardápios virtuais e físicos em restaurantes de Quixadá.pdf                                                                                                                         |
+| ✅     |    2 | –      | LA CARTE - UMA FORMA MAIS TECNOLÓGICA DE PEDIR.pdf                                                                                                                                                         |
+| ✅     |   12 | pt-BR  | Sistema de cardápio digital para bares, restaurantes e similares.pdf                                                                                                                                       |
+| ✅     |   15 | pt-BR  | Usabilidade e experiência do usuário de sistemas de informação - em busca de limites e relações.pdf                                                                                                        |
+| ⚠️ OCR |   10 | pt-BR  | VISTAD~1.PDF — _A influência da engenharia semiótica na UX de aplicativos mobile (relevância tangencial)._                                                                                                 |
+| ✅     |   24 | pt-BR  | Acessibilidade no desenvolvimento de aplicativos móveis - uma revisão sistemática sobre problemas recorrentes, métodos de verificação e ferramentas.pdf _(subtema acessibilidade — adicionado 24/06/2026)_ |
+| ✅     |    4 | pt-BR  | Acessibilidade para Adultos de meia-idade e idosos em e-commerce.pdf _(subtema acessibilidade)_                                                                                                            |
+| ✅     |    4 | pt-BR  | Design inclusivo - acessibilidade digital para idosos em dispositivos inteligentes.pdf _(subtema acessibilidade)_                                                                                          |
+| ✅     |  215 | en     | Designing Displays for Older Adults, 2nd ed (McLaughlin, Pak).pdf — _livro CRC Press 2018; subtema acessibilidade/idosos._                                                                                 |
+| ✅     |    5 | pt-BR  | Interfaces Conversacionais e requisitos de acessibilidade - um estudo com usuários idosos.pdf _(subtema acessibilidade; relevância tangencial — QR menu não é conversacional)._                            |
 
 ---
 

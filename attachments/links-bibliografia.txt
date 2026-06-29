@@ -1,0 +1,61 @@
+10 Usability Heuristics for User Interface Design (Jakob Nielsen)
+https://www.nngroup.com/articles/ten-usability-heuristics/
+
+Nielsen, J. Usability Engineering (1993)
+Livro tem em São Leopoldo, é possível solicitar o Book Express e pegar aqui em POA.
+
+Nielsen - Usabilidade na Web.
+Tem aqui na Biblioteca POA.
+
+ISO 9241-11:2018
+ABNT UNISINOS
+
+ISO 9241-210:2019
+ABNT UNISINOS
+
+WCAG 2.2 (W3C, 2023) — diretrizes de acessibilidade web; obrigatório para defender
+o eixo acessibilidade.
+https://www.w3.org/TR/WCAG22/
+
+Norman, D. — The Design of Everyday Things (2013)
+Tem aqui na biblioteca POA
+
+Designing Displays for Older Adults, 2018 (PDF na pasta)
+https://sol.sbc.org.br/index.php/ihc/article/view/37710 (PDF na pasta)
+https://sol.sbc.org.br/index.php/webmedia/article/view/5646 (PDF na pasta)
+https://sol.sbc.org.br/index.php/ihc_estendido/article/view/26494 (PDF na pasta)
+https://sol.sbc.org.br/index.php/latinoware/article/view/31571 (PDF na pasta)
+
+Sommerville, I. — Software Engineering (cap. de Requisitos), 10ª ed., 2016.
+Tem a 9ª ed aqui na Biblioteca POA
+
+Pressman, R.; Maxim, B. — Software Engineering: A Practitioner's Approach, 9ª ed., 2020
+Tem versão digital no catálogo online da Biblioteca UNISINOS
+
+ISO/IEC 25010:2011
+ABNT UNISINOS
+
+Wiegers, K.; Beatty, J. — Software Requirements, 3ª ed.
+Tem a 2ª ed na Biblioteca São Leopoldo
+
+Bass, L.; Clements, P.; Kazman, R. — Software Architecture in Practice, 4ª ed., 2021.
+Tem a 3ª ed aqui na Biblioteca POA
+
+Richards, M.; Ford, N. — Fundamentals of Software Architecture, 2020
+PDF na pasta
+
+Um artigo/relatório técnico sobre arquiteturas de aplicações multi-tenant SaaS
+(relevante para Goomer/Anota AI/Abrahão) — pode ser um capítulo do livro de Fowler
+ou similar.
+https://books-sol.sbc.org.br/index.php/sbc/catalog/download/16/55/133?inline=1 (PDF na pasta)
+Padrões de arquitetura de aplicações corporativas Martin Fowler (Tem versão digital no catálogo online da Biblioteca UNISINOS)
+https://revistajrg.com/index.php/jrg/article/view/902 (PDF na pasta)
+https://abes.org.br/estudo-da-abes-apresenta-cenario-sobre-saas-no-brasil/
+https://www.arpensp.org.br/artigo/artigo-software-como-servico-ou-saas-vantagens-desse-modelo-de-negocio-%E2%80%93-por-joelson-sell
+
+Creswell, J. W.; Plano Clark, V. L. — Designing and Conducting Mixed Methods Research, 3ª ed., 2017.
+Pesquisa de métodos mistos (Tem versão digital no catálogo online da Biblioteca UNISINOS)
+Designing and conducting mixed methods research (PDF na pasta)
+
+
+
