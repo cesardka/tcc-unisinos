@@ -34,6 +34,7 @@
 \usepackage{pdfpages} % inclusão de PDFs como anexos
 \usepackage{tikz} % desenhos vetoriais para o desenho metodológico
 \usetikzlibrary{positioning, arrows.meta, shapes.geometric, fit, calc}
+\usepackage{array} % alinhamento por coluna em tabelas (>{\raggedright\arraybackslash}p{...})
 \usepackage{booktabs} % regras tipograficamente superiores em tabelas (toprule, midrule, bottomrule)
 \usepackage[section]{placeins} % cria barreira automática antes de cada \section, impedindo floats de vazarem para a seção seguinte
 \usepackage[hidelinks,bookmarks=true,bookmarksnumbered=true,unicode=true]{hyperref} % sumário, referências e citações clicáveis (sem cor de destaque, para impressão limpa)
@@ -254,8 +255,10 @@ This research investigates how bars and restaurants in Porto Alegre that adopted
 \include{chapters/01-introducao}
 \include{chapters/02-fundamentacao}
 \include{chapters/03-metodologia}
-\include{chapters/04-resultados}
-\include{chapters/05-cronograma}
+\include{chapters/04-cronograma}
+\include{chapters/05-resultados}
+\include{chapters/06-discussao}
+\include{chapters/07-conclusao}
 
 %=======================================================================
 % Referências

@@ -1,0 +1,133 @@
+\chapter{Discussão}
+\label{ch:discussao}
+
+Este capítulo interpreta os resultados do Capítulo~\ref{ch:resultados} à luz da fundamentação teórica e organiza os achados nos três artefatos de contribuição anunciados na Seção~\ref{sec:justificativa}: um catálogo de requisitos funcionais e não funcionais (Seção~\ref{sec:disc-requisitos}), um conjunto de problemas recorrentes de usabilidade e acessibilidade (Seção~\ref{sec:disc-ux}) e uma taxonomia das decisões de arquitetura observadas nos casos (Seção~\ref{sec:disc-arquitetura}). Antes disso, a Seção~\ref{sec:disc-adocao} discute o padrão geral de aceitação encontrado entre os frequentadores, e a Seção~\ref{sec:disc-triangulacao} confronta a visão dos gestores com a dos clientes.
+
+%=======================================================================
+\section{Aceitação do cardápio digital pelos frequentadores}
+\label{sec:disc-adocao}
+
+% Leitura prévia (n = 41, 12/11/2026; refazer com a base final):
+% - Preferência: cerca de 78% preferem o cardápio físico e 5% o digital;
+%   ainda assim, cerca de 66% acham que o cardápio digital "veio para ficar".
+% - EE favorável (56% acham fácil aprender; só 27% relatam dificuldade de
+%   leitura/navegação), mas PE baixo (7% acham mais prático que o físico)
+%   e BI2 quase nulo (2% recomendariam um lugar por ter cardápio digital).
+% - TRU alto (cerca de 71% confiam nos preços), apesar de relatos de itens
+%   indisponíveis nas respostas abertas.
+% - "Ter os dois" é a resposta aberta mais recorrente na pergunta "Por quê?".
+% Argumento sugerido: o cardápio digital é aceito como algo inevitável, mas
+% não é desejado; a barreira não é aprender a usar (EE), e sim o valor
+% percebido (PE, PV, HM). Dialogar com Venkatesh et al. (2012), que apontam
+% PE como preditor mais forte de BI, e com Costa (2022), que também encontrou
+% descontentamento em Brasília.
+
+\pendente{discutir o contraste entre facilidade de uso percebida e utilidade percebida, e a preferência por soluções híbridas, relacionando com a UTAUT2 \cite{venkatesh2012consumer}, com os trabalhos relacionados e com a exigência municipal de cardápio físico \cite{camarapoa2024cardapio}}
+
+%=======================================================================
+\section{Catálogo de requisitos}
+\label{sec:disc-requisitos}
+
+Os requisitos a seguir foram extraídos das respostas abertas do questionário, dos problemas técnicos relatados e das entrevistas com gestores. Cada requisito é classificado como funcional (RF) ou não funcional (RNF), conforme \citeonline{sommerville2016software}, e os não funcionais são associados à característica de qualidade correspondente da ISO/IEC 25010 \cite{iso25010}. A coluna ``Origem'' indica se a necessidade apareceu entre os clientes (C), entre os gestores (G) ou em ambos.
+
+\begin{table}[!ht]
+    \caption{Catálogo preliminar de requisitos para soluções de cardápio digital com autoatendimento}
+    \label{tab:requisitos}
+    \centering%
+    \begin{minipage}{.98\textwidth}
+        \small
+        \renewcommand{\arraystretch}{1.25}
+        \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}>{\raggedright\arraybackslash}p{7.2cm}>{\raggedright\arraybackslash}p{2.6cm}c}
+            \toprule
+            \textbf{ID} & \textbf{Requisito} & \textbf{Tipo / ISO 25010} & \textbf{Origem} \\
+            \midrule
+            R01 & Confirmar ao cliente, de forma visível, que o pedido foi recebido e em que estado ele está & RF & C \\
+            R02 & Refletir em tempo real a indisponibilidade de itens & RF & C \\
+            R03 & Permitir consultar o cardápio e pedir sem cadastro ou login obrigatório & RF & C \\
+            R04 & Permitir que várias pessoas da mesma mesa consultem e montem o pedido ao mesmo tempo & RF & C \\
+            R05 & Permitir consultar o cardápio antes de chegar ao estabelecimento & RF & C \\
+            R06 & Carregar rapidamente em conexões lentas, evitando arquivos pesados como PDF & RNF / eficiência de desempenho & C \\
+            R07 & Oferecer alternativa quando não há internet (Wi-Fi do estabelecimento, cardápio físico) & RNF / confiabilidade & C \\
+            R08 & Navegar entre categorias sem recarregar a página nem perder a posição & RNF / usabilidade & C \\
+            R09 & Permitir ajuste de tamanho de fonte e contraste adequado & RNF / usabilidade (acessibilidade) & C \\
+            \bottomrule
+        \end{tabular*}
+        \fonte{Elaborado pelo autor a partir das respostas ao questionário.}
+    \end{minipage}
+\end{table}
+
+\pendente{acrescentar os requisitos levantados nas entrevistas (G), marcar os que aparecem nas duas fontes (C+G) e comentar onde gestores e clientes concordam e onde entram em conflito}
+
+%=======================================================================
+\section{Problemas recorrentes de usabilidade e acessibilidade}
+\label{sec:disc-ux}
+
+A Tabela~\ref{tab:problemas-ux} relaciona os problemas mais citados pelos frequentadores às heurísticas de \citeonline{nielsen1994heuristics} e, quando aplicável, aos critérios de sucesso das WCAG~2.2 \cite{wcag22}.
+
+% Frequência prévia dos problemas técnicos (n = 41): layout confuso 71%;
+% QR Code que não abre 68%; página que não carrega 63%; cadastro ou dados
+% pessoais exigidos 49%; tela de tablet/totem que não responde 41%; falta de
+% opção de acessibilidade 32%; preço ou informação desatualizados 15%.
+
+\begin{table}[!ht]
+    \caption{Problemas recorrentes de usabilidade e acessibilidade em cardápios digitais}
+    \label{tab:problemas-ux}
+    \centering%
+    \begin{minipage}{.98\textwidth}
+        \small
+        \renewcommand{\arraystretch}{1.25}
+        \begin{tabular*}{\textwidth}{>{\raggedright\arraybackslash}p{5.2cm}@{\extracolsep{\fill}}>{\raggedright\arraybackslash}p{4.6cm}>{\raggedright\arraybackslash}p{3.4cm}}
+            \toprule
+            \textbf{Problema relatado} & \textbf{Heurística de Nielsen} & \textbf{WCAG 2.2} \\
+            \midrule
+            Layout confuso ou difícil de ler & Estética e design minimalista; consistência e padrões & --- \\
+            Cardápio em PDF difícil de ler no celular & Estética e design minimalista & 1.4.10 Reflow \\
+            Dúvida se o pedido foi feito ou cobrado & Visibilidade do estado do sistema & --- \\
+            Navegação que recarrega ou perde a posição ao voltar & Controle e liberdade do usuário & --- \\
+            Item exibido, mas indisponível & Prevenção de erros; correspondência com o mundo real & --- \\
+            Cadastro ou login exigido para ver o cardápio & Flexibilidade e eficiência de uso & --- \\
+            Falta de ajuste de fonte e contraste & --- & 1.4.3 Contraste; 1.4.4 Redimensionar texto \\
+            \bottomrule
+        \end{tabular*}
+        \fonte{Elaborado pelo autor a partir das respostas ao questionário, de \citeonline{nielsen1994heuristics} e de \citeonline{wcag22}.}
+    \end{minipage}
+\end{table}
+
+\pendente{comentar cada problema com trechos das respostas abertas e das entrevistas; discutir a diferença entre QR Code no celular do cliente e tablet ou totem do estabelecimento, que vários respondentes preferem}
+
+%=======================================================================
+\section{Decisões de arquitetura nos casos estudados}
+\label{sec:disc-arquitetura}
+
+A taxonomia proposta organiza as decisões de arquitetura em seis dimensões, derivadas da Seção~\ref{sec:arquitetura} e do Bloco~2 do roteiro de entrevista, e posiciona cada caso estudado em cada dimensão \cite{bass2021software,richards2020fundamentals}.
+
+\begin{table}[!ht]
+    \caption{Taxonomia de decisões de arquitetura observadas nos casos}
+    \label{tab:taxonomia-arquitetura}
+    \centering%
+    \begin{minipage}{.98\textwidth}
+        \small
+        \renewcommand{\arraystretch}{1.25}
+        \begin{tabular*}{\textwidth}{>{\raggedright\arraybackslash}p{3.6cm}@{\extracolsep{\fill}}>{\raggedright\arraybackslash}p{3.2cm}>{\raggedright\arraybackslash}p{3.2cm}>{\raggedright\arraybackslash}p{3.2cm}}
+            \toprule
+            \textbf{Dimensão} & \textbf{Caso A} & \textbf{Caso B} & \textbf{Caso C} \\
+            \midrule
+            Dispositivo (cliente ou estabelecimento) & & & \\
+            Sistema próprio ou contratado & & & \\
+            Integração com PDV, estoque e cozinha & & & \\
+            Comportamento sem internet & & & \\
+            Formato do cardápio (PDF, web, aplicativo) & & & \\
+            Identificação do cliente (cadastro, crédito) & & & \\
+            \bottomrule
+        \end{tabular*}
+        \fonte{Elaborado pelo autor a partir das entrevistas.}
+    \end{minipage}
+\end{table}
+
+\pendente{preencher a tabela com os dados das entrevistas e discutir as escolhas entre desenvolver e contratar (build versus buy) em pequenos estabelecimentos}
+
+%=======================================================================
+\section{Visão dos gestores e visão dos clientes}
+\label{sec:disc-triangulacao}
+
+\pendente{confrontar as categorias das entrevistas com os resultados do questionário, indicando convergências, divergências e complementaridades \cite{venkatesh2013bridging}}
