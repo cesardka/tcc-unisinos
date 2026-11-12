@@ -1,0 +1,152 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[brazilian]{babel}
+\usepackage{lmodern}
+\usepackage[margin=2.2cm]{geometry}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\small Roteiro de entrevista com gestores}
+\rhead{\small TCC, César Hoffmann, UNISINOS}
+\cfoot{\small\thepage}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em}
+
+\newcommand{\perfil}[1]{{\unskip\nobreak\hfil\penalty50\hskip2em\hbox{}\nobreak\hfill\mbox{\small\textbf{\textcolor{gray}{[#1]}}}\parfillskip=0pt\finalhyphendemerits=0\par}}
+\newcommand{\aux}[1]{\par\vspace{0.15em}{\small\textcolor{gray}{\textit{Aprofundar: #1}}}}
+\newcommand{\bloco}[3]{\section*{#1 \hfill{\normalsize\textcolor{gray}{#2 \textbullet{} #3}}}}
+\newcommand{\caixa}{$\square$\ }
+
+\setlist[enumerate]{label=\textbf{\arabic*.}, leftmargin=*, itemsep=0.8em}
+
+\begin{document}
+
+\begin{center}
+  {\Large\bfseries Roteiro de entrevista com gestores}\\[0.4em]
+  Cardápios digitais e autoatendimento em bares e restaurantes de Porto Alegre\\[0.2em]
+  {\small César Hoffmann \textbullet{} orientação: Prof.\ Dr.\ Guilherme Lacerda \textbullet{} Ciência da Computação, UNISINOS}
+\end{center}
+
+\begin{tcolorbox}[colback=gray!6,colframe=gray!50,title=Antes de começar,fonttitle=\bfseries]
+\caixa Gravador testado e com bateria (gravar também no celular como reserva).\\
+\caixa TCLE impresso em duas vias, assinado antes de ligar o gravador.\\
+\caixa Termo de Confidencialidade, se o gestor for falar de custos, contratos ou números.\\
+\caixa Termo de Uso de Imagem, se for fotografar o espaço, o totem ou as torneiras.\\
+\caixa Perguntar se o nome do estabelecimento pode aparecer no trabalho ou se prefere pseudônimo.\\
+\caixa Ao ligar o gravador: dizer data, local, perfil do caso e pedir o ``ok'' verbal de consentimento.
+\end{tcolorbox}
+
+\textbf{Duração-alvo:} 45 a 60 minutos. \textbf{Como usar:} a etiqueta à direita de cada pergunta indica para quais perfis ela vale. Perguntas em cinza são aprofundamentos opcionais; use quando a resposta vier curta ou genérica. Sempre que possível, peça um exemplo concreto (``lembra de uma vez em que\ldots?'').
+
+\begin{center}
+\small
+\begin{tabular}{lll}
+  \toprule
+  \textbf{Perfil} & \textbf{Caso} & \textbf{Blocos aplicáveis} \\
+  \midrule
+  A, pré-2020 que adotou & Mambembe Cervejaria & 0, 1, 2, 3, 5, 6, 7 \\
+  B, pré-2020 que resistiu & Lancheria do Parque & 0, 1, 4, 5, 6, 7 \\
+  C, nascido digital & Cervejaria Fora da Lei (Assis Brasil) & 0, 2, 3, 5, 6, 7 \\
+  \bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{Termos usados com o entrevistado.} Fale em ``sistema de autoatendimento'' ou ``cardápio digital'', adaptando ao caso: QR Code, tablet, totem ou torneiras de autosserviço com crédito no aplicativo ou cartão.
+
+%-------------------------------------------------------------
+\bloco{Bloco 0, Caracterização}{todos}{5 min}
+\begin{enumerate}[series=perguntas]
+  \item Conte brevemente a história da casa: quando abriu, qual é o conceito e quem é o cliente típico. \perfil{A B C}
+  \item Qual é o seu papel aqui e há quanto tempo você está nessa função? \perfil{A B C}
+  \item Mais ou menos quantas mesas, quantos funcionários por turno e qual o tíquete médio? \perfil{A B C}
+  \item Hoje, como o cliente consulta o cardápio e faz o pedido? Há quanto tempo funciona assim? \perfil{A B C}
+\end{enumerate}
+
+%-------------------------------------------------------------
+\bloco{Bloco 1, Trajetória}{A e B}{8 min}
+\begin{enumerate}[resume=perguntas]
+  \item Como funcionavam o cardápio e o pedido antes de 2020? \perfil{A B}
+  \item O que mudou, ou não mudou, durante e depois da pandemia? \perfil{A B}
+  \item O que motivou a decisão de adotar o autoatendimento? Quem decidiu? Foi algo planejado ou emergencial? \perfil{A}
+    \aux{havia pressão de clientes, concorrentes, fornecedores ou da falta de funcionários?}
+  \item Como foi a transição? Quanto tempo levou e o que foi mais difícil (equipe, clientes, tecnologia)? \perfil{A}
+  \item Por que vocês decidiram manter o atendimento tradicional? Já chegaram a considerar mudar? \perfil{B}
+\end{enumerate}
+
+%-------------------------------------------------------------
+\bloco{Bloco 2, Solução adotada e arquitetura}{A e C}{12 min}
+\begin{enumerate}[resume=perguntas]
+  \item Que modalidade vocês usam (QR Code no celular do cliente, tablet, totem, torneiras com crédito) e por que essa? \perfil{A C}
+  \item Qual sistema ou fornecedor vocês usam? Por que esse? Já trocaram de fornecedor? \perfil{A C}
+  \item Vocês chegaram a pensar em desenvolver um sistema próprio em vez de contratar um pronto? Por quê? \perfil{A C}
+  \item O sistema conversa com outros sistemas da casa, como caixa (PDV), estoque, emissão de nota ou pedidos da cozinha? Isso é automático ou alguém precisa redigitar? \perfil{A C}
+  \item O que acontece quando a internet ou o sistema cai? Já aconteceu num dia de movimento? Como resolveram? \perfil{A C}
+    \aux{existe algum plano B (cardápio impresso, anotação manual, modo offline)?}
+  \item Como e por quem o cardápio é atualizado (preços, itens novos, itens esgotados)? Quanto tempo leva? \perfil{A C}
+  \item Qual o custo aproximado (mensalidade, taxas por transação, equipamentos) e como você avalia o custo-benefício? \perfil{A C}
+\end{enumerate}
+
+%-------------------------------------------------------------
+\bloco{Bloco 3, Operação e requisitos}{A e C}{8 min}
+\begin{enumerate}[resume=perguntas]
+  \item Quais problemas técnicos aparecem com mais frequência (conexão, QR Code que não abre, tela que não responde, cliente que não entende a interface)? \perfil{A C}
+  \item Na sua visão, o que um bom sistema desses \emph{precisa} fazer? E o que ele não pode deixar de ter em termos de velocidade, estabilidade ou facilidade? \perfil{A C}
+    \aux{peça para listar ``três coisas indispensáveis'' e ``uma coisa que irrita''.}
+  \item Como o autoatendimento afetou o tempo de atendimento, o tíquete médio, o tamanho da equipe e os erros de pedido? \perfil{A C}
+  \item O sistema pede cadastro ou dados pessoais do cliente (nome, CPF, telefone)? Para quê? Algum cliente já reclamou disso? \perfil{A C}
+\end{enumerate}
+
+%-------------------------------------------------------------
+\bloco{Bloco 4, Resistência e barreiras}{B}{8 min}
+\begin{enumerate}[resume=perguntas]
+  \item Que receios você tem em relação ao cardápio digital ou ao autoatendimento (custo, depender de fornecedor, perder o contato com o cliente)? \perfil{B}
+  \item Como acha que seus clientes reagiriam? Já fizeram algum teste? \perfil{B}
+  \item Já foram procurados por fornecedores desse tipo de sistema? O que ofereceram e por que não fechou? \perfil{B}
+  \item O que precisaria acontecer para vocês adotarem? \perfil{B}
+\end{enumerate}
+
+%-------------------------------------------------------------
+\bloco{Bloco 5, Percepção do cliente e acessibilidade}{todos}{8 min}
+\begin{enumerate}[resume=perguntas]
+  \item Que comentários, positivos e negativos, vocês recebem dos clientes sobre o cardápio ou o pedido? \perfil{A B C}
+  \item Vocês percebem diferença entre tipos de cliente (idade, turistas, grupos grandes, casais)? \perfil{A B C}
+  \item Há clientes com dificuldade para usar o sistema, como pessoas idosas ou com baixa visão? Como a equipe lida com isso? \perfil{A B C}
+  \item Clientes pedem cardápio impresso? Com que frequência? Como vocês atendem a lei municipal que exige o cardápio físico? \perfil{A B C}
+  \item Vocês usam algum dado gerado pelo sistema (itens mais vendidos, horários de pico) para tomar decisões? \perfil{A C}
+\end{enumerate}
+
+%-------------------------------------------------------------
+\bloco{Bloco 6, Futuro}{todos}{5 min}
+\begin{enumerate}[resume=perguntas]
+  \item Daqui a cinco anos, como você imagina o atendimento na sua casa? \perfil{A B C}
+  \item Se pudesse mudar uma única coisa nos sistemas de cardápio digital que existem hoje, o que seria? \perfil{A B C}
+\end{enumerate}
+
+%-------------------------------------------------------------
+\bloco{Bloco 7, Encerramento}{todos}{2 min}
+\begin{enumerate}[resume=perguntas]
+  \item Tem algo importante sobre esse assunto que eu não perguntei? \perfil{A B C}
+  \item Posso divulgar o questionário dos clientes aqui (QR Code no balcão ou nas redes da casa)? \perfil{A B C}
+\end{enumerate}
+
+\begin{tcolorbox}[colback=gray!6,colframe=gray!50,title=Logo depois da entrevista,fonttitle=\bfseries]
+\caixa Agradecer e combinar o envio do resumo dos resultados.\\
+\caixa Fotografar a interface ou o equipamento (se autorizado), para a análise de usabilidade.\\
+\caixa Anotar em 5 minutos: impressões gerais, o que mais surpreendeu, contradições e o que não ficou gravado.\\
+\caixa Salvar o áudio com o nome \texttt{perfil-X\_estabelecimento\_AAAA-MM-DD}.
+\end{tcolorbox}
+
+\newpage
+\textbf{Anotações}\par
+\vspace{0.5em}
+\newcount\linhas \linhas=0
+\loop\ifnum\linhas<24 \rule{\linewidth}{0.3pt}\par\vspace{0.7em}\advance\linhas by 1 \repeat
+\end{document}
