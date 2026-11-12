@@ -51,6 +51,11 @@
 \setcounter{bottomnumber}{2}           % até 2 floats no rodapé
 \setcounter{totalnumber}{5}            % até 5 floats por página
 
+% Marcador de trecho a completar quando os dados da coleta estiverem disponíveis.
+% Aparece em vermelho no PDF; antes da entrega, buscar por \pendente e remover todos.
+\usepackage{xcolor}
+\newcommand{\pendente}[1]{\textcolor{red}{\textbf{[PENDENTE: #1]}}}
+
 %=======================================================================
 % Escolha do sistema para geração de referências bibliográficas.
 %
@@ -249,7 +254,8 @@ This research investigates how bars and restaurants in Porto Alegre that adopted
 \include{chapters/01-introducao}
 \include{chapters/02-fundamentacao}
 \include{chapters/03-metodologia}
-\include{chapters/04-cronograma}
+\include{chapters/04-resultados}
+\include{chapters/05-cronograma}
 
 %=======================================================================
 % Referências
