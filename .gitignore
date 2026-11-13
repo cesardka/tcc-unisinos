@@ -39,3 +39,7 @@
 
 ## Optional: ignore the final PDF too (uncomment if you don't want to track it)
 # *.pdf
+
+## Dados brutos da pesquisa (respostas individuais nunca entram no repositório público)
+*.csv
+*.xlsx
