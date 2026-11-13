@@ -42,21 +42,25 @@ Os requisitos a seguir foram extraídos das respostas abertas do questionário, 
             \textbf{ID} & \textbf{Requisito} & \textbf{Tipo / ISO 25010} & \textbf{Origem} \\
             \midrule
             R01 & Confirmar ao cliente, de forma visível, que o pedido foi recebido e em que estado ele está & RF & C \\
-            R02 & Refletir em tempo real a indisponibilidade de itens & RF & C \\
+            R02 & Refletir em tempo real a indisponibilidade de itens & RF & C+G \\
             R03 & Permitir consultar o cardápio e pedir sem cadastro ou login obrigatório & RF & C \\
             R04 & Permitir que várias pessoas da mesma mesa consultem e montem o pedido ao mesmo tempo & RF & C \\
             R05 & Permitir consultar o cardápio antes de chegar ao estabelecimento & RF & C \\
             R06 & Carregar rapidamente em conexões lentas, evitando arquivos pesados como PDF & RNF / eficiência de desempenho & C \\
-            R07 & Oferecer alternativa quando não há internet (Wi-Fi do estabelecimento, cardápio físico) & RNF / confiabilidade & C \\
+            R07 & Oferecer alternativa quando não há internet (Wi-Fi do estabelecimento, cardápio físico) & RNF / confiabilidade & C+G \\
             R08 & Navegar entre categorias sem recarregar a página nem perder a posição & RNF / usabilidade & C \\
             R09 & Permitir ajuste de tamanho de fonte e contraste adequado & RNF / usabilidade (acessibilidade) & C \\
+            R10 & Exibir muitos itens por tela e permitir comparar opções sem rolagem extensa & RNF / usabilidade & C+G \\
+            R11 & Vincular os itens do cardápio ao estoque, por ficha técnica, para atualizar a disponibilidade automaticamente & RF & G \\
             \bottomrule
         \end{tabular*}
-        \fonte{Elaborado pelo autor a partir das respostas ao questionário.}
+        \fonte{Elaborado pelo autor a partir das respostas ao questionário e das entrevistas.}
     \end{minipage}
 \end{table}
 
-\pendente{acrescentar os requisitos levantados nas entrevistas (G), marcar os que aparecem nas duas fontes (C+G) e comentar onde gestores e clientes concordam e onde entram em conflito}
+A entrevista do Caso D, que escolheu não usar cardápio digital, ainda assim contribui para o catálogo. A crítica do gestor à rolagem e à dificuldade de comparar itens coincide com relatos abertos dos frequentadores sobre ``idas e vindas'' entre páginas (R10), e a defesa de manter uma alternativa física para quem não tem internet ou smartphone converge com R07. A atualização imediata de itens esgotados aparece como a principal vantagem reconhecida do digital (R02), e a operação do caso mostra que ela depende da integração com o estoque (R11), funcionalidade que o bar já usava no sistema de gestão, mesmo sem cardápio digital.
+
+\pendente{acrescentar os requisitos dos casos A, B e C e do fornecedor e comentar onde gestores e clientes concordam e onde entram em conflito}
 
 %=======================================================================
 \section{Problemas recorrentes de usabilidade e acessibilidade}
@@ -84,12 +88,13 @@ A Tabela~\ref{tab:problemas-ux} relaciona os problemas mais citados pelos freque
             Cardápio em PDF difícil de ler no celular & Estética e design minimalista & 1.4.10 Reflow \\
             Dúvida se o pedido foi feito ou cobrado & Visibilidade do estado do sistema & --- \\
             Navegação que recarrega ou perde a posição ao voltar & Controle e liberdade do usuário & --- \\
+            Necessidade de rolar a tela para comparar itens & Reconhecimento em vez de memorização & --- \\
             Item exibido, mas indisponível & Prevenção de erros; correspondência com o mundo real & --- \\
             Cadastro ou login exigido para ver o cardápio & Flexibilidade e eficiência de uso & --- \\
             Falta de ajuste de fonte e contraste & --- & 1.4.3 Contraste; 1.4.4 Redimensionar texto \\
             \bottomrule
         \end{tabular*}
-        \fonte{Elaborado pelo autor a partir das respostas ao questionário, de \citeonline{nielsen1994heuristics} e de \citeonline{wcag22}.}
+        \fonte{Elaborado pelo autor a partir das respostas ao questionário, das entrevistas, de \citeonline{nielsen1994heuristics} e de \citeonline{wcag22}.}
     \end{minipage}
 \end{table}
 
@@ -106,18 +111,18 @@ A taxonomia proposta organiza as decisões de arquitetura em seis dimensões, de
     \label{tab:taxonomia-arquitetura}
     \centering%
     \begin{minipage}{.98\textwidth}
-        \small
+        \footnotesize
         \renewcommand{\arraystretch}{1.25}
         \begin{tabular*}{\textwidth}{>{\raggedright\arraybackslash}p{2.8cm}@{\extracolsep{\fill}}>{\raggedright\arraybackslash}p{2.0cm}>{\raggedright\arraybackslash}p{2.0cm}>{\raggedright\arraybackslash}p{2.0cm}>{\raggedright\arraybackslash}p{2.0cm}>{\raggedright\arraybackslash}p{2.0cm}}
             \toprule
             \textbf{Dimensão} & \textbf{Caso A} & \textbf{Caso B} & \textbf{Caso C} & \textbf{Caso D} & \textbf{Fornecedor} \\
             \midrule
-            Dispositivo (cliente ou estabelecimento) & & & & & \\
-            Sistema próprio ou contratado & & & & & \\
-            Integração com PDV, estoque e cozinha & & & & & \\
-            Comportamento sem internet & & & & & \\
-            Formato do cardápio (PDF, web, aplicativo) & & & & & \\
-            Identificação do cliente (cadastro, crédito) & & & & & \\
+            Dispositivo (cliente ou estabelecimento) & & & & Nenhum para o cliente; cardápio impresso & \\
+            Sistema próprio ou contratado & & & & Gestão contratada como serviço (Saipos) & \\
+            Integração com PDV, estoque e cozinha & & & & Pedido do garçom no sistema, com impressoras, pagamento, estoque e notas fiscais & \\
+            Comportamento sem internet & & & & Não abordado & \\
+            Formato do cardápio (PDF, web, aplicativo) & & & & Impresso; mesma arte no Instagram & \\
+            Identificação do cliente (cadastro, crédito) & & & & Nenhuma & \\
             \bottomrule
         \end{tabular*}
         \fonte{Elaborado pelo autor a partir das entrevistas com gestores e com o fornecedor.}
