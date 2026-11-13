@@ -61,7 +61,7 @@ Esta seção registra decisões editoriais ativas e diretrizes destinadas a futu
 ### Escopo e referencial fixados
 
 - **Recorte funcional.** O objeto de estudo são cardápios digitais com autoatendimento em **todas as modalidades de hardware**: dispositivo do próprio cliente (QR Code apontando para web menu ou self-ordering) e dispositivo disponibilizado pelo estabelecimento (tablet na mesa, totem em quiosque). O critério unificador é o cliente realizar por conta própria, em interface digital, etapas tradicionalmente intermediadas por um funcionário. Estão fora do escopo: KDS, ERP, plataformas de delivery (iFood, Rappi, Uber Eats) e aplicativos nativos próprios que exigem instalação em loja, ainda que possam aparecer como contexto.
-- **Casos.** Meta firme de **3 casos**, distribuídos em três perfis: pré-2020 que adotou, pré-2020 que resistiu, pós-2020 nascido digital. Cenários com menos de 3 casos só aparecem no plano de risco do cronograma.
+- **Casos.** **4 casos**, um por perfil: (A) pré-2020 que adotou, (B) pré-2020 que resistiu, (C) pós-2020 nascido digital e (D) pós-2020 que optou pelo cardápio físico, este incorporado durante a coleta do TCC II. Um fornecedor de cardápio digital é entrevistado como informante complementar, não como caso.
 - **Referencial teórico.** **UTAUT2** (Venkatesh et al., 2012) para a perspectiva do consumidor; **UTAUT original** (Venkatesh et al., 2003) para a perspectiva do gestor. Três lentes de Ciência da Computação estruturam a análise: Engenharia de Requisitos, UX/IHC e Arquitetura de Software.
 
 ### Estilo de escrita

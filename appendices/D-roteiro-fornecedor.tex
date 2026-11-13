@@ -1,0 +1,58 @@
+\chapter{Roteiro de entrevista com fornecedor de cardápio digital}
+\label{ap:roteiro-fornecedor}
+
+Este apêndice apresenta o roteiro semiestruturado aplicado ao representante de uma empresa fornecedora de cardápios digitais (Seção~\ref{sec:entrevista-fornecedor}). A entrevista tem duração estimada de 40 a 50 minutos e é gravada mediante consentimento (Apêndice~\ref{ap:termos}). Os Blocos~2 e~4 são prioritários; se o tempo for curto, os Blocos~1 e~5 são abreviados. O entrevistador pede exemplos concretos e não menciona resultados do questionário nem das demais entrevistas, para não induzir as respostas.
+
+\noindent\textbf{Bloco 0, Caracterização}
+\begin{enumerate}
+	\item Conte brevemente a história da empresa e do produto: quando surgiu, que problema queria resolver, onde atua.
+	\item Qual é o seu papel na empresa e há quanto tempo você está nessa função?
+	\item Mais ou menos quantos estabelecimentos usam a solução hoje, e quantos em Porto Alegre ou no RS? Qual é o perfil típico (porte, tipo de casa)?
+\end{enumerate}
+
+\noindent\textbf{Bloco 1, Produto e modalidades}
+\begin{enumerate}\setcounter{enumi}{3}
+	\item Que modalidades vocês oferecem (QR Code no celular do cliente, tablet, totem) e qual é a mais vendida? Por quê?
+	\item O cliente final só consulta o cardápio ou também faz o pedido e paga pelo sistema? Qual é a proporção entre esses usos?
+	\item O cardápio é uma página web, um aplicativo ou um arquivo (PDF)? Por que essa escolha?
+\end{enumerate}
+
+\noindent\textbf{Bloco 2, Arquitetura}
+\begin{enumerate}\setcounter{enumi}{6}
+	\item Em linhas gerais, como a solução é construída e hospedada? É uma plataforma única que atende todos os estabelecimentos (multi-inquilino) ou cada cliente tem uma instalação própria? Como os dados de cada estabelecimento são separados?
+	\item Com que outros sistemas a solução se integra (PDV, emissão de nota fiscal, estoque, impressora ou tela da cozinha, meios de pagamento, delivery)? Quais integrações dão mais trabalho?
+	\item O que acontece quando a internet do estabelecimento ou do cliente cai? Existe algum funcionamento offline ou plano B?
+	\item Como o estabelecimento atualiza preços, itens novos e itens esgotados? Isso aparece para o cliente em tempo real?
+	\item Que nível de disponibilidade vocês garantem? Já tiveram uma queda grande? O que aprenderam com ela?
+	\item O que cada estabelecimento pode personalizar (visual, fotos, categorias, idiomas) e o que é igual para todos?
+\end{enumerate}
+
+\noindent\textbf{Bloco 3, Requisitos e evolução}
+\begin{enumerate}\setcounter{enumi}{12}
+	\item Quais são as funcionalidades que os estabelecimentos mais pedem? E quais eles quase não usam?
+	\item Vocês recebem retorno dos clientes finais? Quais são as reclamações e os elogios mais comuns, e como esse retorno chega até vocês?
+	\item Já lançaram alguma funcionalidade que não deu certo? Por que não funcionou?
+	\item Que dados de uso vocês oferecem ao estabelecimento (itens mais vistos, horários de pico, tempo de pedido)? Os clientes usam esses dados?
+\end{enumerate}
+
+\noindent\textbf{Bloco 4, Dados pessoais e acessibilidade}
+\begin{enumerate}\setcounter{enumi}{16}
+	\item O cliente final precisa se cadastrar ou informar algum dado (nome, CPF, telefone) para ver o cardápio ou pedir? Quem decide isso? Para que esses dados são usados?
+	\item Na LGPD, como vocês entendem o papel de cada um: o estabelecimento é o controlador e vocês o operador, ou é diferente? Como isso aparece no contrato?
+	\item A solução segue alguma diretriz de acessibilidade (por exemplo, WCAG)? Funciona com leitor de tela, permite aumentar a fonte, tem bom contraste? Já foi testada com pessoas idosas ou com deficiência?
+\end{enumerate}
+
+\noindent\textbf{Bloco 5, Mercado e adoção}
+\begin{enumerate}\setcounter{enumi}{19}
+	\item Que tipo de estabelecimento adota mais facilmente e que tipo resiste? Quais são as objeções mais comuns na venda?
+	\item Como a pandemia mudou a procura pela solução? E depois dela?
+	\item A lei de Porto Alegre de 2024, que exige cardápio físico junto com o digital, afetou vendas, cancelamentos ou o uso do produto?
+	\item Como funciona o modelo de cobrança (mensalidade, taxa por pedido, equipamento)? Quando um cliente cancela, quais costumam ser os motivos?
+\end{enumerate}
+
+\noindent\textbf{Bloco 6, Encerramento}
+\begin{enumerate}\setcounter{enumi}{23}
+	\item Daqui a cinco anos, como você imagina o atendimento em bares e restaurantes?
+	\item Tem algo importante sobre esse assunto que eu não perguntei?
+	\item Vocês poderiam compartilhar algum dado agregado e anonimizado (por exemplo, proporção de pedidos pelo QR Code ou tempo médio de pedido) para o trabalho?
+\end{enumerate}

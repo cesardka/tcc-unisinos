@@ -6,17 +6,19 @@ Atualizar a coluna "Status" à medida que os contatos forem feitos.
 
 # Prospecção de estabelecimentos — TCC II
 
-## Casos selecionados (4/nov/2026)
+## Casos selecionados (atualizado em 13/nov/2026)
 
 | Perfil | Estabelecimento | Motivo | Contato | Status |
 | --- | --- | --- | --- | --- |
-| A — pré-2020 que adotou | **Mambembe Cervejaria** (R. Gen. Lima e Silva, 594, loja 5, Cidade Baixa) | Aberta em 2019; em set/2020 instalou torneiras de autosserviço com créditos comprados por aplicativo (GZH, 2020) | WhatsApp (51) 99305-7334 | a contatar |
-| B — pré-2020 que resistiu | **Lancheria do Parque** (Av. Osvaldo Aranha, 1086, Bom Fim) | Fundada em 1982; atendimento tradicional por garçom | (51) 3311-8321 | a contatar |
-| C — nascido digital | **Cervejaria Fora da Lei — Assis Brasil** (Av. Assis Brasil, 1116, Passo d'Areia) | Aberta em set/2019 com autosserviço de torneiras como modelo de origem (cadastro, crédito por caixa ou celular, pagamento por ml) | WhatsApp (51) 99594-0513; eduardo@foradalei.com.br | a contatar |
+| A — pré-2020 que adotou | **Mambembe Cervejaria** (R. Gen. Lima e Silva, 594, loja 5, Cidade Baixa) | Aberta em 2019; em set/2020 instalou torneiras de autosserviço com créditos comprados por aplicativo (GZH, 2020) | WhatsApp (51) 99305-7334 | a confirmar |
+| B — pré-2020 que resistiu | **Atelier de Massas** (a confirmar) | Substitui a Lancheria do Parque; confirmar ano de abertura e se mantém apenas cardápio físico | — | a contatar |
+| C — nascido digital | **Cervejaria Fora da Lei — Assis Brasil** (Av. Assis Brasil, 1116, Passo d'Areia) | Aberta em set/2019 com autosserviço de torneiras como modelo de origem (cadastro, crédito por caixa ou celular, pagamento por ml) | WhatsApp (51) 99594-0513; eduardo@foradalei.com.br | entrevista prevista para 13/nov |
+| D — pós-2020 que optou pelo físico | **Ordinária Pub** (Bom Fim) | Aberto depois de 2020; usa só cardápio físico por escolha dos sócios | — | entrevistado em 13/nov (Google Meet) |
+| Fornecedor (informante) | Fornecedora de cardápio digital indicada pelo Ordinária Pub | Perspectiva de quem constrói e vende a solução | — | a contatar |
 
 Alternativas: Du Magu (perfil A, Cidade Baixa, usa Goomer; (51) 3286-7916) e Alameda Bom Fim (perfil C, aberto em 2022; confirmar se há autoatendimento).
 
-Descartados da lista original: Pátio (encerrado definitivamente) e Janela Bar (rede nacional, fora dos critérios de inclusão).
+Descartados: Lancheria do Parque (substituída), Pátio (encerrado definitivamente) e Janela Bar (rede nacional, fora dos critérios de inclusão).
 
 ## Achado regulatório (impacta o TCC)
 
