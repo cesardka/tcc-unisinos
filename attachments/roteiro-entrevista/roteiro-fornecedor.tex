@@ -1,0 +1,125 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[brazilian]{babel}
+\usepackage{lmodern}
+\usepackage[margin=2.2cm]{geometry}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{amssymb}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\small Roteiro de entrevista com fornecedor}
+\rhead{\small TCC, César Hoffmann, UNISINOS}
+\cfoot{\small\thepage}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em}
+
+\newcommand{\aux}[1]{\par\vspace{0.15em}{\small\textcolor{gray}{\textit{Aprofundar: #1}}}}
+\newcommand{\bloco}[2]{\section*{#1 \hfill{\normalsize\textcolor{gray}{#2}}}}
+\newcommand{\caixa}{$\square$\ }
+
+\setlist[enumerate]{label=\textbf{\arabic*.}, leftmargin=*, itemsep=0.8em}
+
+\begin{document}
+
+\begin{center}
+  {\Large\bfseries Roteiro de entrevista com fornecedor de cardápio digital}\\[0.4em]
+  Cardápios digitais e autoatendimento em bares e restaurantes de Porto Alegre\\[0.2em]
+  {\small César Hoffmann \textbullet{} orientação: Prof.\ Dr.\ Guilherme Lacerda \textbullet{} Ciência da Computação, UNISINOS}
+\end{center}
+
+\begin{tcolorbox}[colback=gray!6,colframe=gray!50,title=Antes de começar,fonttitle=\bfseries]
+\caixa Gravação testada (no Meet, conferir em que conta do Google a gravação e a transcrição ficam salvas).\\
+\caixa TCLE enviado e aceito antes de começar a gravar.\\
+\caixa Termo de Confidencialidade oferecido: o fornecedor deve falar de clientes, preços e arquitetura.\\
+\caixa Combinar se o nome da empresa e do produto podem aparecer no trabalho ou se prefere pseudônimo.\\
+\caixa Ao começar a gravar: dizer data, empresa e papel do entrevistado e pedir o ``ok'' verbal de consentimento.
+\end{tcolorbox}
+
+\textbf{Duração-alvo:} 40 a 50 minutos. \textbf{Objetivo:} ouvir quem projeta e vende a solução para entender as decisões de arquitetura, os requisitos que os estabelecimentos pedem e o que o fornecedor observa no mercado de Porto Alegre. O fornecedor não é um caso do estudo; ele é um informante complementar aos estabelecimentos e aos frequentadores.
+
+\textbf{Como conduzir.} Os Blocos 2 e 4 são os mais importantes para o TCC; se o tempo apertar, encurte os Blocos 1 e 5. Peça exemplos concretos (``lembra de um cliente em que\ldots?''). Não cite números nem relatos do questionário ou das outras entrevistas, para não induzir respostas.
+
+%-------------------------------------------------------------
+\bloco{Bloco 0, Caracterização}{5 min}
+\begin{enumerate}[series=perguntas]
+  \item Conte brevemente a história da empresa e do produto: quando surgiu, que problema queria resolver, onde atua.
+  \item Qual é o seu papel na empresa e há quanto tempo você está nessa função?
+  \item Mais ou menos quantos estabelecimentos usam a solução hoje, e quantos em Porto Alegre ou no RS? Qual é o perfil típico (porte, tipo de casa)?
+\end{enumerate}
+
+%-------------------------------------------------------------
+\bloco{Bloco 1, Produto e modalidades}{5 min}
+\begin{enumerate}[resume=perguntas]
+  \item Que modalidades vocês oferecem (QR Code no celular do cliente, tablet, totem) e qual é a mais vendida? Por quê?
+  \item O cliente final só consulta o cardápio ou também faz o pedido e paga pelo sistema? Qual é a proporção entre esses usos?
+  \item O cardápio é uma página web, um aplicativo ou um arquivo (PDF)? Por que essa escolha?
+\end{enumerate}
+
+%-------------------------------------------------------------
+\bloco{Bloco 2, Arquitetura}{12 min}
+\begin{enumerate}[resume=perguntas]
+  \item Em linhas gerais, como a solução é construída e hospedada? É uma plataforma única que atende todos os estabelecimentos (multi-inquilino) ou cada cliente tem uma instalação própria?
+    \aux{como vocês separam os dados de cada estabelecimento? Como fazem para escalar em horários de pico?}
+  \item Com que outros sistemas a solução se integra (PDV/caixa, emissão de nota fiscal, estoque, impressora ou tela da cozinha, meios de pagamento, delivery)? Quais integrações dão mais trabalho?
+  \item O que acontece quando a internet do estabelecimento ou do cliente cai? Existe algum funcionamento offline ou plano B?
+  \item Como o estabelecimento atualiza preços, itens novos e itens esgotados? Isso aparece para o cliente em tempo real?
+  \item Que nível de disponibilidade vocês garantem? Já tiveram uma queda grande? O que aprenderam com ela?
+  \item O que cada estabelecimento pode personalizar (visual, fotos, categorias, idiomas) e o que é igual para todos?
+\end{enumerate}
+
+%-------------------------------------------------------------
+\bloco{Bloco 3, Requisitos e evolução}{8 min}
+\begin{enumerate}[resume=perguntas]
+  \item Quais são as funcionalidades que os estabelecimentos mais pedem? E quais eles quase não usam?
+  \item Vocês recebem retorno dos clientes finais (quem está na mesa)? Quais são as reclamações e os elogios mais comuns?
+    \aux{como esse retorno chega até vocês: pelo estabelecimento, por avaliações, por dados de uso?}
+  \item Já lançaram alguma funcionalidade que não deu certo? Por que não funcionou?
+  \item Que dados de uso vocês oferecem ao estabelecimento (itens mais vistos, horários de pico, tempo de pedido)? Os clientes usam esses dados?
+\end{enumerate}
+
+%-------------------------------------------------------------
+\bloco{Bloco 4, Dados pessoais e acessibilidade}{8 min}
+\begin{enumerate}[resume=perguntas]
+  \item O cliente final precisa se cadastrar ou informar algum dado (nome, CPF, telefone) para ver o cardápio ou pedir? Quem decide isso: vocês ou o estabelecimento? Para que esses dados são usados?
+  \item Na LGPD, como vocês entendem o papel de cada um: o estabelecimento é o controlador e vocês o operador, ou é diferente? Como isso aparece no contrato?
+  \item A solução segue alguma diretriz de acessibilidade (por exemplo, WCAG)? Funciona com leitor de tela, permite aumentar a fonte, tem bom contraste?
+    \aux{já testaram com pessoas idosas ou com deficiência visual? Algum cliente pediu isso?}
+\end{enumerate}
+
+%-------------------------------------------------------------
+\bloco{Bloco 5, Mercado e adoção}{7 min}
+\begin{enumerate}[resume=perguntas]
+  \item Na sua experiência, que tipo de estabelecimento adota mais facilmente e que tipo resiste? Quais são as objeções mais comuns na venda?
+  \item Como a pandemia mudou a procura pela solução? E depois dela?
+  \item A lei de Porto Alegre de 2024, que exige cardápio físico junto com o digital, afetou vendas, cancelamentos ou o uso do produto?
+  \item Como funciona o modelo de cobrança (mensalidade, taxa por pedido, equipamento)? Quando um cliente cancela, quais costumam ser os motivos?
+\end{enumerate}
+
+%-------------------------------------------------------------
+\bloco{Bloco 6, Encerramento}{3 min}
+\begin{enumerate}[resume=perguntas]
+  \item Daqui a cinco anos, como você imagina o atendimento em bares e restaurantes?
+  \item Tem algo importante sobre esse assunto que eu não perguntei?
+  \item Vocês poderiam compartilhar algum dado agregado e anonimizado (por exemplo, proporção de pedidos pelo QR Code ou tempo médio de pedido) para o trabalho?
+\end{enumerate}
+
+\begin{tcolorbox}[colback=gray!6,colframe=gray!50,title=Logo depois da entrevista,fonttitle=\bfseries]
+\caixa Agradecer e combinar o envio do resumo dos resultados.\\
+\caixa Baixar a gravação e a transcrição do Meet e guardar fora de pastas compartilhadas.\\
+\caixa Anotar em 5 minutos: impressões gerais, o que mais surpreendeu, contradições com os estabelecimentos e o que não ficou gravado.\\
+\caixa Salvar com o nome \texttt{fornecedor\_empresa\_AAAA-MM-DD}.
+\end{tcolorbox}
+
+\newpage
+\textbf{Anotações}\par
+\vspace{0.5em}
+\newcount\linhas \linhas=0
+\loop\ifnum\linhas<24 \rule{\linewidth}{0.3pt}\par\vspace{0.7em}\advance\linhas by 1 \repeat
+\end{document}
