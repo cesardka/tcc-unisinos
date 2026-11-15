@@ -6,7 +6,22 @@ Este capítulo apresenta os resultados das duas frentes de coleta descritas no C
 \section{Casos estudados}
 \label{sec:res-casos}
 
-\pendente{caracterizar os casos A, B e C (perfil, bairro, ano de abertura, porte, modalidade de autoatendimento) e resumir cada entrevista após a transcrição}
+\pendente{caracterizar os casos A e B (perfil, bairro, ano de abertura, porte, modalidade de autoatendimento) e resumir cada entrevista após a transcrição}
+
+\subsection{Caso C, Ohana Açaí}
+\label{sec:res-caso-c}
+
+O Caso C é o Ohana Açaí, açaiteria da Zona Sul de Porto Alegre aberta em fevereiro de 2022, cuja identificação no trabalho foi autorizada pelos sócios, com doze mesas, três funcionários na cozinha, um no caixa e dois entregadores, reforçados no verão. O tíquete médio individual é de cerca de R\$~30, e os sócios descrevem o público como de todas as idades. A entrevista foi feita presencialmente em 15 de novembro de 2026, com os dois sócios responsáveis pela loja, e durou cerca de 34 minutos.
+
+\textbf{Atendimento e cardápio.} O modelo é híbrido desde a abertura. Na loja, há cardápio impresso e o pedido é anotado à mão, mas cada mesa tem um QR Code já associado ao seu número, pelo qual o cliente pode consultar o cardápio e pedir sozinho; o pedido entra direto no sistema. Segundo os sócios, cerca de 90\% do uso do cardápio digital vem do delivery, e o autoatendimento no salão é minoritário. Clientes que não conseguem usar o cardápio digital, sobretudo idosos, ligam para a loja ou chamam um atendente pelo WhatsApp.
+
+\textbf{Sistema e escolha do fornecedor.} A loja usa o Anota AI, plataforma contratada como serviço, escolhida por referência de outra açaiteria que já o usava. Os sócios nunca consideraram desenvolver um sistema próprio. A mensalidade, de cerca de R\$~240, inclui caixa, estoque e relatórios, mas o módulo fiscal é cobrado à parte e foi considerado caro. Na prática, a loja usa o sistema só para pedidos e para atualizar o cardápio: o estoque e o caixa continuam manuais, porque, com uma operação pequena, os sócios acham mais simples conferir o estoque visualmente. A troca de fornecedor é vista como fácil, porque o novo fornecedor copia o cardápio a partir do link do atual; a loja recebe ofertas de concorrentes, sobretudo pelo Instagram, mas não responde.
+
+\textbf{Benefícios percebidos.} A principal vantagem citada é o pagamento on-line no delivery: o pedido só chega à loja depois de pago, o que acabou com prejuízos de pagamentos recusados na entrega e com o custo de manter máquinas de cartão com os entregadores. Também citam a agilidade, porque o pedido sai pronto sem ser anotado, e a atualização imediata do cardápio, pausando na hora um item que acabou. Não perceberam aumento do valor gasto por cliente.
+
+\textbf{Problemas.} O mais grave são as atualizações do sistema, que segundo os sócios ocorrem a cada quinze dias, em qualquer horário, inclusive no pico: ``quando eles estão atualizando, trava tudo''. As mudanças de interface também exigem readaptação, mais difícil para funcionários mais velhos, e o suporte, automatizado, demora a passar para um atendente humano. Para não depender de uma única conexão, a loja paga duas operadoras de internet e usa o celular como último recurso. No cadastro do delivery, o sistema pede nome, telefone e endereço, mas não valida o telefone, o que leva a números errados e facilita golpes, como comprovantes falsos de Pix.
+
+\textbf{Dados e futuro.} Os sócios consultam os relatórios mensalmente: clientes que mais compram, clientes que deixaram de comprar e bairros com mais pedidos. Como melhoria, gostariam de rastrear os entregadores, recurso que associam a outro fornecedor. No futuro, pensam em tablets nas mesas ou em um totem de autoatendimento, que chegaram a orçar em cerca de R\$~8~mil, além de mensalidade.
 
 \subsection{Caso D, Ordinária Pub}
 \label{sec:res-caso-d}
@@ -72,6 +87,49 @@ O entrevistado reconhece vantagens do cardápio digital, como atualizar preços 
 \label{sec:res-cruzamentos}
 
 \pendente{escores e preferência por faixa etária, frequência de ida, deficiência ou dificuldade e localidade (Porto Alegre e região metropolitana versus outras cidades)}
+
+\section{Avaliação técnica dos cardápios digitais}
+\label{sec:res-avaliacao-tecnica}
+
+A Tabela~\ref{tab:lighthouse} apresenta as medianas das três auditorias de cada página, conforme o procedimento da Seção~\ref{sec:avaliacao-tecnica}.
+
+\begin{table}[!ht]
+    \caption{Desempenho e acessibilidade dos cardápios digitais auditados (mediana de três execuções)}
+    \label{tab:lighthouse}
+    \centering%
+    \begin{minipage}{.98\textwidth}
+        \small
+        \renewcommand{\arraystretch}{1.2}
+        \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}cccccc}
+            \toprule
+            & \multicolumn{2}{c}{\textbf{Anota AI}} & \multicolumn{2}{c}{\textbf{Goomer}} & \\
+            \cmidrule{2-3}\cmidrule{4-5}
+            \textbf{Métrica} & \textbf{Ohana} & \textbf{Atelier} & \textbf{Cortex} & \textbf{Armazém} & \textbf{Bom} \\
+            \midrule
+            Desempenho (0--100) & 42 & 51 & 31 & 32 & $\geq 90$ \\
+            FCP (s) & 4,4 & 4,4 & 11,1 & 11,2 & $\leq 1{,}8$ \\
+            LCP (s) & 9,1 & 8,2 & 20,2 & 20,9 & $\leq 2{,}5$ \\
+            TTI (s) & 15,6 & 16,8 & 20,2 & 21,1 & --- \\
+            TBT (ms) & 347 & 280 & 1.365 & 1.150 & $\leq 200$ \\
+            CLS & 0,21 & 0,11 & 0 & 0 & $\leq 0{,}1$ \\
+            Peso (MB) & 1,8 & 1,9 & 2,4 & 2,4 & --- \\
+            Cookies de terceiros & 7 & 7 & 60 & 58 & --- \\
+            \midrule
+            Acessibilidade (0--100) & 90 & 94 & 88 & 88 & --- \\
+            Zoom bloqueado (WCAG 1.4.4) & sim & sim & sim & sim & não \\
+            Contraste insuficiente (WCAG 1.4.3) & 3 & 0 & 6 & 5 & 0 \\
+            Sem região principal marcada & não & não & sim & sim & não \\
+            \bottomrule
+        \end{tabular*}
+        \fonte{Elaborado pelo autor a partir de auditorias com o Lighthouse 13.5.0 em 15 nov. 2026; limites de referência de \citeonline{google2026webvitals}.}
+    \end{minipage}
+\end{table}
+
+Nas quatro páginas, o maior elemento visível (LCP) levou de 8 a 21 segundos para aparecer na rede simulada, entre três e oito vezes o limite considerado bom. As páginas do Anota AI mostram o primeiro conteúdo em cerca de 4,4~segundos, e as da Goomer em cerca de 11~segundos. Em todas, a maior parte do peso transferido é código JavaScript (de 64\% a 80\%): são aplicações que precisam baixar e executar esse código antes de exibir o cardápio. Na página do Ohana, elementos se deslocam durante o carregamento (CLS de 0,21), o que pode levar o cliente a tocar no item errado.
+
+Na acessibilidade, as pontuações automáticas são altas (88 a 94), mas as quatro páginas impedem o usuário de ampliar a tela com o gesto de pinça, o que contraria o critério 1.4.4 das WCAG~2.2 \cite{wcag22} e prejudica justamente pessoas com baixa visão e idosos. Três das quatro páginas também têm textos com contraste abaixo do mínimo de 4,5:1. Por fim, as páginas da Goomer carregam cerca de sessenta cookies de terceiros apenas para exibir o cardápio, e as do Anota AI, sete.
+
+A variação entre as três execuções foi pequena nas métricas de carregamento (coeficiente de variação de até 7\% em FCP, Speed Index, TTI e peso, e de até 16\% em LCP) e maior em TBT e CLS, como esperado para essas métricas. Mesmo no melhor resultado de cada página, nenhuma se aproximou dos limites de referência, de modo que a variação não altera as conclusões.
 
 \section{Integração das fontes}
 \label{sec:res-integracao}

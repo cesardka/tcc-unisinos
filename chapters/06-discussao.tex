@@ -28,7 +28,7 @@ Este capítulo interpreta os resultados do Capítulo~\ref{ch:resultados} à luz 
 \section{Catálogo de requisitos}
 \label{sec:disc-requisitos}
 
-Os requisitos a seguir foram extraídos das respostas abertas do questionário, dos problemas técnicos relatados e das entrevistas com gestores. Cada requisito é classificado como funcional (RF) ou não funcional (RNF), conforme \citeonline{sommerville2016software}, e os não funcionais são associados à característica de qualidade correspondente da ISO/IEC 25010 \cite{iso25010}. A coluna ``Origem'' indica se a necessidade apareceu entre os clientes (C), entre os gestores (G) ou em ambos.
+Os requisitos a seguir foram extraídos das respostas abertas do questionário, dos problemas técnicos relatados e das entrevistas com gestores. Cada requisito é classificado como funcional (RF) ou não funcional (RNF), conforme \citeonline{sommerville2016software}, e os não funcionais são associados à característica de qualidade correspondente da ISO/IEC 25010 \cite{iso25010}. A coluna ``Origem'' indica se a necessidade apareceu entre os clientes (C), entre os gestores (G) ou nas auditorias técnicas (A), podendo combinar mais de uma fonte.
 
 \begin{table}[!ht]
     \caption{Catálogo preliminar de requisitos para soluções de cardápio digital com autoatendimento}
@@ -46,12 +46,16 @@ Os requisitos a seguir foram extraídos das respostas abertas do questionário, 
             R03 & Permitir consultar o cardápio e pedir sem cadastro ou login obrigatório & RF & C \\
             R04 & Permitir que várias pessoas da mesma mesa consultem e montem o pedido ao mesmo tempo & RF & C \\
             R05 & Permitir consultar o cardápio antes de chegar ao estabelecimento & RF & C \\
-            R06 & Carregar rapidamente em conexões lentas, evitando arquivos pesados como PDF & RNF / eficiência de desempenho & C \\
+            R06 & Carregar rapidamente em conexões lentas, evitando arquivos pesados como PDF & RNF / eficiência de desempenho & C+A \\
             R07 & Oferecer alternativa quando não há internet (Wi-Fi do estabelecimento, cardápio físico) & RNF / confiabilidade & C+G \\
             R08 & Navegar entre categorias sem recarregar a página nem perder a posição & RNF / usabilidade & C \\
-            R09 & Permitir ajuste de tamanho de fonte e contraste adequado & RNF / usabilidade (acessibilidade) & C \\
+            R09 & Permitir ajuste de tamanho de fonte, ampliação da tela e contraste adequado & RNF / usabilidade (acessibilidade) & C+A \\
             R10 & Exibir muitos itens por tela e permitir comparar opções sem rolagem extensa & RNF / usabilidade & C+G \\
             R11 & Vincular os itens do cardápio ao estoque, por ficha técnica, para atualizar a disponibilidade automaticamente & RF & G \\
+            R12 & Aplicar atualizações do sistema sem interromper a operação e fora dos horários de pico & RNF / confiabilidade (disponibilidade) & G \\
+            R13 & Validar os dados de contato informados no cadastro (por exemplo, o telefone) & RF & G \\
+            R14 & Manter a interface estável entre versões, avisando antes de mudanças relevantes & RNF / usabilidade & G \\
+            R15 & Não carregar rastreadores nem cookies de terceiros apenas para exibir o cardápio & RNF / segurança (privacidade) & A \\
             \bottomrule
         \end{tabular*}
         \fonte{Elaborado pelo autor a partir das respostas ao questionário e das entrevistas.}
@@ -60,7 +64,11 @@ Os requisitos a seguir foram extraídos das respostas abertas do questionário, 
 
 A entrevista do Caso D, que escolheu não usar cardápio digital, ainda assim contribui para o catálogo. A crítica do gestor à rolagem e à dificuldade de comparar itens coincide com relatos abertos dos frequentadores sobre ``idas e vindas'' entre páginas (R10), e a defesa de manter uma alternativa física para quem não tem internet ou smartphone converge com R07. A atualização imediata de itens esgotados aparece como a principal vantagem reconhecida do digital (R02), e a operação do caso mostra que ela depende da integração com o estoque (R11), funcionalidade que o bar já usava no sistema de gestão, mesmo sem cardápio digital.
 
-\pendente{acrescentar os requisitos dos casos A, B e C e do fornecedor e comentar onde gestores e clientes concordam e onde entram em conflito}
+O Caso C reforça R02, ao pausar na hora itens que acabaram, e R07, ao manter duas conexões de internet e o celular como reserva. Ele também acrescenta requisitos que só aparecem do lado do gestor: atualizações que não interrompam a operação (R12), validação dos dados de contato no cadastro (R13) e estabilidade da interface entre versões (R14). Este último dialoga com a dificuldade dos clientes idosos relatada pelo mesmo caso e com a preferência pelo cardápio físico entre os respondentes mais velhos do questionário.
+
+As auditorias técnicas (Seção~\ref{sec:res-avaliacao-tecnica}) dão evidência objetiva a dois requisitos que, até então, apoiavam-se em relatos. O R06 é confirmado pelo tempo de carregamento de 8 a 21 segundos em rede móvel simulada, coerente com os relatos de páginas que não carregam no questionário; e o R09, pelo bloqueio de zoom nas quatro páginas auditadas. As auditorias também acrescentam o R15, já que as páginas carregam de sete a sessenta cookies de terceiros apenas para exibir o cardápio, o que dialoga com a discussão sobre privacidade da Seção~\ref{sec:lgpd}.
+
+\pendente{acrescentar os requisitos dos casos A e B e do fornecedor e comentar onde gestores e clientes concordam e onde entram em conflito}
 
 %=======================================================================
 \section{Problemas recorrentes de usabilidade e acessibilidade}
@@ -89,12 +97,15 @@ A Tabela~\ref{tab:problemas-ux} relaciona os problemas mais citados pelos freque
             Dúvida se o pedido foi feito ou cobrado & Visibilidade do estado do sistema & --- \\
             Navegação que recarrega ou perde a posição ao voltar & Controle e liberdade do usuário & --- \\
             Necessidade de rolar a tela para comparar itens & Reconhecimento em vez de memorização & --- \\
+            Interface que muda a cada atualização do sistema & Consistência e padrões & --- \\
             Item exibido, mas indisponível & Prevenção de erros; correspondência com o mundo real & --- \\
             Cadastro ou login exigido para ver o cardápio & Flexibilidade e eficiência de uso & --- \\
             Falta de ajuste de fonte e contraste & --- & 1.4.3 Contraste; 1.4.4 Redimensionar texto \\
+            Zoom bloqueado pela página (auditoria) & Flexibilidade e eficiência de uso & 1.4.4 Redimensionar texto \\
+            Elementos que se deslocam durante o carregamento (auditoria) & Prevenção de erros & --- \\
             \bottomrule
         \end{tabular*}
-        \fonte{Elaborado pelo autor a partir das respostas ao questionário, das entrevistas, de \citeonline{nielsen1994heuristics} e de \citeonline{wcag22}.}
+        \fonte{Elaborado pelo autor a partir das respostas ao questionário, das entrevistas, das auditorias técnicas, de \citeonline{nielsen1994heuristics} e de \citeonline{wcag22}.}
     \end{minipage}
 \end{table}
 
@@ -117,17 +128,19 @@ A taxonomia proposta organiza as decisões de arquitetura em seis dimensões, de
             \toprule
             \textbf{Dimensão} & \textbf{Caso A} & \textbf{Caso B} & \textbf{Caso C} & \textbf{Caso D} & \textbf{Fornecedor} \\
             \midrule
-            Dispositivo (cliente ou estabelecimento) & & & & Nenhum para o cliente; cardápio impresso & \\
-            Sistema próprio ou contratado & & & & Gestão contratada como serviço (Saipos) & \\
-            Integração com PDV, estoque e cozinha & & & & Pedido do garçom no sistema, com impressoras, pagamento, estoque e notas fiscais & \\
-            Comportamento sem internet & & & & Não abordado & \\
-            Formato do cardápio (PDF, web, aplicativo) & & & & Impresso; mesma arte no Instagram & \\
-            Identificação do cliente (cadastro, crédito) & & & & Nenhuma & \\
+            Dispositivo (cliente ou estabelecimento) & & & Celular do cliente (QR Code por mesa), além do impresso & Nenhum para o cliente; cardápio impresso & \\
+            Sistema próprio ou contratado & & & Contratado como serviço (Anota AI) & Gestão contratada como serviço (Saipos) & \\
+            Integração com PDV, estoque e cozinha & & & Pedidos da mesa, do delivery e do iFood no sistema; caixa e estoque manuais & Pedido do garçom no sistema, com impressoras, pagamento, estoque e notas fiscais & \\
+            Comportamento sem internet & & & Duas operadoras e celular como reserva & Não abordado & \\
+            Formato do cardápio (PDF, web, aplicativo) & & & Página web, além do impresso & Impresso; mesma arte no Instagram & \\
+            Identificação do cliente (cadastro, crédito) & & & Nome, telefone e endereço no delivery & Nenhuma & \\
             \bottomrule
         \end{tabular*}
         \fonte{Elaborado pelo autor a partir das entrevistas com gestores e com o fornecedor.}
     \end{minipage}
 \end{table}
+
+As auditorias acrescentam uma observação de arquitetura que vale para as duas plataformas analisadas: os cardápios são aplicações que dependem de baixar entre 1,3 e 2~MB de JavaScript antes de exibir qualquer conteúdo útil. Para uma tarefa essencialmente de leitura, como consultar um cardápio, alternativas como páginas renderizadas no servidor, conteúdo estático com armazenamento em cache ou aplicações web progressivas com funcionamento offline reduziriam o tempo de carregamento e a dependência da conexão, atendendo a R06 e R07.
 
 \pendente{preencher a tabela com os dados das entrevistas e discutir as escolhas entre desenvolver e contratar (build versus buy) em pequenos estabelecimentos}
 
