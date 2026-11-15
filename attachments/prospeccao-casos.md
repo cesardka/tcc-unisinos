@@ -6,19 +6,20 @@ Atualizar a coluna "Status" à medida que os contatos forem feitos.
 
 # Prospecção de estabelecimentos — TCC II
 
-## Casos selecionados (atualizado em 13/nov/2026)
+## Casos selecionados (atualizado em 15/nov/2026)
 
 | Perfil | Estabelecimento | Motivo | Contato | Status |
 | --- | --- | --- | --- | --- |
-| A — pré-2020 que adotou | **Mambembe Cervejaria** (R. Gen. Lima e Silva, 594, loja 5, Cidade Baixa) | Aberta em 2019; em set/2020 instalou torneiras de autosserviço com créditos comprados por aplicativo (GZH, 2020) | WhatsApp (51) 99305-7334 | a confirmar |
-| B — pré-2020 que resistiu | **Atelier de Massas** (a confirmar) | Substitui a Lancheria do Parque; confirmar ano de abertura e se mantém apenas cardápio físico | — | a contatar |
-| C — nascido digital | **Cervejaria Fora da Lei — Assis Brasil** (Av. Assis Brasil, 1116, Passo d'Areia) | Aberta em set/2019 com autosserviço de torneiras como modelo de origem (cadastro, crédito por caixa ou celular, pagamento por ml) | WhatsApp (51) 99594-0513; eduardo@foradalei.com.br | entrevista prevista para 13/nov |
+| A — pré-2020 que adotou | **Bowlerama** (R. Luiz de Camões, 337, Santo Antônio, dentro do Clube Geraldo Santana) | Funciona desde 2012–2013 (GZH, Jornal do Comércio); hoje opera com sistema digital, migração a confirmar se foi pós-2020 | (51) 3023-4343, qua–dom a partir das 15h | a contatar em 16/nov |
+| A — alternativa | **Mambembe Cervejaria** (R. Gen. Lima e Silva, 594, loja 5, Cidade Baixa) | Aberta em 2019; em set/2020 instalou torneiras de autosserviço com créditos comprados por aplicativo (GZH, 2020) | WhatsApp (51) 99305-7334 | a contatar |
+| B — pré-2020 que resistiu | **Atelier de Massas** (R. Riachuelo, 1482, Centro Histórico) | Funciona desde 1992; confirmar se mantém apenas cardápio físico | Instagram ou telefone do Google Maps | a contatar em 16/nov |
+| C — nascido digital | **Ohana Açaí** (Zona Sul) | Aberto em fev/2022 com QR Code por mesa (Anota AI) desde a abertura, além do cardápio impresso; delivery próprio e iFood | — | entrevistado em 15/nov (presencial) |
 | D — pós-2020 que optou pelo físico | **Ordinária Pub** (Bom Fim) | Aberto depois de 2020; usa só cardápio físico por escolha dos sócios | — | entrevistado em 13/nov (Google Meet) |
-| Fornecedor (informante) | Fornecedora de cardápio digital indicada pelo Ordinária Pub | Perspectiva de quem constrói e vende a solução | — | a contatar |
+| Fornecedor (informante) | **Saipos** (contato comercial indicado pelo Ordinária Pub) | Perspectiva de quem constrói e vende a solução | — | convite pronto, a contatar |
 
-Alternativas: Du Magu (perfil A, Cidade Baixa, usa Goomer; (51) 3286-7916) e Alameda Bom Fim (perfil C, aberto em 2022; confirmar se há autoatendimento).
+Alternativas: Cervejaria Fora da Lei — Assis Brasil (perfil C, substituída pelo Ohana Açaí; WhatsApp (51) 99594-0513), Du Magu (perfil A, Cidade Baixa, usa Goomer; (51) 3286-7916) e Alameda Bom Fim (perfil C, aberto em 2022; confirmar se há autoatendimento).
 
-Descartados: Lancheria do Parque (substituída), Pátio (encerrado definitivamente) e Janela Bar (rede nacional, fora dos critérios de inclusão).
+Descartados: Lancheria do Parque (substituída pelo Atelier de Massas), Pátio (encerrado definitivamente) e Janela Bar (rede nacional, fora dos critérios de inclusão).
 
 ## Achado regulatório (impacta o TCC)
 
