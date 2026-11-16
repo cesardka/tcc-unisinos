@@ -1,6 +1,6 @@
 # TCC — Cadê o cardápio?
 
-> **Entendendo o impacto da digitalização de bares e restaurantes entre 2020 e 2026 em Porto Alegre**
+> **Adoção, experiência do usuário e arquitetura de cardápios digitais em bares e restaurantes de Porto Alegre**
 
 Repositório do Trabalho de Conclusão de Curso (TCC) de **César Hoffmann**, aluno de **Ciência da Computação** na **UNISINOS**.
 
