@@ -1,28 +1,17 @@
 \chapter{Discussão}
 \label{ch:discussao}
 
-Este capítulo interpreta os resultados do Capítulo~\ref{ch:resultados} à luz da fundamentação teórica e organiza os achados nos três artefatos de contribuição anunciados na Seção~\ref{sec:justificativa}: um catálogo de requisitos funcionais e não funcionais (Seção~\ref{sec:disc-requisitos}), um conjunto de problemas recorrentes de usabilidade e acessibilidade (Seção~\ref{sec:disc-ux}) e uma taxonomia das decisões de arquitetura observadas nos casos (Seção~\ref{sec:disc-arquitetura}). Antes disso, a Seção~\ref{sec:disc-adocao} discute o padrão geral de aceitação encontrado entre os frequentadores, e a Seção~\ref{sec:disc-triangulacao} confronta a visão dos gestores com a dos clientes.
+Este capítulo interpreta os resultados do Capítulo~\ref{ch:resultados} com base na fundamentação teórica e organiza os achados nos três artefatos de contribuição anunciados na Seção~\ref{sec:justificativa}: um catálogo de requisitos funcionais e não funcionais (Seção~\ref{sec:disc-requisitos}), um conjunto de problemas recorrentes de usabilidade e acessibilidade (Seção~\ref{sec:disc-ux}) e uma taxonomia das decisões de arquitetura observadas nos casos (Seção~\ref{sec:disc-arquitetura}). Antes disso, a Seção~\ref{sec:disc-adocao} discute o padrão geral de aceitação encontrado entre os frequentadores, e a Seção~\ref{sec:disc-triangulacao} confronta a visão dos gestores com a dos clientes.
 
 %=======================================================================
 \section{Aceitação do cardápio digital pelos frequentadores}
 \label{sec:disc-adocao}
 
-% Leitura prévia (n = 41, 12/11/2026; refazer com a base final):
-% - Preferência: cerca de 78% preferem o cardápio físico e 5% o digital;
-%   ainda assim, cerca de 66% acham que o cardápio digital "veio para ficar".
-% - EE favorável (56% acham fácil aprender; só 27% relatam dificuldade de
-%   leitura/navegação), mas PE baixo (7% acham mais prático que o físico)
-%   e BI2 quase nulo (2% recomendariam um lugar por ter cardápio digital).
-% - TRU alto (cerca de 71% confiam nos preços), apesar de relatos de itens
-%   indisponíveis nas respostas abertas.
-% - "Ter os dois" é a resposta aberta mais recorrente na pergunta "Por quê?".
-% Argumento sugerido: o cardápio digital é aceito como algo inevitável, mas
-% não é desejado; a barreira não é aprender a usar (EE), e sim o valor
-% percebido (PE, PV, HM). Dialogar com Venkatesh et al. (2012), que apontam
-% PE como preditor mais forte de BI, e com Costa (2022), que também encontrou
-% descontentamento em Brasília.
+Os resultados do questionário mostram uma situação que pode parecer contraditória: a maioria dos respondentes usa cardápios digitais com frequência e acredita que eles vieram para ficar, mas prefere o cardápio físico (76\%). Esse quadro se parece com o descontentamento encontrado por \citeonline{costa2022comportamento} entre consumidores de Brasília, e contrasta com a alta intenção de uso relatada por \citeonline{fioreti2026aplicativos} no Maranhão. Uma explicação possível é a diferença de recorte: o trabalho de Fioreti et al. olhou para aplicativos de autoatendimento em geral, enquanto este estudo pergunta especificamente sobre o cardápio usado na mesa de bares e restaurantes, situação em que o garçom continua sendo uma alternativa disponível. Do lado da oferta, pesquisas da ABRASEL indicam que cerca de 40\% dos estabelecimentos adotam cardápio digital e que parte dos que adotaram durante a pandemia deixou de usar \cite{abrasel2023qrcode,abraselsc2025cardapio}, o que também sugere uma adoção estável, mas não universal.
 
-\pendente{discutir o contraste entre facilidade de uso percebida e utilidade percebida, e a preferência por soluções híbridas, relacionando com a UTAUT2 \cite{venkatesh2012consumer}, com os trabalhos relacionados e com a exigência municipal de cardápio físico \cite{camarapoa2024cardapio}}
+Olhando pelos construtos da UTAUT2, a barreira principal não parece ser aprender a usar. A expectativa de esforço e as condições facilitadoras foram os construtos mais bem avaliados, enquanto a expectativa de desempenho foi a mais baixa: poucos respondentes acham o cardápio digital mais prático que o físico. Isso é coerente com o modelo, que coloca a expectativa de desempenho como um dos principais determinantes da intenção de uso \cite{venkatesh2012consumer}, e com a ideia, presente desde o TAM, de que a utilidade percebida pesa mais do que a facilidade \cite{davis1989perceived}. Neste estudo, a expectativa de desempenho e o hábito foram os construtos mais correlacionados com a intenção de uso, enquanto a expectativa de esforço teve correlação menor. Em outras palavras, o cardápio digital é visto como fácil, mas pouco útil, e quem não criou o hábito de usá-lo tem pouca intenção de continuar.
+
+Esse resultado também ajuda a entender por que a solução mais citada nas respostas abertas foi oferecer as duas opções. Assim como \citeonline{oliveira2017autoatendimento} observaram em uma rede de fast food, o autoatendimento pode ser bem avaliado em alguns aspectos sem ser decisivo para a escolha do cliente. Em Porto Alegre, a exigência de manter o cardápio físico \cite{camarapoa2024cardapio} acaba coincidindo com o que a maioria dos respondentes diz preferir. A diferença de idade observada, com os respondentes de 35 anos ou mais preferindo ainda mais o físico, reforça a importância dessa alternativa, especialmente porque pessoas mais velhas tendem a ter mais dificuldade com interfaces pequenas e densas \cite{mclaughlin2020designing,lara2010acessibilidade}.
 
 %=======================================================================
 \section{Catálogo de requisitos}
@@ -148,4 +137,12 @@ As auditorias acrescentam uma observação de arquitetura que vale para as duas 
 \section{Visão dos gestores e visão dos clientes}
 \label{sec:disc-triangulacao}
 
-\pendente{confrontar as categorias das entrevistas com os resultados do questionário, indicando convergências, divergências e complementaridades \cite{venkatesh2013bridging}}
+Seguindo a proposta de meta-inferências de \citeonline{venkatesh2013bridging}, esta seção compara o que apareceu nas entrevistas com o que apareceu no questionário e nas auditorias, separando convergências, divergências e complementaridades. Por enquanto, a comparação considera os casos C e D; os casos A e B e o fornecedor serão acrescentados quando as entrevistas forem concluídas.
+
+\textbf{Convergências.} Os gestores e os clientes concordam em três pontos. O primeiro é a dependência da internet: o Ohana Açaí paga duas operadoras para não ficar sem conexão, os respondentes citam a internet fraca como a principal situação em que o cardápio digital funciona pior, e as auditorias mostram páginas que levam vários segundos para carregar em rede móvel. O segundo é a dificuldade das pessoas mais velhas, relatada pelos sócios do Ohana e refletida na preferência maior pelo físico entre os respondentes de 35 anos ou mais. O terceiro é a vantagem de atualizar o cardápio na hora, citada nos dois casos e coerente com a confiança alta dos respondentes nos preços e na disponibilidade informados.
+
+\textbf{Divergências.} A principal diferença está no valor percebido. Para o Ohana, o sistema traz ganhos claros na operação, como o pagamento antecipado no delivery e pedidos que chegam prontos, enquanto os clientes, no salão, quase não veem o cardápio digital como mais prático. O Caso D mostra o outro lado: mesmo com o módulo de cardápio digital disponível sem custo, os sócios escolheram o físico por preferência pessoal e pela experiência de atendimento, uma decisão parecida com a da maioria dos respondentes.
+
+\textbf{Complementaridades.} Cada fonte acrescentou algo que as outras não mostravam. As entrevistas revelaram problemas invisíveis para o cliente, como as atualizações do sistema que travam a operação no horário de pico e a falta de validação dos dados de cadastro. O questionário trouxe a escala dos problemas de uso, como layout confuso e QR Code que não abre. As auditorias deram medidas objetivas para problemas que, até então, apareciam só como relato, como a lentidão e o bloqueio do zoom, que fere as diretrizes de acessibilidade \cite{wcag22} e afeta justamente o público com mais dificuldade.
+
+\pendente{acrescentar as meta-inferências dos casos A e B e da entrevista com o fornecedor}

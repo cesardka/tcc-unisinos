@@ -56,6 +56,8 @@
 % Aparece em vermelho no PDF; antes da entrega, buscar por \pendente e remover todos.
 \usepackage{xcolor}
 \newcommand{\pendente}[1]{\textcolor{red}{\textbf{[PENDENTE: #1]}}}
+% Inclui linhas de tabela geradas pelos scripts de analysis/ (o \input comum falha dentro de tabular).
+\makeatletter\newcommand{\inputtabela}[1]{\@@input #1 }\makeatother
 
 %=======================================================================
 % Escolha do sistema para geração de referências bibliográficas.
