@@ -12,14 +12,14 @@ Este repositório contém o arquivo-fonte em LaTeX, imagens, referências biblio
 - **Orientador:** PhD Guilherme Lacerda
 - **Instituição:** Universidade do Vale do Rio dos Sinos (UNISINOS)
 - **Curso:** Ciência da Computação
-- **Disciplina:** TCC I — 2024/2
+- **Formato atual:** artigo de TCC II (2026), com apêndices e anexos
 
 ## Estrutura do repositório
 
-- `main.tex` — arquivo-fonte principal (preâmbulo, pré-textuais e `\include` de capítulos e apêndices)
-- `chapters/` — capítulos numerados, um arquivo por capítulo (`01-introducao.tex`, `02-fundamentacao.tex`, `03-metodologia.tex`, `04-cronograma.tex`, `05-resultados.tex`, `06-discussao.tex`, `07-conclusao.tex`)
-- `appendices/` — apêndices (`A-roteiro.tex`, `B-questionario.tex`, `C-termos.tex`)
-- `UNISINOSmonografia.cls` — classe LaTeX oficial da UNISINOS para monografias
+- `main.tex` — arquivo-fonte principal (capa, artigo e `\input` das seções e apêndices)
+- `chapters/` — seções numeradas do artigo; o cronograma permanece no acervo, mas não é incluído
+- `appendices/` — instrumentos, termos, fundamentação complementar (`E-fundamentacao.tex`) e procedimentos detalhados (`F-procedimentos.tex`)
+- `UNISINOSmonografia.cls` — classe de monografia adaptada com a opção `artigo`
 - `referencias.bib` — base de referências bibliográficas do trabalho (BibTeX); entradas geradas a partir do fichamento em `attachments/fichamento.md`
 - `exemplo.bib` — entradas de exemplo do template UNISINOS (mantidas apenas para referência de sintaxe)
 - `bibliography/` — arquivos PDF das referências, organizados por eixo temático
@@ -29,17 +29,14 @@ Este repositório contém o arquivo-fonte em LaTeX, imagens, referências biblio
   - `attachments/fichamento.md` — fichamento das referências (resumo, tipo, recorte, relevância)
   - `attachments/bibliografia-triagem.md` — triagem automatizada dos PDFs (status de extração de texto)
   - `attachments/autorizações/` — modelos UNISINOS de termos de confidencialidade e autorização de uso de imagem para a coleta de dados
-- `main.pdf` — versão compilada mais recente do trabalho
+- `César Hoffmann - TCC.pdf` — versão compilada do trabalho
 
 ## Como compilar
 
 Requisitos: uma distribuição LaTeX instalada (TeX Live, MacTeX ou MiKTeX) com `pdflatex` e `bibtex`.
 
 ```bash
-pdflatex main.tex
-bibtex main
-pdflatex main.tex
-pdflatex main.tex
+latexmk -pdf -interaction=nonstopmode main.tex
 ```
 
 Ou, se preferir usar `latexmk`:
@@ -48,11 +45,11 @@ Ou, se preferir usar `latexmk`:
 latexmk -pdf main.tex
 ```
 
-O PDF gerado estará em `main.pdf`.
+O PDF gerado estará em `César Hoffmann - TCC.pdf`. A opção `artigo` mantém capa e folha de rosto, coloca título e resumos no início do artigo, imprime as sete seções em sequência e deixa referências antes dos apêndices.
 
 ## Template e créditos
 
-A formatação deste trabalho parte do **template LaTeX oficial da UNISINOS para monografias**, distribuído pela própria universidade aos alunos de graduação. O núcleo do template — classe `UNISINOSmonografia.cls`, estrutura de pré-textuais (capa, folha de rosto, dedicatória, epígrafe, resumos, sumário) e configuração ABNT via `abntex2` — é mantido o mais próximo possível do original; as adaptações feitas neste repositório dizem respeito apenas ao conteúdo do trabalho (texto, referências, figuras e ajustes pontuais de estilo).
+A formatação parte da classe LaTeX para monografias da UNISINOS. A opção `artigo` adapta as seções e os resumos ao formato de TCC em artigo, preservando a capa, a folha de rosto, as citações e as referências ABNT. A versão anterior à conversão está preservada na branch remota `monografia`.
 
 ## Convenções editoriais e diretrizes para colaboração com agentes
 

@@ -1,0 +1,94 @@
+\chapter{Detalhamento dos procedimentos de pesquisa}
+\label{ap:procedimentos}
+
+Este apêndice documenta o desenho de pesquisa, a construção dos instrumentos e as decisões de tratamento dos dados resumidas na Seção~\ref{ch:metodologia}. Os roteiros e o questionário completos estão nos Apêndices~\ref{ap:roteiro}, \ref{ap:roteiro-fornecedor} e~\ref{ap:questionario}.
+
+\section{Desenho da pesquisa}
+
+\begin{figure}[!ht]
+    \caption{Desenho metodológico do trabalho}
+    \label{fig:desenho-metodologico}
+    \centering
+    \begin{tikzpicture}[
+        font=\small,
+        node distance=8mm and 8mm,
+        every node/.style={align=center, rounded corners=2pt, draw, thick, inner sep=4pt},
+        phase/.style={fill=gray!15, font=\small\bfseries, minimum width=0.85\linewidth},
+        block/.style={fill=white, text width=4.7cm, minimum height=1.2cm},
+        qual/.style={fill=blue!8, text width=5cm, minimum height=1.6cm},
+        quant/.style={fill=orange!10, text width=5cm, minimum height=1.6cm},
+        triang/.style={fill=green!12, text width=8cm, minimum height=1cm, font=\small\bfseries},
+        output/.style={fill=yellow!18, text width=10cm, minimum height=1cm},
+        >={Stealth[length=2mm]},
+        arrow/.style={->, thick}
+    ]
+        \node[phase] (p1) {Fase 1, TCC I};
+        \node[block, below=of p1] (rev) {Revisão de literatura\\ + defini\c{c}\~ao de problema e objetivos\\ + elabora\c{c}\~ao de instrumentos\\ + termos \'eticos};
+        \node[phase, below=14mm of rev] (p2) {Fase 2, TCC II};
+        \node[qual, below left=of p2.south, xshift=-5mm] (qual) {\textbf{Coleta qualitativa}\\ Entrevistas com gestores\\ (perfis A a D previstos)\\ e contato com fornecedor};
+        \node[quant, below right=of p2.south, xshift=5mm] (quant) {\textbf{Coleta quantitativa}\\ Survey on-line com frequentadores\\ de bares e restaurantes\\ (UTAUT2, 114 respostas)};
+        \node[block, below=of qual, fill=blue!8] (anaqual) {An\'alise de conte\'udo\\ por categorias};
+        \node[block, below=of quant, fill=orange!10] (anaquant) {Estat\'\i{}stica descritiva\\ + cruzamentos\\ por construto UTAUT2};
+        \node[triang, below=12mm of p2 |- anaqual.south, yshift=-4mm] (tri) {Triangula\c{c}\~ao (meta-infer\^encias), desenho concorrente convergente paralelo};
+        \node[output, below=of tri] (outnode) {\textbf{Tr\^es artefatos de contribui\c{c}\~ao}: cat\'alogo de FR/NFR \(\bullet\) problemas recorrentes de UX e acessibilidade \(\bullet\) taxonomia de decis\~oes arquiteturais};
+        \draw[arrow] (p1) -- (rev);
+        \draw[arrow] (rev) -- (p2);
+        \draw[arrow] (p2.south) -- (qual.north);
+        \draw[arrow] (p2.south) -- (quant.north);
+        \draw[arrow] (qual) -- (anaqual);
+        \draw[arrow] (quant) -- (anaquant);
+        \draw[arrow] (anaqual.south) -- (tri.north -| anaqual.south);
+        \draw[arrow] (anaquant.south) -- (tri.north -| anaquant.south);
+        \draw[arrow] (tri) -- (outnode);
+    \end{tikzpicture}
+    \fonte{Elaborado pelo autor.}
+\end{figure}
+
+\section{Instrumentos e questionário}
+
+O roteiro dos gestores organiza-se em seis blocos: abertura e consentimento; caracterização do estabelecimento e do entrevistado; trajetória de adoção; implementação e operação; percepção sobre os clientes; e benefícios, riscos e desafios. A profundidade de cada bloco é adaptada ao perfil do estabelecimento e ao tempo disponível. O roteiro do fornecedor cobre caracterização da empresa, produto, arquitetura e integrações, requisitos, tratamento de dados e acessibilidade, mercado e encerramento. Esses roteiros constam integralmente nos Apêndices~\ref{ap:roteiro} e~\ref{ap:roteiro-fornecedor}.
+
+As entrevistas por videoconferência foram gravadas e transcritas automaticamente pelo Google Meet; as presenciais foram gravadas em áudio e transcritas localmente com Whisper, sem envio do áudio a serviços externos. As transcrições foram revisadas para corrigir termos técnicos e marcar trechos não confirmados. O material original e o revisado permanecem fora do repositório, com acesso restrito.
+
+O questionário (Apêndice~\ref{ap:questionario}) abrange perfil, experiência com cardápios digitais, problemas técnicos e visão geral. Participantes sem experiência recente com cardápios digitais eram direcionados ao fim do formulário antes das questões técnicas. Como o desvio no Google Forms ocorre ao fim da seção, suas respostas às afirmações em escala e à pergunta de frustração também foram excluídas da análise. As 19 afirmações foram divididas em duas grades móveis, de dez e nove linhas, com ordem das afirmações embaralhada para cada respondente.
+
+\begin{table}[!ht]
+    \caption{Mapeamento construto \texttimes{} número de itens \texttimes{} escala no questionário com frequentadores}
+    \label{tab:utaut2-mapeamento}
+    \centering%
+    \begin{minipage}{.98\textwidth}
+        \renewcommand{\arraystretch}{1.2}
+        \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}ccc}
+            \toprule
+            \textbf{Construto} & \textbf{N\textsuperscript{o} de itens} & \textbf{Códigos} & \textbf{Escala} \\
+            \midrule
+            Expectativa de desempenho (PE) & 2 & PE1, PE2 & Likert 1--5 \\
+            Expectativa de esforço (EE) & 2 (1 invertido) & EE1, EE2\textsuperscript{i} & Likert 1--5 \\
+            Influência social (SI) & 2 & SI1, SI2 & Likert 1--5 \\
+            Condições facilitadoras (FC) & 2 & FC1, FC2 & Likert 1--5 \\
+            Motivação hedônica (HM) & 2 (1 invertido) & HM1, HM2\textsuperscript{i} & Likert 1--5 \\
+            Valor (PV) & 2 (1 invertido) & PV1, PV2\textsuperscript{i} & Likert 1--5 \\
+            Hábito (HB) & 2 & HB1, HB2 & Likert 1--5 \\
+            Intenção comportamental (BI) & 2 & BI1, BI2 & Likert 1--5 \\
+            \midrule
+            \multicolumn{4}{l}{\textit{Extensões contextuais}} \\
+            Confiança & 1 & TRU & Likert 1--5 \\
+            Privacidade & 1 & PRI & Likert 1--5 \\
+            Experiência social & 1 & SOC & Likert 1--5 \\
+            \midrule
+            \textbf{Total} & \textbf{19} & --- & --- \\
+            \bottomrule
+        \end{tabular*}
+        \fonte{Elaborado pelo autor a partir de \citeonline{venkatesh2012consumer} e Apêndice~\ref{ap:questionario}. \textsuperscript{i}~Item invertido, recodificado na análise.}
+    \end{minipage}
+\end{table}
+
+A escala de cinco pontos foi adotada em vez dos sete pontos do estudo de \citeonline{venkatesh2012consumer} por facilitar a resposta do público geral, sem perda expressiva de precisão na comparação experimental de \citeonline{dalmoro2013dilemas}. Além dos construtos UTAUT2, foram incluídos itens únicos para confiança, privacidade e experiência social, analisados separadamente. O instrumento foi revisado quanto à clareza, ao desvio de seções e à leitura em dispositivos móveis, mas não passou por piloto externo.
+
+\section{Amostragem e tratamento}
+
+A seleção dos casos exclui redes nacionais ou internacionais franqueadas, operações exclusivamente de delivery e restaurantes de ticket muito alto, pois suas decisões tecnológicas e condições de atendimento diferem das de estabelecimentos independentes de pequeno ou médio porte. A divulgação do questionário ocorreu por grupos de WhatsApp, redes sociais e canais acadêmicos, com pedido de repasse entre contatos. A mensagem evitou sugerir uma avaliação positiva ou negativa dos cardápios digitais.
+
+Na análise quantitativa, os itens invertidos EE2, HM2 e PV2 são recodificados por $x' = 6-x$. Calculam-se frequências das perguntas de perfil e de múltipla escolha; médias, medianas, dispersão e concordância por item e construto; e cruzamentos exploratórios por faixa etária, frequência de ida a bares e restaurantes e localidade. A correlação entre pares de itens orienta a leitura exploratória: escores de pares com associações menores são acompanhados da análise item a item, sem alegar validação psicométrica dos construtos. As extensões contextuais de item único são analisadas separadamente. Os respondentes de outras cidades compõem apenas a comparação complementar.
+
+As respostas abertas são organizadas em categorias para comparação com as entrevistas. Para cada categoria, a integração examina evidências convergentes, divergentes e complementares \cite{venkatesh2013bridging}. \pendente{registrar apenas os procedimentos de validação qualitativa efetivamente realizados, após concluir a codificação das entrevistas}

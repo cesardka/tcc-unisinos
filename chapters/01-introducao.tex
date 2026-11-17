@@ -11,7 +11,7 @@ Apesar do crescimento da adoção e do peso econômico do setor, é possível id
 \section{Tema}
 \label{sec:tema}
 
-O tema deste estudo é a adoção de cardápios digitais com autoatendimento em bares e restaurantes brasileiros depois de 2020, com foco em Porto Alegre. No mercado, o nome ``cardápio digital'' é usado para soluções bem diferentes entre si, que podem ser organizadas em três tipos \cite{chen2021consumer,santos2024gerador}. O primeiro é o PDF estático, acessado por link ou QR Code, que só permite a leitura. O segundo é o web menu navegável, com catálogo, fotos, filtros (vegano, sem glúten) e busca, mas sem pedido. O terceiro é o self-ordering completo, em que o cliente faz o pedido pela própria interface, com integração com a cozinha, com o sistema de PDV/ERP e, às vezes, com o pagamento. Essa tipologia é detalhada na Seção~\ref{sec:cardapios-digitais} e na Tabela~\ref{tab:tipologia-cardapio}. Quando a interface permite que o próprio cliente registre e envie o pedido para a cozinha, sem passar pelo garçom, temos um cenário de autoatendimento, que é o foco deste trabalho.
+O tema deste estudo são cardápios digitais em bares e restaurantes de Porto Alegre depois de 2020, com foco na decisão de oferecer ou não autoatendimento transacional. O termo também abrange PDFs estáticos e web menus para consulta, que não devem ser confundidos com sistemas em que o cliente envia o pedido \cite{chen2021consumer,santos2024gerador}. A Tabela~\ref{tab:tipologia-cardapio} distingue essas modalidades.
 
 A transformação digital no setor de alimentação fora do lar começou antes da pandemia, mas foi muito acelerada por ela. \citeonline{harms2021effectuation} estudaram empreendedores do ramo na Alemanha durante a primeira onda da COVID-19 e identificaram caminhos diferentes de inovação, alguns mais planejados e outros feitos por ajustes contínuos, que levaram à adoção de soluções digitais como resposta à incerteza. No Brasil, \citeonline{costa2021implicacoes} mostraram, a partir de entrevistas com pequenos negócios de alimentação, que a pandemia funcionou como um empurrão externo para o uso de tecnologia, mesmo quando os donos não tinham essa intenção antes. Levar essa tecnologia para o dia a dia de bares e restaurantes envolve, ao mesmo tempo, questões de operação (custo, integração com a cozinha, manutenção do cardápio), de experiência do usuário (clareza visual, dificuldades de uso, acessibilidade) e jurídicas (tratamento dos dados pessoais coletados em formulários).
 
@@ -26,9 +26,9 @@ O escopo da pesquisa é delimitado em quatro eixos.
 
 \textbf{Recorte temporal.} O período de interesse vai de março de 2020 a 2026, olhando principalmente para o ``antes'' e o ``depois'' da pandemia. Entram no recorte os estabelecimentos que já existiam antes da pandemia e que adotaram, mantiveram ou mudaram o formato do cardápio, e também os que abriram às vésperas da pandemia ou depois dela, seja já operando com autoatendimento digital (cenário ``nascido digital''), seja escolhendo desde o início trabalhar apenas com cardápio físico.
 
-\textbf{Recorte funcional.} São estudados cardápios digitais com autoatendimento em diferentes formatos de hardware: (i) acesso pelo celular do próprio cliente, normalmente por QR Code que abre uma página web (PDF, web menu ou self-ordering completo); e (ii) uso de dispositivos do estabelecimento, como tablets nas mesas ou totens. O que une esses formatos é o cliente fazer sozinho, em uma interface digital, pelo menos uma etapa que antes dependia de um funcionário. Isso vai desde apenas consultar o cardápio (como em um PDF, em que o garçom ainda anota o pedido) até consultar, montar o pedido, registrar a comanda e pagar (como em uma solução de self-ordering integrada). Ficam fora do escopo os sistemas de gestão de cozinha (Kitchen Display Systems), as plataformas de delivery (iFood, Rappi, Uber Eats), os sistemas de gestão (ERP) e os aplicativos próprios que precisam ser instalados pela loja de aplicativos, embora possam aparecer como contexto.
+\textbf{Recorte funcional.} Distinguem-se três modalidades: (i) PDF ou imagem digital, que só permite consultar; (ii) web menu navegável, que organiza a consulta, mas não registra o pedido; e (iii) autoatendimento transacional, que permite enviar o pedido e, por vezes, pagar. A interface pode estar no celular do cliente, em um tablet ou em um totem. O estudo de adoção privilegia a terceira modalidade e inclui estabelecimentos que não a adotaram como contraste. As respostas dos frequentadores podem se referir às três modalidades, sem permitir atribuir a cada uma os mesmos resultados; as auditorias avaliam somente as páginas públicas selecionadas, não o fluxo completo de pedido. Sistemas de gestão, cozinha e delivery entram apenas como contexto das integrações. Aplicativos que exigem instalação ficam fora do recorte.
 
-\textbf{Recorte de sujeitos.} A pesquisa envolve dois grupos principais: (i) gestores ou proprietários dos estabelecimentos escolhidos como estudos de caso; e (ii) frequentadores de bares e restaurantes de Porto Alegre, que respondem a um questionário sem ligação direta com esses estabelecimentos. Assim, é possível comparar a percepção de quem oferece o serviço com a experiência de quem usa. De forma complementar, é ouvido também um representante de uma empresa fornecedora de cardápios digitais, que traz a visão de quem constrói e mantém a solução.
+\textbf{Recorte de sujeitos.} A pesquisa envolve gestores dos estabelecimentos estudados e frequentadores que responderam a um questionário sem ligação direta com os casos. Uma entrevista com fornecedor foi prevista como fonte complementar, mas ainda precisa ser confirmada. A comparação entre os grupos é temática, não uma avaliação dos clientes de cada estabelecimento.
 
 \section{Problema}
 \label{sec:problema}
@@ -36,10 +36,10 @@ O escopo da pesquisa é delimitado em quatro eixos.
 A pergunta que orienta este trabalho é:
 
 \begin{quote}
-Como bares e restaurantes de Porto Alegre que adotaram cardápios digitais com autoatendimento desde 2020 percebem os benefícios, riscos e desafios dessa transição, e como seus clientes vivenciam essa interação?
+Como as escolhas de adoção e operação de cardápios digitais em bares e restaurantes de Porto Alegre desde 2020 se relacionam com a experiência relatada por frequentadores, e que requisitos e problemas técnicos podem ser identificados a partir dos casos, do questionário e das auditorias?
 \end{quote}
 
-A pergunta junta duas perspectivas que a literatura costuma tratar separadamente. A do estabelecimento aparece em geral em estudos sobre adoção de tecnologia e inovação de modelo de negócio \cite{venkatesh2003useracceptance,harms2021effectuation,costa2021implicacoes}. A do cliente aparece em estudos sobre aceitação e comportamento do consumidor \cite{venkatesh2012consumer,costa2022comportamento,silva2024design}. Este trabalho fica no encontro dessas duas visões, no contexto pós-2020 e em Porto Alegre.
+A pergunta articula escolhas relatadas pelos estabelecimentos \cite{venkatesh2003useracceptance,costa2021implicacoes}, experiência dos frequentadores \cite{venkatesh2012consumer,costa2022comportamento,silva2024design} e qualidade das interfaces observadas. Os respondentes do questionário não são necessariamente clientes dos casos; por isso, o confronto entre fontes é temático, não uma medida direta do efeito de uma escolha específica sobre seus clientes. Os requisitos e os problemas de interface são contribuições técnicas; as decisões internas de arquitetura só podem ser discutidas quando houver evidência além do relato do gestor.
 
 \section{Objetivos}
 \label{sec:objetivos}
@@ -47,14 +47,14 @@ A pergunta junta duas perspectivas que a literatura costuma tratar separadamente
 \subsection{Objetivo geral}
 \label{sec:obj-geral}
 
-Analisar, por meio de um estudo de caso múltiplo e de um questionário com frequentadores, como a adoção de cardápios digitais com autoatendimento a partir de 2020 afeta a operação de bares e restaurantes de Porto Alegre e a experiência de seus clientes.
+Analisar as escolhas de adoção e operação de cardápios digitais em estabelecimentos de Porto Alegre, a experiência relatada por frequentadores e os requisitos e problemas técnicos identificados por entrevistas, questionário e auditorias de páginas públicas.
 
 \subsection{Objetivos específicos}
 \label{sec:obj-especificos}
 
 \begin{alineas}
 	\item caracterizar o estado da arte sobre cardápios digitais, QR menus e self-ordering no food service;
-	\item levantar, com gestores dos estabelecimentos estudados, motivações, custos, decisões de arquitetura (sistema próprio ou plataforma terceirizada, integrações com PDV/ERP e cozinha, dependência de internet) e requisitos funcionais e não funcionais importantes para a operação;
+	\item levantar, com gestores dos estabelecimentos estudados, motivações, custos, escolhas de contratação e integração relatadas, dependência de internet e requisitos importantes para a operação;
 	\item coletar, por questionário, a percepção de frequentadores sobre usabilidade, acessibilidade, confiança, valor percebido e intenção de uso, com base na UTAUT2;
 	\item comparar os requisitos valorizados por gestores e por clientes, apontando convergências, divergências e conflitos, e reunir esses requisitos em um quadro consolidado;
 	\item discutir aspectos de UX e acessibilidade observados nas interfaces estudadas, com base em heurísticas de usabilidade, diretrizes de acessibilidade e inclusão digital;

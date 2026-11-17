@@ -1,7 +1,7 @@
 \chapter{Discussão}
 \label{ch:discussao}
 
-Este capítulo interpreta os resultados do Capítulo~\ref{ch:resultados} com base na fundamentação teórica e organiza os achados nos três artefatos de contribuição anunciados na Seção~\ref{sec:justificativa}: um catálogo de requisitos funcionais e não funcionais (Seção~\ref{sec:disc-requisitos}), um conjunto de problemas recorrentes de usabilidade e acessibilidade (Seção~\ref{sec:disc-ux}) e uma taxonomia das decisões de arquitetura observadas nos casos (Seção~\ref{sec:disc-arquitetura}). Antes disso, a Seção~\ref{sec:disc-adocao} discute o padrão geral de aceitação encontrado entre os frequentadores, e a Seção~\ref{sec:disc-triangulacao} confronta a visão dos gestores com a dos clientes.
+Esta seção interpreta os resultados da Seção~\ref{ch:resultados} com base na fundamentação teórica e organiza os achados nos três artefatos de contribuição anunciados na Seção~\ref{sec:justificativa}: um catálogo de requisitos funcionais e não funcionais (Seção~\ref{sec:disc-requisitos}), um conjunto de problemas recorrentes de usabilidade e acessibilidade (Seção~\ref{sec:disc-ux}) e uma taxonomia das decisões de arquitetura observadas nos casos (Seção~\ref{sec:disc-arquitetura}). Antes disso, a Seção~\ref{sec:disc-adocao} discute o padrão geral de aceitação encontrado entre os frequentadores, e a Seção~\ref{sec:disc-triangulacao} confronta a visão dos gestores com a dos clientes.
 
 %=======================================================================
 \section{Aceitação do cardápio digital pelos frequentadores}
@@ -9,7 +9,7 @@ Este capítulo interpreta os resultados do Capítulo~\ref{ch:resultados} com bas
 
 Os resultados do questionário mostram uma situação que pode parecer contraditória: a maioria dos respondentes usa cardápios digitais com frequência e acredita que eles vieram para ficar, mas prefere o cardápio físico (76\%). Esse quadro se parece com o descontentamento encontrado por \citeonline{costa2022comportamento} entre consumidores de Brasília, e contrasta com a alta intenção de uso relatada por \citeonline{fioreti2026aplicativos} no Maranhão. Uma explicação possível é a diferença de recorte: o trabalho de Fioreti et al. olhou para aplicativos de autoatendimento em geral, enquanto este estudo pergunta especificamente sobre o cardápio usado na mesa de bares e restaurantes, situação em que o garçom continua sendo uma alternativa disponível. Do lado da oferta, pesquisas da ABRASEL indicam que cerca de 40\% dos estabelecimentos adotam cardápio digital e que parte dos que adotaram durante a pandemia deixou de usar \cite{abrasel2023qrcode,abraselsc2025cardapio}, o que também sugere uma adoção estável, mas não universal.
 
-Olhando pelos construtos da UTAUT2, a barreira principal não parece ser aprender a usar. A expectativa de esforço e as condições facilitadoras foram os construtos mais bem avaliados, enquanto a expectativa de desempenho foi a mais baixa: poucos respondentes acham o cardápio digital mais prático que o físico. Isso é coerente com o modelo, que coloca a expectativa de desempenho como um dos principais determinantes da intenção de uso \cite{venkatesh2012consumer}, e com a ideia, presente desde o TAM, de que a utilidade percebida pesa mais do que a facilidade \cite{davis1989perceived}. Neste estudo, a expectativa de desempenho e o hábito foram os construtos mais correlacionados com a intenção de uso, enquanto a expectativa de esforço teve correlação menor. Em outras palavras, o cardápio digital é visto como fácil, mas pouco útil, e quem não criou o hábito de usá-lo tem pouca intenção de continuar.
+Nos 90 respondentes expostos de Porto Alegre e região metropolitana, aprender a usar parece ser uma barreira menor do que perceber vantagem no uso. A expectativa de esforço teve média de 3,53, enquanto a expectativa de desempenho teve média de 2,22. Esta última e o hábito apresentaram as maiores correlações descritivas com a intenção de uso \cite{venkatesh2012consumer,davis1989perceived}. Isso não demonstra que mudar a utilidade ou formar um hábito causaria maior intenção; indica uma associação nesta amostra de conveniência. As médias de influência social, condições facilitadoras, valor e motivação hedônica precisam ser acompanhadas da análise de seus itens, cuja correlação interna foi baixa (Seção~\ref{sec:res-construtos}).
 
 Esse resultado também ajuda a entender por que a solução mais citada nas respostas abertas foi oferecer as duas opções. Assim como \citeonline{oliveira2017autoatendimento} observaram em uma rede de fast food, o autoatendimento pode ser bem avaliado em alguns aspectos sem ser decisivo para a escolha do cliente. Em Porto Alegre, a exigência de manter o cardápio físico \cite{camarapoa2024cardapio} acaba coincidindo com o que a maioria dos respondentes diz preferir. A diferença de idade observada, com os respondentes de 35 anos ou mais preferindo ainda mais o físico, reforça a importância dessa alternativa, especialmente porque pessoas mais velhas tendem a ter mais dificuldade com interfaces pequenas e densas \cite{mclaughlin2020designing,lara2010acessibilidade}.
 
@@ -17,7 +17,7 @@ Esse resultado também ajuda a entender por que a solução mais citada nas resp
 \section{Catálogo de requisitos}
 \label{sec:disc-requisitos}
 
-Os requisitos a seguir foram extraídos das respostas abertas do questionário, dos problemas técnicos relatados e das entrevistas com gestores. Cada requisito é classificado como funcional (RF) ou não funcional (RNF), conforme \citeonline{sommerville2016software}, e os não funcionais são associados à característica de qualidade correspondente da ISO/IEC 25010 \cite{iso25010}. A coluna ``Origem'' indica se a necessidade apareceu entre os clientes (C), entre os gestores (G) ou nas auditorias técnicas (A), podendo combinar mais de uma fonte.
+Os requisitos a seguir são uma síntese preliminar das respostas abertas, dos problemas assinalados no questionário, das entrevistas dos casos C e D e das auditorias das quatro páginas. Cada entrada traduz uma necessidade ou falha relatada ou verificada em uma capacidade desejável, classificada como funcional (RF) ou não funcional (RNF) \cite{sommerville2016software,iso25010}. Na coluna ``Origem'', C indica frequentadores, G indica gestores e A indica auditoria. A combinação de letras aponta fontes de apoio, não validação independente: ainda é preciso vincular cada ID ao trecho ou à medição original e revisar ambiguidades com os participantes, quando possível.
 
 \begin{table}[!ht]
     \caption{Catálogo preliminar de requisitos para soluções de cardápio digital com autoatendimento}
@@ -44,10 +44,10 @@ Os requisitos a seguir foram extraídos das respostas abertas do questionário, 
             R12 & Aplicar atualizações do sistema sem interromper a operação e fora dos horários de pico & RNF / confiabilidade (disponibilidade) & G \\
             R13 & Validar os dados de contato informados no cadastro (por exemplo, o telefone) & RF & G \\
             R14 & Manter a interface estável entre versões, avisando antes de mudanças relevantes & RNF / usabilidade & G \\
-            R15 & Não carregar rastreadores nem cookies de terceiros apenas para exibir o cardápio & RNF / segurança (privacidade) & A \\
+            R15 & Minimizar cookies de terceiros ao consultar o cardápio e justificar os estritamente necessários & RNF / privacidade & A \\
             \bottomrule
         \end{tabular*}
-        \fonte{Elaborado pelo autor a partir das respostas ao questionário e das entrevistas.}
+        \fonte{Elaborado pelo autor a partir do questionário, dos casos C e D e das auditorias; catálogo preliminar.}
     \end{minipage}
 \end{table}
 
@@ -55,7 +55,7 @@ A entrevista do Caso D, que escolheu não usar cardápio digital, ainda assim co
 
 O Caso C reforça R02, ao pausar na hora itens que acabaram, e R07, ao manter duas conexões de internet e o celular como reserva. Ele também acrescenta requisitos que só aparecem do lado do gestor: atualizações que não interrompam a operação (R12), validação dos dados de contato no cadastro (R13) e estabilidade da interface entre versões (R14). Este último dialoga com a dificuldade dos clientes idosos relatada pelo mesmo caso e com a preferência pelo cardápio físico entre os respondentes mais velhos do questionário.
 
-As auditorias técnicas (Seção~\ref{sec:res-avaliacao-tecnica}) dão evidência objetiva a dois requisitos que, até então, apoiavam-se em relatos. O R06 é confirmado pelo tempo de carregamento de 8 a 21 segundos em rede móvel simulada, coerente com os relatos de páginas que não carregam no questionário; e o R09, pelo bloqueio de zoom nas quatro páginas auditadas. As auditorias também acrescentam o R15, já que as páginas carregam de sete a sessenta cookies de terceiros apenas para exibir o cardápio, o que dialoga com a discussão sobre privacidade da Seção~\ref{sec:lgpd}.
+As auditorias técnicas (Seção~\ref{sec:res-avaliacao-tecnica}) dão evidência objetiva a dois requisitos que, até então, apoiavam-se em relatos. O R06 é sustentado pelo tempo de carregamento de 8 a 21 segundos em rede móvel simulada, coerente com os relatos de páginas que não carregam; o R09, pelo bloqueio de zoom nas quatro páginas. A contagem de sete a sessenta cookies de terceiros justifica investigar o R15, mas não comprova, por si só, rastreamento indevido ou violação da LGPD. R02, R07 e R10 têm apoio em relatos dos dois grupos; R12 a R14 vêm apenas do caso C. A vantagem operacional de atualizar itens não elimina o problema de comparação e leitura relatado pelos frequentadores.
 
 \pendente{acrescentar os requisitos dos casos A e B e do fornecedor e comentar onde gestores e clientes concordam e onde entram em conflito}
 
@@ -63,7 +63,7 @@ As auditorias técnicas (Seção~\ref{sec:res-avaliacao-tecnica}) dão evidênci
 \section{Problemas recorrentes de usabilidade e acessibilidade}
 \label{sec:disc-ux}
 
-A Tabela~\ref{tab:problemas-ux} relaciona os problemas mais citados pelos frequentadores às heurísticas de \citeonline{nielsen1994heuristics} e, quando aplicável, aos critérios de sucesso das WCAG~2.2 \cite{wcag22}.
+A Tabela~\ref{tab:problemas-ux} relaciona problemas relatados às heurísticas de \citeonline{nielsen1994heuristics} e, quando aplicável, aos critérios das WCAG~2.2 \cite{wcag22}. As três linhas identificadas como ``auditoria'' são verificações das páginas selecionadas, não relatos de usuários; os demais mapeamentos são hipóteses de interpretação e não demonstram, por si, violação de uma diretriz.
 
 % Frequência prévia dos problemas técnicos (n = 41): layout confuso 71%;
 % QR Code que não abre 68%; página que não carrega 63%; cadastro ou dados
@@ -98,16 +98,18 @@ A Tabela~\ref{tab:problemas-ux} relaciona os problemas mais citados pelos freque
     \end{minipage}
 \end{table}
 
-\pendente{comentar cada problema com trechos das respostas abertas e das entrevistas; discutir a diferença entre QR Code no celular do cliente e tablet ou totem do estabelecimento, que vários respondentes preferem}
+No caso D, o entrevistado sintetizou o problema de comparar itens: ``no papel não tem scroll'' (Seção~\ref{sec:res-caso-d}). Isso se aproxima dos relatos de idas e vindas no questionário e da heurística de reconhecimento em vez de memorização. Não é, porém, uma falha verificada nas páginas auditadas. Em contraste, o bloqueio de zoom foi observado nas quatro páginas, relacionado ao critério WCAG~2.2 1.4.4; não há teste com usuários que permita medir seu impacto neste estudo. A diferença entre uso no celular do cliente e em tablet ou totem ainda precisa ser tratada por modalidade, sem supor que as experiências sejam equivalentes.
+
+\pendente{associar aos problemas os trechos verificados das respostas abertas e das entrevistas e discutir separadamente celular, tablet e totem}
 
 %=======================================================================
 \section{Decisões de arquitetura nos casos estudados}
 \label{sec:disc-arquitetura}
 
-A taxonomia proposta organiza as decisões de arquitetura em seis dimensões, derivadas da Seção~\ref{sec:arquitetura} e do Bloco~2 do roteiro de entrevista, e posiciona cada caso estudado em cada dimensão \cite{bass2021software,richards2020fundamentals}. A coluna do fornecedor descreve a solução que ele oferece; no perfil D, que não usa cardápio digital, as dimensões são preenchidas com as razões da escolha quando o gestor as mencionou.
+A tabela organiza seis dimensões de contratação e operação, derivadas da Seção~\ref{sec:arquitetura} e do roteiro de entrevista \cite{bass2021software,richards2020fundamentals}. As células preenchidas dos casos C e D refletem relatos dos gestores, não inspeção da implementação das plataformas. No caso D, dizem respeito ao sistema de gestão contratado e à escolha de não oferecer cardápio digital ao cliente. As células vazias permanecem sem evidência; a coluna do fornecedor só poderá ser preenchida se a entrevista ocorrer.
 
 \begin{table}[!ht]
-    \caption{Taxonomia de decisões de arquitetura observadas nos casos}
+    \caption{Dimensões técnicas relatadas pelos gestores nos casos C e D}
     \label{tab:taxonomia-arquitetura}
     \centering%
     \begin{minipage}{.98\textwidth}
@@ -125,11 +127,11 @@ A taxonomia proposta organiza as decisões de arquitetura em seis dimensões, de
             Identificação do cliente (cadastro, crédito) & & & Nome, telefone e endereço no delivery & Nenhuma & \\
             \bottomrule
         \end{tabular*}
-        \fonte{Elaborado pelo autor a partir das entrevistas com gestores e com o fornecedor.}
+        \fonte{Elaborado pelo autor a partir das entrevistas dos casos C e D. Células vazias indicam informação ainda não obtida.}
     \end{minipage}
 \end{table}
 
-As auditorias acrescentam uma observação de arquitetura que vale para as duas plataformas analisadas: os cardápios são aplicações que dependem de baixar entre 1,3 e 2~MB de JavaScript antes de exibir qualquer conteúdo útil. Para uma tarefa essencialmente de leitura, como consultar um cardápio, alternativas como páginas renderizadas no servidor, conteúdo estático com armazenamento em cache ou aplicações web progressivas com funcionamento offline reduziriam o tempo de carregamento e a dependência da conexão, atendendo a R06 e R07.
+As auditorias mostram que as páginas analisadas transferem entre 1,3 e 2~MB de JavaScript e demoram para exibir o conteúdo principal em rede simulada. Isso motiva investigar alternativas como conteúdo estático, cache e renderização no servidor para a consulta do cardápio. As auditorias não permitem identificar a arquitetura interna das plataformas nem afirmar que essas alternativas reduziriam o tempo de carregamento sem um protótipo e novas medições.
 
 \pendente{preencher a tabela com os dados das entrevistas e discutir as escolhas entre desenvolver e contratar (build versus buy) em pequenos estabelecimentos}
 
@@ -144,5 +146,9 @@ Seguindo a proposta de meta-inferências de \citeonline{venkatesh2013bridging}, 
 \textbf{Divergências.} A principal diferença está no valor percebido. Para o Ohana, o sistema traz ganhos claros na operação, como o pagamento antecipado no delivery e pedidos que chegam prontos, enquanto os clientes, no salão, quase não veem o cardápio digital como mais prático. O Caso D mostra o outro lado: mesmo com o módulo de cardápio digital disponível sem custo, os sócios escolheram o físico por preferência pessoal e pela experiência de atendimento, uma decisão parecida com a da maioria dos respondentes.
 
 \textbf{Complementaridades.} Cada fonte acrescentou algo que as outras não mostravam. As entrevistas revelaram problemas invisíveis para o cliente, como as atualizações do sistema que travam a operação no horário de pico e a falta de validação dos dados de cadastro. O questionário trouxe a escala dos problemas de uso, como layout confuso e QR Code que não abre. As auditorias deram medidas objetivas para problemas que, até então, apareciam só como relato, como a lentidão e o bloqueio do zoom, que fere as diretrizes de acessibilidade \cite{wcag22} e afeta justamente o público com mais dificuldade.
+
+\textbf{Implicações técnicas.} No caso C, contratar uma solução pronta facilitou o pedido e a atualização de itens, mas criou dependência das atualizações e da conexão do fornecedor. As auditorias mostram que desempenho e ampliação da página precisam ser considerados mesmo quando o atendimento pode continuar no papel. No caso D, o sistema interno integra pedidos e estoque sem impor uma interface ao cliente. O contraste ajuda a separar digitalização da operação de autoatendimento no salão. A necessidade de atualizar itens (R02) pode coexistir com o desejo de comparar opções sem rolagem (R10); oferecer apenas o QR Code não resolve esse conflito de experiência. Essas relações entre decisão operacional, requisito e problema de interface são a contribuição técnica pretendida, ainda limitada aos casos concluídos.
+
+\textbf{Construção e validação.} Os três artefatos são sínteses exploratórias, não soluções avaliadas em uso. A classificação dos requisitos segue a distinção funcional/não funcional; os problemas são relacionados a heurísticas e WCAG somente quando aplicáveis; as dimensões de arquitetura derivam do roteiro, mas não foram verificadas no código ou na infraestrutura. Ainda não houve revisão desses artefatos por profissionais independentes. \pendente{se viável, revisar o catálogo, o mapeamento de problemas e as dimensões técnicas com um ou dois profissionais, registrando critério, alterações e discordâncias; senão, explicitar a ausência de validação na conclusão}
 
 \pendente{acrescentar as meta-inferências dos casos A e B e da entrevista com o fornecedor}

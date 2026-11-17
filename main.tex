@@ -1,5 +1,5 @@
 %
-% Exemplo LaTeX de monografia UNISINOS
+% Artigo de TCC com capa e folha de rosto da UNISINOS
 %
 % Elaborado com base nas orientações dadas no documento
 % ``GUIA PARA ELABORAÇÃO DE TRABALHOS ACADÊMICOS''
@@ -26,7 +26,7 @@
 % - english,brazilian,french,german,etc.: idiomas usados no documento.
 %   Deve ser colocado por último o idioma principal.
 %=======================================================================
-\documentclass[twoside,english,brazilian]{UNISINOSmonografia}
+\documentclass[artigo,english,brazilian]{UNISINOSmonografia}
 \usepackage[utf8]{inputenc} % charset do texto (utf8, latin1, etc.)
 \usepackage[T1]{fontenc} % encoding da fonte (afeta a sep. de sílabas)
 \usepackage{graphicx} % comandos para gráficos e inclusão de figuras
@@ -38,6 +38,7 @@
 \usepackage{booktabs} % regras tipograficamente superiores em tabelas (toprule, midrule, bottomrule)
 \usepackage[section]{placeins} % cria barreira automática antes de cada \section, impedindo floats de vazarem para a seção seguinte
 \usepackage[hidelinks,bookmarks=true,bookmarksnumbered=true,unicode=true]{hyperref} % sumário, referências e citações clicáveis (sem cor de destaque, para impressão limpa)
+\usepackage{xurl} % permite quebrar URLs longas nas referências
 
 % Parâmetros de posicionamento de floats. Os defaults do LaTeX são
 % conservadores demais para documentos com várias tabelas grandes:
@@ -89,7 +90,7 @@
 \unidade{Unidade Acadêmica de Graduação}
 \curso{Curso de Bacharelado em Ciência da Computação}
 \natureza{%
-Monografia apresentada como requisito parcial para obtenção do título de Bacharel em Ciência da Computação, pelo Curso de Ciência da Computação da Universidade do Vale do Rio dos Sinos (UNISINOS)
+Artigo apresentado como requisito parcial para obtenção do título de Bacharel em Ciência da Computação, pelo Curso de Ciência da Computação da Universidade do Vale do Rio dos Sinos (UNISINOS)
 }
 \local{Porto Alegre}
 \ano{2026}
@@ -117,51 +118,11 @@ Monografia apresentada como requisito parcial para obtenção do título de Bach
 % Início do documento.
 %=======================================================================
 \begin{document}
+\hypersetup{pageanchor=false}
 \capa
 \folhaderosto
-%\folhadeaprovacao % não deve ser incluída nos TCCs
-
-%=======================================================================
-% Dedicatória (opcional).
-%
-% O texto é normalmente colocado na parte de baixo da página, alinhado
-% à direita.  Mas a formatação é basicamente livre.  Só não se escreve
-% a palavra 'dedicatória'.
-%=======================================================================
-\begin{dedicatoria}
-A todos os pilares que sustentaram esta ponte e tornaram a jornada possível.\\[1ex] % quebra a linha dando um espaçamento maior
-Olavo, Regina, Cristina, Marina, Vanessa e Fernanda\\[4ex] % quebra a linha dando um espaçamento maior
-
-``\textit{Eu sou o conjunto dessas pessoas\\e felizmente sou gordo o bastante pra que todas caibam no meu corpinho.}''\\[1ex]
---- \textsc{Jô Soares}
-\end{dedicatoria}
-
-%=======================================================================
-% Agradecimentos (opcional).
-%=======================================================================
-\begin{agradecimentos}
-Ao meu orientador, \textbf{Guilherme Lacerda}, pela disponibilidade, pela paciência (acima de tudo), pelas leituras atentas e pelo cuidado em apontar caminhos sem fechar portas, demonstrando que conduzir uma orientação assim é, em si, um exercício de bom design.
-
-Ao \textbf{Mateus Raeder}, coordenador do curso e professor que me acompanhou do primeiro dia ao último dessa caminhada, pela generosidade em me dar oportunidades dentro e fora da sala de aula, pelo afeto, por ser meu confidente, e por ser esse farol no curso de Ciência da Computação acessível a todos os alunos nos momentos bons e ruins.
-
-À \textbf{Vanessa Schenkel}, que foi minha parceira de crime nos anos mais duros da graduação, pelo carinho, pelo companheirismo nos projetos dentro e fora da universidade, e por ser a pessoa que mais me ajudou a voar alto, mas sem que eu perdesse o chão. Não fosse por ela, com certeza eu não estaria nem próximo de conseguir escrever este trabalho.
-
-Aos amigos que estiveram comigo nessa jornada, em especial ao \textbf{Vinícius Tessis Cruz}, e à \textbf{Maisa Drum Ferreira}, pela paciência nos dias longos, pelo riso nos dias curtos e por seguirem por perto mesmo quando o TCC virou assunto recorrente por muitos anos, muito mais do que deveria.
-
-A todos que, de alguma forma, ajudaram este trabalho a ser construído, direta ou indiretamente: o meu muito obrigado.
-\end{agradecimentos}
-
-%=======================================================================
-% Epígrafe (opcional).
-%
-% ``[...] o autor apresenta uma citação, seguida de indicação de autoria,
-% relacionada com a matéria tratada no corpo do trabalho. Podem, também,
-% constar epígrafes nas folhas de aberturas das seções primárias.''
-%=======================================================================
-\begin{epigrafe}
-\foreignlanguage{english}{``\textit{If you have difficulties, remember, it's not your fault: it's bad design.}''}\\
-\cite[p.~314]{norman2013design}
-\end{epigrafe}
+\artigoheader
+\hypersetup{pageanchor=true}
 
 %=======================================================================
 % Resumo em Português.
@@ -169,7 +130,7 @@ A todos que, de alguma forma, ajudaram este trabalho a ser construído, direta o
 % A recomendação é para 150 a 500 palavras.
 %=======================================================================
 \begin{abstract}
-Esta pesquisa investiga como bares e restaurantes de Porto Alegre adotaram, ou escolheram não adotar, cardápios digitais com autoatendimento desde 2020, e como seus clientes vivenciam essa interação. O trabalho usa métodos mistos e três lentes da Ciência da Computação: Engenharia de Requisitos, Interação Humano-Computador e Arquitetura de Software. A parte qualitativa é um estudo de caso múltiplo com estabelecimentos de quatro perfis (pré-2020 que adotou, pré-2020 que resistiu, nascido digital e pós-2020 que optou pelo cardápio físico), complementado por entrevista com um fornecedor de cardápios digitais. A parte quantitativa é um questionário baseado na UTAUT2, respondido por 114 frequentadores, 92 deles de Porto Alegre e região metropolitana. Além disso, quatro cardápios digitais públicos, de duas plataformas, foram auditados com o Lighthouse. Os resultados mostram que, embora 64\% dos respondentes acreditem que os cardápios digitais vieram para ficar, 76\% preferem o cardápio físico. A facilidade de uso foi bem avaliada, mas a utilidade percebida foi baixa, e foi justamente a utilidade, junto com o hábito, o construto mais associado à intenção de continuar usando. As entrevistas indicam que a escolha pelo digital depende mais da proposta do estabelecimento do que da tecnologia disponível, e revelam problemas invisíveis ao cliente, como atualizações que interrompem a operação. As auditorias mostraram páginas pesadas, que levam de 8 a 21 segundos para exibir o conteúdo principal em rede móvel lenta, e o bloqueio do zoom em todos os cardápios analisados. Como contribuições, o trabalho apresenta um catálogo de requisitos funcionais e não funcionais, um conjunto de problemas recorrentes de usabilidade e acessibilidade e uma taxonomia de decisões de arquitetura, e indica que manter as duas opções de cardápio é a solução mais defendida por clientes e gestores.
+Esta pesquisa investiga as escolhas de adoção e operação de cardápios digitais em bares e restaurantes de Porto Alegre, a experiência relatada por frequentadores e os problemas técnicos das interfaces. Emprega métodos mistos: entrevistas com gestores, questionário baseado na UTAUT2 e auditorias de páginas públicas com o Lighthouse. O desenho prevê quatro perfis de estabelecimento, mas esta versão apresenta resultados de dois casos, um com atendimento híbrido e outro que escolheu manter apenas o cardápio físico. A entrevista com fornecedor ainda não foi confirmada. O questionário recebeu 114 respostas, das quais 92 são de Porto Alegre e região metropolitana. Nessa base, 76\% preferem o cardápio físico, embora a facilidade de uso do digital seja avaliada mais favoravelmente que sua utilidade. As quatro páginas auditadas levaram de 8 a 21 segundos para exibir o conteúdo principal em rede móvel simulada e bloquearam a ampliação da tela. Os resultados disponíveis permitem propor um catálogo preliminar de requisitos, um mapeamento de problemas de usabilidade e acessibilidade e dimensões técnicas relatadas pelos gestores. A conclusão é parcial: faltam entrevistas previstas e a validação desses artefatos; as associações no questionário não estabelecem causalidade nem representam todos os frequentadores da cidade.
 
 \pendente{atualizar o resumo após as entrevistas dos casos A e B e do fornecedor}
 \end{abstract}
@@ -183,7 +144,7 @@ Esta pesquisa investiga como bares e restaurantes de Porto Alegre adotaram, ou e
 %=======================================================================
 \begin{otherlanguage}{english}
 \begin{abstract}
-This research investigates how bars and restaurants in Porto Alegre have adopted, or chosen not to adopt, digital self-ordering menus since 2020, and how their customers experience this interaction. The study uses mixed methods and three Computer Science lenses: Requirements Engineering, Human-Computer Interaction and Software Architecture. The qualitative part is a multiple case study with establishments of four profiles (pre-2020 adopter, pre-2020 resistant, digital-native and post-2020 printed-menu-by-choice), complemented by an interview with a digital menu vendor. The quantitative part is a UTAUT2-based survey answered by 114 patrons, 92 of them from Porto Alegre and its metropolitan area. In addition, four public digital menus from two platforms were audited with Lighthouse. Results show that, although 64\% of respondents believe digital menus are here to stay, 76\% prefer printed menus. Ease of use was rated positively, but perceived usefulness was low, and usefulness, together with habit, was the construct most associated with the intention to keep using digital menus. The interviews suggest that the choice of a digital menu depends more on each establishment's concept than on the available technology, and they reveal problems that customers do not see, such as system updates that interrupt operations. The audits found heavy pages that take 8 to 21 seconds to display their main content on a slow mobile network, and zoom was blocked in every menu analyzed. As contributions, the work presents a catalog of functional and non-functional requirements, a set of recurring usability and accessibility issues and a taxonomy of architectural decisions, and it indicates that offering both menu options is the solution most supported by customers and managers.
+This research investigates how bars and restaurants in Porto Alegre choose and operate digital menus, how patrons describe their experience, and which technical problems appear in public menu interfaces. It uses mixed methods: interviews with managers, a UTAUT2-based survey, and Lighthouse audits. The design covers four establishment profiles, but this version reports two cases: one offers both digital and printed menus; the other chose only printed menus. The planned vendor interview has not been confirmed. The survey received 114 responses, including 92 from Porto Alegre and its metropolitan area. In that group, 76\% prefer printed menus, although digital menus were rated more favorably for ease of use than for perceived usefulness. On a simulated mobile network, the four audited pages took 8 to 21 seconds to display their main content, and all blocked zoom. The available findings support a preliminary requirements catalog, a mapping of usability and accessibility issues, and a set of technical dimensions reported by managers. Conclusions remain provisional pending further interviews and validation of these artifacts. Survey associations establish neither causation nor population-level estimates.
 
 \pendente{update the abstract after the interviews for cases A and B and the vendor}
 \end{abstract}
@@ -192,12 +153,12 @@ This research investigates how bars and restaurants in Porto Alegre have adopted
 %=======================================================================
 % Lista de Figuras (opcional).
 %=======================================================================
-\listoffigures
+% Listas e sumário não integram o artigo; os apêndices continuam após as referências.
 
 %=======================================================================
 % Lista de Tabelas (opcional).
 %=======================================================================
-\listoftables
+% \listoftables
 
 %=======================================================================
 % Lista de Abreviaturas (opcional).
@@ -214,28 +175,6 @@ This research investigates how bars and restaurants in Porto Alegre have adopted
 %
 % Deve ser passada como parâmetro a maior das siglas utilizadas.
 %=======================================================================
-\begin{listadesiglas}{UNISINOS}
-\item[ABNT] Associação Brasileira de Normas Técnicas
-\item[ABRASEL] Associação Brasileira de Bares e Restaurantes
-\item[CEP] Comitê de Ética em Pesquisa
-\item[ERP] Enterprise Resource Planning
-\item[LGPD] Lei Geral de Proteção de Dados Pessoais
-\item[MFOA] Mobile Food Ordering App
-\item[PEOU] Perceived Ease of Use (Facilidade de Uso Percebida)
-\item[PU] Perceived Usefulness (Utilidade Percebida)
-\item[QR] Quick Response (code)
-\item[SEBRAE] Serviço Brasileiro de Apoio às Micro e Pequenas Empresas
-\item[TAM] Technology Acceptance Model
-\item[TCC] Trabalho de Conclusão de Curso
-\item[TCLE] Termo de Consentimento Livre e Esclarecido
-\item[TD] Transformação Digital
-\item[TPB] Theory of Planned Behavior
-\item[TRA] Theory of Reasoned Action
-\item[UNISINOS] Universidade do Vale do Rio dos Sinos
-\item[UTAUT] Unified Theory of Acceptance and Use of Technology
-\item[UTAUT2] Unified Theory of Acceptance and Use of Technology 2
-\item[UX] User Experience (Experiência do Usuário)
-\end{listadesiglas}
 
 %=======================================================================
 % Lista de Símbolos (opcional).
@@ -250,21 +189,18 @@ This research investigates how bars and restaurants in Porto Alegre have adopted
 %=======================================================================
 % Sumário
 %=======================================================================
-\tableofcontents
+% \tableofcontents
 
 %=======================================================================
-% Capítulos (cada arquivo contém um \chapter{...} próprio).
-%
-% Para compilar somente um capítulo durante a escrita, descomente
-% \includeonly{...} logo antes de \begin{document}.
+% Secoes principais: \input evita que cada uma comece em pagina nova.
 %=======================================================================
-\include{chapters/01-introducao}
-\include{chapters/02-fundamentacao}
-\include{chapters/03-metodologia}
-\include{chapters/04-cronograma}
-\include{chapters/05-resultados}
-\include{chapters/06-discussao}
-\include{chapters/07-conclusao}
+\singlespacing
+\input{chapters/01-introducao}
+\input{chapters/02-fundamentacao}
+\input{chapters/03-metodologia}
+\input{chapters/05-resultados}
+\input{chapters/06-discussao}
+\input{chapters/07-conclusao}
 
 %=======================================================================
 % Referências
@@ -276,17 +212,20 @@ This research investigates how bars and restaurants in Porto Alegre have adopted
 % Apêndices
 %=======================================================================
 \appendix
-\include{appendices/A-roteiro}
-\include{appendices/B-questionario}
-\include{appendices/C-termos}
-\include{appendices/D-roteiro-fornecedor}
+\input{appendices/A-roteiro}
+\input{appendices/B-questionario}
+\input{appendices/C-termos}
+\input{appendices/D-roteiro-fornecedor}
+\input{appendices/E-fundamentacao}
+\input{appendices/F-procedimentos}
 
 %=======================================================================
 % Anexos (documentos não elaborados pelo autor)
 %=======================================================================
 \annex
-\include{anexos/A-confidencialidade}
-\include{anexos/B-uso-imagem}
-\include{anexos/C-obra-fotografica}
+\renewcommand{\theHchapter}{anexo.\Alph{chapter}}
+\input{anexos/A-confidencialidade}
+\input{anexos/B-uso-imagem}
+\input{anexos/C-obra-fotografica}
 
 \end{document}

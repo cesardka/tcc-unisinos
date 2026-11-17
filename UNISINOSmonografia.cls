@@ -39,6 +39,8 @@
 %=======================================================================
 % Declaracoes básicas
 %=======================================================================
+\newif\if@artigo
+\DeclareOption{artigo}{\@artigotrue}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{report}}
 \ProcessOptions\relax
 \LoadClass[a4paper,12pt,openright]{report}
@@ -777,3 +779,29 @@
 	\def\palavraschavename{Keywords}
 	\def\fontename{Source}
 }
+
+% Artigo de TCC: mantem capa e referencias, mas elimina as quebras de
+% pagina e o titulo "Capitulo" das secoes principais.
+\if@artigo
+	\renewcommand{\chapter}{%
+		\@startsection{chapter}{0}{\z@}{2\baselineskip}{\baselineskip}%
+			{\@chapterfont}%
+	}
+	\renewenvironment{abstract}{%
+		\par\medskip\noindent\textbf{\abstractname:}\space\ignorespaces
+	}{%
+		\par\noindent\textbf{\palavraschavename:} \@abstractkw\par\medskip
+	}
+	\DeclareRobustCommand{\artigoheader}{%
+		\clearpage
+		\pagenumbering{arabic}
+		\pagestyle{UNISINOSmonografia}%
+		\begin{center}
+			{\@chapterfont\MakeUppercase{\@title}\par}
+			\@ifundefined{@subtitle}{}{\@subtitle\par}
+			\vspace{\baselineskip}
+			\@authorfirst~\@authorlast\par
+			\@advisorfirst~\@advisorlast\par
+		\end{center}
+	}
+\fi
