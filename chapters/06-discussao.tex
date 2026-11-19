@@ -59,7 +59,7 @@ As auditorias técnicas (Seção~\ref{sec:res-avaliacao-tecnica}) dão evidênci
 
 O caso B acrescenta um contraste ao R11: usa plataformas para entregas, mas acompanha o estoque manualmente. A integração entre cardápio e estoque não pode ser apresentada como necessidade universal dos gestores entrevistados. O relato também não verifica o funcionamento interno da plataforma.
 
-\pendente{conferir o áudio do caso B e os trechos individuais das respostas abertas, completar o caso A e revisar a classificação de origem e os conflitos entre requisitos}
+\pendente{conferir os trechos individuais das respostas abertas, completar o caso A e revisar a classificação de origem e os conflitos entre requisitos}
 
 %=======================================================================
 \section{Problemas recorrentes de usabilidade e acessibilidade}
@@ -82,19 +82,19 @@ No caso D, o entrevistado sintetizou o problema de comparar itens: ``no papel n�
 \section{Decisões de arquitetura nos casos estudados}
 \label{sec:disc-arquitetura}
 
-A tabela organiza seis dimensões de contratação e operação, derivadas da Seção~\ref{sec:arquitetura} e do roteiro de entrevista \cite{bass2021software,richards2020fundamentals}. As células preenchidas dos casos B, C e D refletem relatos dos gestores, não inspeção da implementação das plataformas. No caso B, as plataformas de entrega não implicam autoatendimento no salão; no caso D, a tecnologia descrita é um sistema de gestão contratado. As células vazias permanecem sem evidência; a coluna do fornecedor só poderá ser preenchida se a entrevista ocorrer.
+A tabela organiza seis dimensões de contratação e operação, derivadas da Seção~\ref{sec:arquitetura} e do roteiro de entrevista \cite{bass2021software,richards2020fundamentals}. As células preenchidas dos casos B, C e D refletem relatos dos gestores, não inspeção da implementação das plataformas. No caso B, as plataformas de entrega não implicam autoatendimento no salão; no caso D, a tecnologia descrita é um sistema de gestão contratado. As células vazias permanecem sem evidência.
 
-O quadro completo, com lacunas explícitas para o caso A e o fornecedor, está no Apêndice~\ref{ap:complementos}, Tabela~\ref{tab:taxonomia-arquitetura}.
+O quadro completo, com lacunas explícitas para o caso A, está no Apêndice~\ref{ap:complementos}, Tabela~\ref{tab:taxonomia-arquitetura}.
 
 As auditorias mostram que as páginas analisadas transferem entre 1,3 e 2~MB de JavaScript e demoram para exibir o conteúdo principal em rede simulada. Isso motiva investigar alternativas como conteúdo estático, cache e renderização no servidor para a consulta do cardápio. As auditorias não permitem identificar a arquitetura interna das plataformas nem afirmar que essas alternativas reduziriam o tempo de carregamento sem um protótipo e novas medições.
 
-\pendente{conferir o áudio do caso B, completar o caso A e discutir somente escolhas de contratação sustentadas pelos relatos}
+\pendente{completar o caso A e discutir somente escolhas de contratação sustentadas pelos relatos}
 
 %=======================================================================
 \section{Visão dos gestores e visão dos clientes}
 \label{sec:disc-triangulacao}
 
-Seguindo a proposta de meta-inferências de \citeonline{venkatesh2013bridging}, esta seção compara o que apareceu nas entrevistas com o que apareceu no questionário e nas auditorias, separando convergências, divergências e complementaridades. Por enquanto, a matriz compara os casos C e D; o caso B contribui para distinguir o salão dos canais de entrega, sem permitir associar a preferência dos respondentes à clientela da casa. O caso A e o fornecedor serão acrescentados se as entrevistas ocorrerem.
+Seguindo a proposta de meta-inferências de \citeonline{venkatesh2013bridging}, esta seção compara o que apareceu nas entrevistas com o que apareceu no questionário e nas auditorias, separando convergências, divergências e complementaridades. Por enquanto, a matriz compara os casos C e D; o caso B contribui para distinguir o salão dos canais de entrega, sem permitir associar a preferência dos respondentes à clientela da casa. O caso A será acrescentado se a entrevista ocorrer.
 
 \textbf{Convergências.} Os gestores e os clientes concordam em três pontos. O primeiro é a dependência da internet: o Ohana Açaí paga duas operadoras para não ficar sem conexão, os respondentes citam a internet fraca como a principal situação em que o cardápio digital funciona pior, e as auditorias mostram páginas que levam vários segundos para carregar em rede móvel. O segundo é a dificuldade das pessoas mais velhas, relatada pelos sócios do Ohana e refletida na preferência maior pelo físico entre os respondentes de 35 anos ou mais. O terceiro é a vantagem de atualizar o cardápio na hora, citada nos dois casos e coerente com a confiança alta dos respondentes nos preços e na disponibilidade informados.
 
@@ -106,4 +106,4 @@ Seguindo a proposta de meta-inferências de \citeonline{venkatesh2013bridging}, 
 
 \textbf{Construção e validação.} O catálogo é uma síntese exploratória, não uma solução avaliada em uso. A matriz do Apêndice~\ref{ap:requisitos} torna visíveis as propostas que vão além dos relatos. A demonstração local (Seção~\ref{sec:res-demonstracao}) verifica apenas a mudança de estado e o bloqueio de novas adições para R02; não verifica sua atualização em tempo real entre dispositivos. R06 e R09 continuam como critérios propostos. A prova de conceito não demonstra completude ou aceitação do catálogo por profissionais. \pendente{se viável, revisar os requisitos com profissionais de desenvolvimento, registrando critérios, alterações e discordâncias}
 
-\pendente{conferir o áudio do caso B e integrar os achados do caso A e, se ocorrer, da entrevista com fornecedor}
+\pendente{integrar os achados do caso A se a entrevista ocorrer}

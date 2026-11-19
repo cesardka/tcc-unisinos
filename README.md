@@ -1,12 +1,12 @@
 # TCC — Cadê o cardápio?
 
-> **Adoção, experiência do usuário e arquitetura de cardápios digitais em bares e restaurantes de Porto Alegre**
+> **Um catálogo preliminar de requisitos para cardápios digitais em bares e restaurantes de Porto Alegre**
 
 Repositório do Trabalho de Conclusão de Curso (TCC) de **César Hoffmann**, aluno de **Ciência da Computação** na **UNISINOS**.
 
 ## Sobre o projeto
 
-Este repositório contém o arquivo-fonte em LaTeX, imagens, referências bibliográficas e demais arquivos relacionados ao TCC. O objetivo do trabalho é investigar como a digitalização — em especial a substituição de cardápios físicos por versões digitais (QR code, apps, etc.) — afetou a experiência em bares e restaurantes de Porto Alegre no período entre 2020 e 2026.
+Este repositório contém o arquivo-fonte em LaTeX, imagens, referências bibliográficas e demais arquivos relacionados ao TCC. O trabalho elabora um catálogo preliminar de requisitos para cardápios digitais em bares e restaurantes de Porto Alegre, apoiado por entrevistas, questionário e auditorias de páginas públicas.
 
 - **Autor:** César Hoffmann
 - **Orientador:** PhD Guilherme Lacerda
@@ -59,7 +59,7 @@ Esta seção registra decisões editoriais ativas e diretrizes destinadas a futu
 ### Escopo e referencial fixados
 
 - **Recorte funcional.** O objeto de estudo são cardápios digitais com autoatendimento em **todas as modalidades de hardware**: dispositivo do próprio cliente (QR Code apontando para web menu ou self-ordering) e dispositivo disponibilizado pelo estabelecimento (tablet na mesa, totem em quiosque). O critério unificador é o cliente realizar por conta própria, em interface digital, etapas tradicionalmente intermediadas por um funcionário. Estão fora do escopo: KDS, ERP, plataformas de delivery (iFood, Rappi, Uber Eats) e aplicativos nativos próprios que exigem instalação em loja, ainda que possam aparecer como contexto.
-- **Casos.** **4 casos**, um por perfil: (A) pré-2020 que adotou, (B) pré-2020 que resistiu, (C) pós-2020 nascido digital e (D) pós-2020 que optou pelo cardápio físico, este incorporado durante a coleta do TCC II. Um fornecedor de cardápio digital é entrevistado como informante complementar, não como caso.
+- **Casos.** O desenho prevê **4 casos**, um por perfil: (A) pré-2020 que adotou, (B) pré-2020 que não adotou pedido digital no salão, (C) pós-2020 nascido digital e (D) pós-2020 que optou pelo cardápio físico, este incorporado durante a coleta do TCC II. Há resultados de B, C e D; o caso A ainda está pendente. A entrevista complementar com fornecedor foi prevista, mas não realizada nesta versão.
 - **Referencial teórico.** **UTAUT2** (Venkatesh et al., 2012) para a perspectiva do consumidor; **UTAUT original** (Venkatesh et al., 2003) para a perspectiva do gestor. Três lentes de Ciência da Computação estruturam a análise: Engenharia de Requisitos, UX/IHC e Arquitetura de Software.
 
 ### Estilo de escrita
