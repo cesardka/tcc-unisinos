@@ -15,18 +15,18 @@ Orientador: Prof. Dr. Guilherme Lacerda. **Entrega: 23/11/2026 (prazo fixo).**
 - Auditorias Lighthouse: `python3 analysis/medianas_lighthouse.py` (relatórios em `analysis/auditoria/relatorios/`).
 - Transcrição local: `whisper-cli -m ~/.cache/whisper/ggml-large-v3-turbo-q5_0.bin -f audio.wav -l pt` (converter antes com ffmpeg para 16 kHz mono).
 
-## Estado da pesquisa (16/11/2026)
+## Estado da pesquisa (atualizado em 19/11/2026)
 - Questionário encerrado em 15/11: 114 respostas (92 POA+RM; 90 expostos). 76% preferem físico; PE 2,22 (mais baixo), EE 3,53; PE×BI ρ=0,68, HB×BI 0,67.
-- Casos: C = Ohana Açaí (entrevistado 15/11, nome autorizado); D = Ordinária Pub (13/11, nome autorizado).
-  Pendentes: A (candidatos Bowlerama, Mambembe, Du Magu), B (Atelier de Massas, contato com a Túlia), fornecedor (Saipos aguardando supervisão; Anota AI contatado via LinkedIn).
+- Casos: C = Ohana Açaí (entrevistado 15/11, nome autorizado); D = Ordinária Pub (13/11, nome autorizado). B = Atelier de Massas (entrevistado em 18/11, nome da casa autorizado pelo participante segundo César; TCLE físico assinado com César). O áudio ainda precisa ser conferido contra a transcrição automática. Áudio original `~/Downloads/atelier_20261118.m4a`; transcrição e notas privadas em `~/Documents/UNISINOS/TCC II - Entrevistas/`. Não divulgar o nome pessoal do entrevistado.
+  Pendentes: A (Bowlerama em contato, outros candidatos Mambembe e Du Magu) e fornecedor (Saipos aguardando supervisão; Anota AI contatado via LinkedIn).
 - Auditorias de 4 cardápios (Anota AI: Ohana, Atelier; Goomer: Cortex, Armazém): LCP 8–21 s, zoom bloqueado em todos.
 - Convites: `attachments/roteiro-entrevista/convite-fornecedor.pdf` e `convite-gestor.pdf`; TCLE: `attachments/termos/tcle-entrevista.pdf`.
 
 ## Estado do artigo e próximas tarefas
 - A versão anterior à conversão está preservada na branch remota `monografia` (commit `c7b65f1`). A branch `main` contém o artigo em elaboração. Push somente quando o César pedir.
-- `main.tex` usa a opção `artigo` de `UNISINOSmonografia.cls`: capa, folha de rosto, sete seções corridas, referências, apêndices e anexos. O cronograma não é incluído. Os complementos teóricos e os procedimentos estão nos Apêndices E e F.
-- O PDF compila com `latexmk`. As referências começam aproximadamente na página 32 do artigo; a meta do orientador continua sendo **25 a 30 páginas até as referências**. Não ajustar a fonte só para atingir o limite: priorizar cortes editoriais e apêndices.
+- `main.tex` usa a opção `artigo` de `UNISINOSmonografia.cls`: capa, folha de rosto, sete seções corridas, referências, apêndices e anexos. O cronograma não é incluído. Os complementos teóricos, os procedimentos e a rastreabilidade estão nos Apêndices E, F e G.
+- O PDF compila com `latexmk`. As referências terminam na página 30 do artigo na versão com o caso B e a demonstração R02; a meta do orientador é **25 a 30 páginas até o fim das referências**. Não ajustar a fonte só para atingir o limite: priorizar cortes editoriais e apêndices.
 - O feedback do orientador foi incorporado parcialmente: pergunta e objetivo alinhados às contribuições técnicas; modalidades de cardápio delimitadas; quadro de lentes teóricas; matriz preliminar de integração; correlações tratadas como descritivas; decisões técnicas dos gestores separadas da arquitetura interna não observada. O resumo e a conclusão são explicitamente provisórios.
-- Prioridade de pesquisa: concluir ou redimensionar formalmente os casos A e B e confirmar a entrevista do fornecedor. Não preencher células vazias ou atribuir às plataformas arquiteturas não verificadas. O questionário não foi aplicado especificamente aos clientes dos casos.
+- Prioridade de pesquisa: conferir no áudio os trechos atribuídos ao caso B; concluir ou redimensionar formalmente o caso A e confirmar a entrevista do fornecedor. Não preencher células vazias ou atribuir às plataformas arquiteturas não verificadas. O questionário não foi aplicado especificamente aos clientes dos casos.
 - Para cada requisito R01--R15, registrar fonte identificável (trecho anonimizado de entrevista, item/resposta do questionário ou relatório de auditoria), justificativa, conflito entre gestores e clientes e eventual revisão. Conferir as categorias abertas antes de consolidar a matriz das três fontes. Se viável, revisar os três artefatos com um ou dois profissionais; se não, declarar a ausência de validação.
-- Resolver todos os `\pendente{...}` antes da entrega, em especial ética/CEP, resultados A/B/fornecedor, rastreabilidade, validação dos artefatos e conclusão. Usar apenas dados reais. PDFs de referência dos TCCs de Jorge Viegas, Daniel Ferreira e Lucas Ceschini e artigo de Vanessa Schenkel estão em `~/Downloads`.
+- Resolver todos os `\pendente{...}` antes da entrega, em especial ética/CEP, conferência do áudio B, resultados A/fornecedor, rastreabilidade, validação do catálogo e conclusão. Usar apenas dados reais. PDFs de referência dos TCCs de Jorge Viegas, Daniel Ferreira e Lucas Ceschini e artigo de Vanessa Schenkel estão em `~/Downloads`.

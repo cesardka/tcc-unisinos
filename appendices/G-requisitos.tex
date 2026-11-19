@@ -1,0 +1,67 @@
+\chapter{Rastreabilidade e aplicação preliminar dos requisitos}
+\label{ap:requisitos}
+
+Este apêndice registra o que sustenta cada entrada da Tabela~\ref{tab:requisitos}. ``Relato'' designa uma necessidade ou problema descrito pelo participante; ``auditoria'' designa uma característica da página pública medida ou verificada pelo Lighthouse. A formulação de um requisito a partir dessas fontes é uma proposta do autor, não a demonstração de que a solução já a implementa. As contagens de respostas abertas são aproximadas e ainda requerem revisão manual (Seção~\ref{sec:res-problemas}). Os registros individuais do questionário e as transcrições ficam fora do repositório para proteger os participantes. Ainda falta localizar e anonimizar o trecho específico por trás de algumas entradas.
+
+\begin{longtable}{@{}p{0.9cm}p{10.0cm}p{3.0cm}@{}}
+\caption{Origem, justificativa e limites do catálogo preliminar}
+\label{tab:rastreabilidade}\\
+\toprule
+\textbf{ID} & \textbf{Evidência localizável e passagem para o requisito} & \textbf{Situação} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{ID} & \textbf{Evidência localizável e passagem para o requisito} & \textbf{Situação} \\
+\midrule
+\endhead
+R01 & A Tabela~\ref{tab:problemas-ux} menciona dúvida sobre a confirmação do pedido, mas o trecho original da resposta ainda não foi localizado para conferir esta formulação. & Proposta sem trecho verificado \\
+R02 & Os casos C e D relatam a importância de retirar itens esgotados (Seções~\ref{sec:res-caso-c} e~\ref{sec:res-caso-d}); no caso B, o gestor relata que itens podem ser editados no painel de entregas, sem informar o tempo de atualização (Seção~\ref{sec:res-caso-b}). Quatorze de 90 participantes assinalaram informação desatualizada (Tabela~\ref{tab:problemas}). A atualização em tempo real é uma meta de projeto, não uma integração observada. & Relatos; solução proposta \\
+R03 & Cadastro ou dados pessoais exigidos foram assinalados por 43 de 90 participantes (Tabela~\ref{tab:problemas}). Permitir pedir sem login é uma proposta; a pergunta não distingue consulta de pedido. & Questionário; extrapolação \\
+R04 & Nove das 61 respostas abertas sobre dificuldades mencionam o uso em grupo com um aparelho (Seção~\ref{sec:res-problemas}). Pedidos simultâneos são uma alternativa proposta, ainda sem teste com mesas. & Categoria aberta; proposta \\
+R05 & Sete das 69 respostas abertas sobre vantagens mencionam a consulta prévia (Seção~\ref{sec:res-problemas}); não há medição de seu uso efetivo. & Categoria aberta; proposta \\
+R06 & Falha de carregamento foi assinalada por 52 de 90 participantes (Tabela~\ref{tab:problemas}); o LCP das quatro páginas ficou entre 8 e 21 segundos em rede simulada (Tabela~\ref{tab:lighthouse}). A meta de desempenho deve ser especificada por cenário. & Questionário e auditoria \\
+R07 & O caso C relata duas operadoras e reserva por celular; o caso D defende o cardápio físico (Seções~\ref{sec:res-caso-c} e~\ref{sec:res-caso-d}). A internet foi citada em 23 das 61 respostas abertas sobre dificuldades (Seção~\ref{sec:res-problemas}). A forma de continuidade varia conforme o estabelecimento. & Relatos de ambas as fontes \\
+R08 & Oito das 61 respostas abertas sobre dificuldades mencionam navegação ou rolagem (Seção~\ref{sec:res-problemas}). Evitar recarga e perda de posição é uma solução proposta, não uma falha medida na auditoria. & Categoria aberta; proposta \\
+R09 & Falta de opções de acessibilidade foi assinalada por 24 de 90 participantes (Tabela~\ref{tab:problemas}). Os relatórios Lighthouse de Ohana, Atelier, Cortex e Armazém falharam em \texttt{meta-viewport}; três páginas falharam em \texttt{color-contrast} (Tabela~\ref{tab:lighthouse}). & Questionário e auditoria \\
+R10 & O gestor D afirmou ``no papel não tem scroll'' (Seção~\ref{sec:res-caso-d}); oito das 61 respostas abertas sobre dificuldades citam navegação ou rolagem (Seção~\ref{sec:res-problemas}). Exibir muitos itens é uma solução proposta, não validada em teste de uso. & Entrevista e categoria aberta \\
+R11 & O caso D relata baixa automática de estoque a partir das fichas técnicas em seu sistema de gestão (Seção~\ref{sec:res-caso-d}); o caso B usa plataformas de entrega, mas acompanha o estoque manualmente (Seção~\ref{sec:res-caso-b}). Aplicar a integração ao cardápio do cliente é uma transferência proposta, não necessidade compartilhada pelos gestores. & Relatos distintos; proposta \\
+R12 & Segundo o caso C, atualizações em horário de pico interrompem a operação: ``quando eles estão atualizando, trava tudo'' (Seção~\ref{sec:res-caso-c}). & Entrevista C \\
+R13 & O caso C relata telefones errados no cadastro do \emph{delivery} (Seção~\ref{sec:res-caso-c}). A necessidade não foi demonstrada no pedido em mesa. & Entrevista C; outro fluxo \\
+R14 & O caso C relata mudanças frequentes de interface e readaptação da equipe (Seção~\ref{sec:res-caso-c}). Avisar antes é uma recomendação proposta. & Entrevista C; proposta \\
+R15 & Os relatórios Lighthouse registram de 7 a 60 cookies de terceiros nas quatro páginas (Tabela~\ref{tab:lighthouse}, auditoria \texttt{third-party-cookies}). A contagem justifica examinar necessidade e finalidade; não comprova rastreamento indevido nem violação da LGPD. & Auditoria; recomendação \\
+\bottomrule
+\end{longtable}
+
+Os relatórios citados estão em \texttt{analysis/auditoria/relatorios/}, com três arquivos JSON por página. Os IDs dos itens do questionário e o instrumento integral estão no Apêndice~\ref{ap:questionario}. Esta matriz não substitui a conferência das respostas abertas individuais: para R01, R04, R05, R08 e R10 ainda se deve associar cada afirmação ao trecho anonimizado correspondente. Para os demais requisitos, também é necessário conferir se a redação vai além da evidência e registrar as discordâncias dos participantes.
+
+\section{Refinamento e aplicação exploratória dos requisitos}
+\label{sec:requisitos-aplicacao}
+
+Os critérios abaixo refinam três requisitos em condições verificáveis. São \textbf{propostas do autor}, não requisitos aceitos pelos participantes. Somente a parte de R02 referente ao estado de um item na mesma página foi implementada e testada; R06 e R09 continuam sem avaliação na prova de conceito.
+
+\begin{description}
+    \item[R02, disponibilidade.] Dado um item disponível no cardápio fictício, quando o operador o marca como esgotado, então, sem recarregar a mesma página, o item deve indicar ``Esgotado'', desabilitar ``Adicionar'' e recusar novas adições mesmo se a ação for chamada diretamente. Os demais itens continuam disponíveis. Ao voltar a disponibilizar o item, uma nova adição deve ser aceita. Não se especificou atualização entre dispositivos nem conexão com estoque real.
+    \item[R06, desempenho.] Dada a abertura do cardápio em perfil móvel com rede 4G lenta simulada (150~ms, 1,6~Mbps) e CPU quatro vezes mais lenta, medir o LCP em três execuções e registrar a mediana. A meta proposta é até 2,5~segundos, conforme \citeonline{google2026webvitals}; ela não foi testada no protótipo.
+    \item[R09, ampliação.] Dada uma página aberta no celular, deve ser possível ampliar o texto até 200\% sem perder sua leitura ou uso, conforme WCAG~2.2, critério 1.4.4 \cite{wcag22}. O \texttt{meta-viewport} não deve bloquear o zoom. Uma inspeção manual e uma verificação automática seriam necessárias para avaliar o critério; não foram feitas no protótipo.
+\end{description}
+
+\begin{table}[!ht]
+    \caption{Rastreabilidade da demonstração técnica e lacunas de verificação}
+    \label{tab:demonstracao-requisitos}
+    \centering
+    \small
+    \begin{tabular}{@{}p{1.2cm}p{6.2cm}p{6.5cm}@{}}
+        \toprule
+        \textbf{ID} & \textbf{Especificação e implementação} & \textbf{Verificação nesta versão} \\
+        \midrule
+        R02 & \texttt{prototype/spec.md}; regra em \texttt{availability.mjs}; interface local em \texttt{index.html} & Quatro testes automatizados de transição e bloqueio; inspeção manual do estado do botão na mesma página \\
+        R06 & Mediana do LCP em três execuções sob rede e CPU simuladas & Critério proposto; sem medição do protótipo \\
+        R09 & Ampliação até 200\% sem bloquear uso ou leitura & Critério proposto; sem verificação do protótipo \\
+        \bottomrule
+    \end{tabular}
+    \fonte{Elaborado pelo autor; os caminhos são relativos à pasta \texttt{prototype/}.}
+\end{table}
+
+O arquivo \texttt{prototype/README.md} explica como abrir a página local e executar os testes. A prova de conceito não foi disponibilizada em endereço público nesta versão. Ela não verifica a atualização simultânea no celular de clientes nem substitui a revisão do catálogo por profissionais.
+
+\pendente{conferir o áudio do caso B e os trechos originais das respostas abertas; revisar a matriz com o caso A, se ocorrer; documentar eventual avaliação do catálogo por profissionais}

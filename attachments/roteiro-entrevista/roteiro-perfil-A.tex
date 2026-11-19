@@ -1,0 +1,92 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[brazilian]{babel}
+\usepackage{lmodern}
+\usepackage[margin=2.1cm]{geometry}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\small TCC, César Hoffmann}
+\rhead{\small UNISINOS \textbullet{} Perfil A}
+\cfoot{\small\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.4em}
+\setlist[enumerate]{label=\textbf{\arabic*.},leftmargin=*,itemsep=0.55em,topsep=0.2em}
+\newcommand{\aprofundar}[1]{\par{\small\color{gray}\textit{Se couber: #1}}}
+\newcommand{\marcar}{$\square$\ }
+
+\begin{document}
+\begin{center}
+  {\Large\bfseries Entrevista com gestor, perfil A}\\[0.3em]
+  {\small Estabelecimento anterior a 2020 que adotou autoatendimento digital}\\[0.3em]
+  Cardápios digitais em bares e restaurantes de Porto Alegre
+\end{center}
+
+\textbf{Casa:} \rule{7cm}{0.4pt}\quad
+\textbf{Data/local:} \rule{4cm}{0.4pt}
+
+\textbf{Pessoa e função:} \rule{9cm}{0.4pt}
+
+\textbf{Antes de gravar:} \marcar levar o TCLE em duas vias e colher a assinatura; \marcar confirmar a gravação e a opção de identificação da casa; \marcar pedir autorização específica para fotos ou documentos. Não divulgar o nome pessoal. Perguntas podem ser puladas. Não solicitar contratos, dados de clientes nem senhas.
+
+\textbf{Tempo:} cerca de 30 a 45 minutos; reservar até 60 se houver disponibilidade. Perguntar primeiro, depois pedir um exemplo real: quando ocorreu, o que aconteceu e como foi resolvido. Distinguir o que a pessoa viu do que o fornecedor informou.
+
+\section*{1. A casa e a mudança}
+\begin{enumerate}
+  \item Quando a casa abriu e qual é o seu papel na operação?
+    \aprofundar{Número aproximado de mesas, equipe e perfil dos clientes, se a pessoa souber.}
+  \item Como o cliente consultava o cardápio e fazia o pedido antes de 2020? E como faz hoje?
+    \aprofundar{Separar PDF, página para consulta e pedido feito pelo próprio cliente; salão e delivery.}
+  \item Em que momento passaram a oferecer o pedido digital ao cliente? O que levou a essa decisão?
+    \aprofundar{Quem decidiu? Foi uma mudança planejada ou feita durante a pandemia?}
+  \item O que mudou na rotina quando passaram a usar essa solução?
+    \aprofundar{Pedir um episódio concreto, positivo ou negativo, sem supor ganho de tempo ou redução de equipe.}
+\end{enumerate}
+
+\section*{2. O sistema na prática}
+\begin{enumerate}[resume]
+  \item Como o cliente faz o pedido digital, do acesso ao cardápio até a confirmação?
+    \aprofundar{QR Code, tablet, totem ou outro; como ele sabe que o pedido chegou.}
+  \item Qual solução vocês contrataram ou desenvolveram? Por que escolheram essa?
+    \aprofundar{Houve outra opção ou troca de fornecedor? O que sabem por experiência própria?}
+  \item Depois de confirmado, como o pedido chega ao caixa e à cozinha?
+    \aprofundar{Existe integração que vocês usam de fato ou alguém precisa repetir a informação?}
+  \item Quem atualiza preços e itens esgotados? Quanto tempo demora para a mudança aparecer ao cliente?
+    \aprofundar{Lembram de alguma vez em que o cardápio mostrava um item indisponível?}
+  \item Já faltou internet ou o sistema parou em dia de atendimento? O que vocês fizeram?
+    \aprofundar{Cardápio físico, anotação manual, outro link, suporte; pedir um caso real.}
+\end{enumerate}
+
+\section*{3. Qualidade e necessidades}
+\begin{enumerate}[resume]
+  \item O que costuma dar mais trabalho ou atrapalhar o uso do sistema?
+    \aprofundar{Carregamento, atualização, estabilidade, cadastro, leitura no celular, suporte.}
+  \item O que é indispensável em um cardápio digital para a casa funcionar bem?
+    \aprofundar{Pedir até três prioridades; que problema cada uma resolve?}
+  \item O que os clientes comentam sobre o pedido digital e sobre a opção de cardápio físico?
+    \aprofundar{Distinguir comentário ouvido de impressão da equipe; pedir exemplo sem identificar cliente.}
+  \item O sistema pede dados pessoais para consultar ou pedir? Para quê?
+    \aprofundar{Distinguir pedido no salão, delivery e fidelidade; não solicitar dados pessoais.}
+\end{enumerate}
+
+\section*{4. Conferência de requisitos e encerramento}
+\begin{enumerate}[resume]
+  \item Para vocês, o que seria mais importante melhorar: atualização dos itens, funcionamento sem internet, rapidez ou leitura da tela? Algum desses pontos não é um problema aqui?
+    \aprofundar{Perguntar a prioridade e o motivo antes de mostrar soluções propostas no TCC.}
+  \item Existe algo que um cardápio digital não deve fazer, mesmo que pareça prático para o cliente?
+  \item Tem alguma situação importante que eu não perguntei? Posso pedir depois um esclarecimento sobre um trecho da entrevista?
+\end{enumerate}
+
+\textbf{Depois:} anotar pontos contraditórios, exemplos e o que foi visto diretamente; registrar se fotos foram autorizadas. Guardar o áudio e o TCLE fora do repositório do trabalho.
+
+\vspace{0.6em}
+\textbf{Anotações:}\par
+\newcount\linhas \linhas=0
+\loop\ifnum\linhas<7 \rule{\linewidth}{0.25pt}\par\vspace{0.55em}\advance\linhas by 1 \repeat
+\end{document}

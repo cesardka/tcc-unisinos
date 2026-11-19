@@ -18,7 +18,8 @@ Este repositório contém o arquivo-fonte em LaTeX, imagens, referências biblio
 
 - `main.tex` — arquivo-fonte principal (capa, artigo e `\input` das seções e apêndices)
 - `chapters/` — seções numeradas do artigo; o cronograma permanece no acervo, mas não é incluído
-- `appendices/` — instrumentos, termos, fundamentação complementar (`E-fundamentacao.tex`) e procedimentos detalhados (`F-procedimentos.tex`)
+- `appendices/` — instrumentos, termos, fundamentação complementar (`E-fundamentacao.tex`), procedimentos (`F-procedimentos.tex`) e rastreabilidade dos requisitos (`G-requisitos.tex`)
+- `prototype/` — prova de conceito local do requisito R02, especificação e testes (instruções em `prototype/README.md`)
 - `UNISINOSmonografia.cls` — classe de monografia adaptada com a opção `artigo`
 - `referencias.bib` — base de referências bibliográficas do trabalho (BibTeX); entradas geradas a partir do fichamento em `attachments/fichamento.md`
 - `exemplo.bib` — entradas de exemplo do template UNISINOS (mantidas apenas para referência de sintaxe)

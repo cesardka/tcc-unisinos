@@ -36,6 +36,7 @@
 \usetikzlibrary{positioning, arrows.meta, shapes.geometric, fit, calc}
 \usepackage{array} % alinhamento por coluna em tabelas (>{\raggedright\arraybackslash}p{...})
 \usepackage{booktabs} % regras tipograficamente superiores em tabelas (toprule, midrule, bottomrule)
+\usepackage{longtable} % matriz de rastreabilidade em várias páginas do apêndice
 \usepackage[section]{placeins} % cria barreira automática antes de cada \section, impedindo floats de vazarem para a seção seguinte
 \usepackage[hidelinks,bookmarks=true,bookmarksnumbered=true,unicode=true]{hyperref} % sumário, referências e citações clicáveis (sem cor de destaque, para impressão limpa)
 \usepackage{xurl} % permite quebrar URLs longas nas referências
@@ -130,9 +131,9 @@ Artigo apresentado como requisito parcial para obtenção do título de Bacharel
 % A recomendação é para 150 a 500 palavras.
 %=======================================================================
 \begin{abstract}
-Esta pesquisa investiga as escolhas de adoção e operação de cardápios digitais em bares e restaurantes de Porto Alegre, a experiência relatada por frequentadores e os problemas técnicos das interfaces. Emprega métodos mistos: entrevistas com gestores, questionário baseado na UTAUT2 e auditorias de páginas públicas com o Lighthouse. O desenho prevê quatro perfis de estabelecimento, mas esta versão apresenta resultados de dois casos, um com atendimento híbrido e outro que escolheu manter apenas o cardápio físico. A entrevista com fornecedor ainda não foi confirmada. O questionário recebeu 114 respostas, das quais 92 são de Porto Alegre e região metropolitana. Nessa base, 76\% preferem o cardápio físico, embora a facilidade de uso do digital seja avaliada mais favoravelmente que sua utilidade. As quatro páginas auditadas levaram de 8 a 21 segundos para exibir o conteúdo principal em rede móvel simulada e bloquearam a ampliação da tela. Os resultados disponíveis permitem propor um catálogo preliminar de requisitos, um mapeamento de problemas de usabilidade e acessibilidade e dimensões técnicas relatadas pelos gestores. A conclusão é parcial: faltam entrevistas previstas e a validação desses artefatos; as associações no questionário não estabelecem causalidade nem representam todos os frequentadores da cidade.
+Esta pesquisa elabora um catálogo preliminar de requisitos para cardápios digitais em bares e restaurantes de Porto Alegre. As fontes são entrevistas com gestores, um questionário com frequentadores e auditorias de quatro páginas públicas com o Lighthouse. O desenho prevê quatro perfis de estabelecimento, mas esta versão apresenta resultados dos casos B, C e D; o caso A e a entrevista com fornecedor ainda estão pendentes. O caso B mantém o cardápio impresso no salão e usa plataformas digitais para entregas. O questionário recebeu 114 respostas, das quais 92 são de Porto Alegre e região metropolitana. Entre esses respondentes, 76\% preferem o cardápio físico. Nas páginas auditadas, o conteúdo principal levou de 8 a 21 segundos para aparecer em rede móvel simulada, e todas bloquearam a ampliação da tela. O catálogo relaciona necessidades operacionais, problemas de uso e atributos de qualidade. Uma matriz distingue evidências e propostas; três critérios de aceitação orientam especificações. Uma prova de conceito implementa parte de R02 e passou em quatro testes da regra de disponibilidade, sem integração com estoque. O trabalho não comprova a arquitetura interna das plataformas nem a completude ou aplicabilidade do catálogo. Faltam a conferência do áudio do caso B, outras entrevistas previstas, a revisão de respostas abertas e a validação com profissionais; os resultados não representam todos os frequentadores da cidade.
 
-\pendente{atualizar o resumo após as entrevistas dos casos A e B e do fornecedor}
+\pendente{revisar o resumo após conferir o áudio do caso B e concluir o caso A e, se possível, a entrevista com fornecedor}
 \end{abstract}
 
 %=======================================================================
@@ -144,9 +145,9 @@ Esta pesquisa investiga as escolhas de adoção e operação de cardápios digit
 %=======================================================================
 \begin{otherlanguage}{english}
 \begin{abstract}
-This research investigates how bars and restaurants in Porto Alegre choose and operate digital menus, how patrons describe their experience, and which technical problems appear in public menu interfaces. It uses mixed methods: interviews with managers, a UTAUT2-based survey, and Lighthouse audits. The design covers four establishment profiles, but this version reports two cases: one offers both digital and printed menus; the other chose only printed menus. The planned vendor interview has not been confirmed. The survey received 114 responses, including 92 from Porto Alegre and its metropolitan area. In that group, 76\% prefer printed menus, although digital menus were rated more favorably for ease of use than for perceived usefulness. On a simulated mobile network, the four audited pages took 8 to 21 seconds to display their main content, and all blocked zoom. The available findings support a preliminary requirements catalog, a mapping of usability and accessibility issues, and a set of technical dimensions reported by managers. Conclusions remain provisional pending further interviews and validation of these artifacts. Survey associations establish neither causation nor population-level estimates.
+This study develops a preliminary requirements catalog for digital menus in bars and restaurants in Porto Alegre. Its sources are interviews with managers, a patron survey, and Lighthouse audits of four public menu pages. The design covers four establishment profiles, but this version reports cases B, C and D; case A and the planned vendor interview remain pending. Case B uses a printed menu in the dining area and digital platforms for deliveries. The survey received 114 responses, including 92 from Porto Alegre and its metropolitan area. Of these respondents, 76\% prefer printed menus. On a simulated mobile network, the four audited pages took 8 to 21 seconds to display their main content, and all blocked zoom. The catalog links operational needs, user-reported problems, and quality attributes. An evidence matrix distinguishes findings from proposals; three acceptance criteria outline possible specifications. A local proof of concept implements part of R02 and passes four availability-rule tests, without inventory integration. The study does not establish the platforms' internal architecture or the catalog's completeness and applicability. Review of case B's audio, planned interviews, review of individual open-ended responses, and professional validation remain outstanding; these findings cannot be generalized to all local patrons.
 
-\pendente{update the abstract after the interviews for cases A and B and the vendor}
+\pendente{review the abstract after checking case B's audio and completing case A and, if possible, the vendor interview}
 \end{abstract}
 \end{otherlanguage}
 
@@ -218,6 +219,8 @@ This research investigates how bars and restaurants in Porto Alegre choose and o
 \input{appendices/D-roteiro-fornecedor}
 \input{appendices/E-fundamentacao}
 \input{appendices/F-procedimentos}
+\input{appendices/G-requisitos}
+\input{appendices/H-complementos}
 
 %=======================================================================
 % Anexos (documentos não elaborados pelo autor)

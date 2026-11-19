@@ -1,21 +1,21 @@
 \chapter{Conclusão}
 \label{ch:conclusao}
 
-Com as evidências disponíveis, a resposta à pergunta da Seção~\ref{sec:problema} é parcial. O caso C relata vantagens operacionais do pedido digital, mas também interrupções nas atualizações e dependência de conexão; o caso D informatizou a operação sem adotar o cardápio digital no salão. Entre os frequentadores de Porto Alegre e região metropolitana que responderam ao questionário, a facilidade percebida coexistiu com baixa utilidade percebida e preferência pelo cardápio físico. As quatro páginas auditadas exibiram carregamento lento em rede simulada e bloquearam a ampliação da tela. Esses achados sustentam requisitos de continuidade operacional, desempenho e acessibilidade, mas não demonstram que as escolhas dos casos causaram as respostas dos frequentadores.
+Com as evidências disponíveis, a resposta à pergunta da Introdução (Capítulo~\ref{ch:introducao}) é parcial. Os casos B, C e D mostram que usar tecnologia em pedidos de entrega ou na gestão não implica oferecer pedido digital no salão. C e D trazem necessidades de atualização de itens, continuidade da operação e comparação de opções; B relata estoque manual mesmo com plataformas de entrega. Os frequentadores relatam problemas de conexão e leitura; as quatro páginas auditadas exibiram carregamento lento em rede simulada e bloquearam a ampliação da tela. A Tabela~\ref{tab:requisitos} e a matriz do Apêndice~\ref{ap:requisitos} transformam essas fontes em requisitos e explicitam quais itens ainda são propostas. Isso não demonstra que o catálogo é completo nem que as escolhas dos casos causaram as respostas dos frequentadores.
 
-\pendente{reavaliar esta resposta após concluir os casos A e B, confirmar a entrevista com o fornecedor e fechar a triangulação}
+\pendente{conferir o áudio do caso B e reavaliar esta resposta após o caso A, a confirmação do fornecedor e a triangulação}
 
 \section{Atendimento aos objetivos específicos}
 \label{sec:conc-objetivos}
 
-A revisão da literatura fundamentou as categorias de cardápio e os modelos de adoção (Seções~\ref{ch:fundamentacao} e~\ref{sec:trabalhos-relacionados}). O questionário e as auditorias documentam percepções de uso e problemas das páginas estudadas (Seções~\ref{sec:res-questionario} e~\ref{sec:res-avaliacao-tecnica}). As entrevistas dos casos C e D permitem comparar escolhas de operação e identificar requisitos iniciais (Seções~\ref{sec:res-casos} e~\ref{sec:disc-requisitos}). O contraste entre gestores e clientes e a discussão sobre arquitetura e tratamento de dados ainda não esgotam os objetivos definidos na Seção~\ref{sec:obj-especificos}.
+A revisão da literatura fundamentou as modalidades e os atributos de qualidade (Capítulos~\ref{ch:fundamentacao} e~\ref{sec:trabalhos-relacionados}). O questionário, as entrevistas B, C e D e as auditorias sustentam parte do catálogo (Seções~\ref{sec:res-casos}, \ref{sec:res-questionario} e~\ref{sec:res-avaliacao-tecnica}). A validação dos requisitos e o contraste entre todos os perfis ainda não atendem integralmente aos objetivos definidos na introdução.
 
 \pendente{revisar o atendimento de cada objetivo específico quando as entrevistas e a análise dos dados estiverem concluídas}
 
 \section{Contribuições}
 \label{sec:conc-contribuicoes}
 
-O catálogo preliminar de requisitos (Tabela~\ref{tab:requisitos}) pode apoiar gestores na contratação e fornecedores na priorização de funcionalidades. O mapeamento de problemas de interface (Tabela~\ref{tab:problemas-ux}) orienta verificações de usabilidade e acessibilidade. As dimensões técnicas relatadas (Tabela~\ref{tab:taxonomia-arquitetura}) ajudam a formular perguntas sobre integração e disponibilidade, mas não equivalem a uma descrição validada das arquiteturas dos fornecedores.
+O catálogo preliminar e sua matriz de evidências (Tabela~\ref{tab:requisitos} e Apêndice~\ref{ap:requisitos}) permitem inspecionar quais problemas motivam cada requisito e quais decisões ainda exigem validação. A prova de conceito local mostra a passagem de parte de R02 da especificação à implementação e ao teste (Seção~\ref{sec:res-demonstracao}); não valida o catálogo. As auditorias fornecem medidas de desempenho e acessibilidade que relatos de uso não poderiam oferecer. As dimensões operacionais da Tabela~\ref{tab:taxonomia-arquitetura} não descrevem arquiteturas internas verificadas.
 
 \section{Limitações}
 \label{sec:conc-limitacoes}
@@ -26,12 +26,12 @@ Os resultados devem ser lidos considerando as limitações a seguir.
     \item \textbf{Amostra por conveniência.} O questionário foi divulgado na rede pessoal e acadêmica do autor, com repasse entre contatos. A amostra concentra respondentes jovens adultos e com ensino superior, e tem poucos respondentes com deficiência, o que impede generalizar os resultados para todos os frequentadores de Porto Alegre e limita a discussão sobre acessibilidade.
     \item \textbf{Janela de coleta curta e sem piloto.} O questionário ficou aberto por poucos dias e não passou por aplicação piloto com respondentes externos.
     \item \textbf{Construtos com dois itens.} Cada construto da UTAUT2 foi medido por duas afirmações. Em alguns construtos, os dois itens se mostraram pouco correlacionados, o que indica que medem aspectos diferentes; nesses casos, a análise foi feita item a item.
-    \item \textbf{Casos incompletos.} Até esta versão, há resultados dos casos C e D; faltam os casos A e B e a confirmação da entrevista com o fornecedor. O perfil D foi incorporado durante a coleta, e não no desenho original.
+    \item \textbf{Casos incompletos.} Até esta versão, há resultados dos casos B, C e D; faltam o caso A e a confirmação da entrevista com o fornecedor. O áudio do caso B ainda precisa ser conferido contra a transcrição automática. O perfil D foi incorporado durante a coleta, e não no desenho original.
     \item \textbf{Proximidade entre pesquisador e entrevistados.} Parte dos entrevistados foi acessada pela rede pessoal do autor, e em alguns momentos o entrevistador expressou concordância com o que ouvia. Para reduzir esse efeito, a análise privilegia as falas espontâneas, anteriores a qualquer comentário do entrevistador.
     \item \textbf{Gravações incompletas.} Em ao menos uma entrevista, o início da conversa não foi transcrito e a gravação disponível ficou incompleta; o contexto ausente foi registrado pelo pesquisador logo após a entrevista.
     \item \textbf{Alcance das auditorias técnicas.} Foram auditadas quatro páginas públicas de duas plataformas, em condições de rede e de dispositivo simuladas; as verificações automáticas de acessibilidade cobrem apenas parte das WCAG~2.2.
     \item \textbf{Dados declarados.} Tanto o questionário quanto as entrevistas registram percepções e relatos, sem observação direta do uso nem medição do desempenho das soluções.
-    \item \textbf{Artefatos ainda não validados.} O catálogo, o mapeamento de problemas e as dimensões técnicas não passaram por revisão independente nem por avaliação de uso. O funcionamento interno das plataformas não foi inspecionado.
+    \item \textbf{Artefatos ainda não validados.} O catálogo, o mapeamento de problemas e as dimensões técnicas não passaram por revisão independente nem por avaliação de uso. A prova de conceito usa itens fictícios e estado na mesma aba, sem estoque real nem teste de R06 e R09. O funcionamento interno das plataformas não foi inspecionado.
 \end{itemize}
 
 \pendente{revisar as limitações com a base final e acrescentar as que surgirem nas entrevistas}
@@ -45,5 +45,5 @@ A partir dos resultados e das limitações, sugerem-se as seguintes continuaçõ
     \item avaliar interfaces de cardápio digital por meio de testes de usabilidade com usuários, incluindo pessoas idosas e pessoas com deficiência visual ou de leitura;
     \item validar uma escala com mais itens por construto, em amostra maior e mais diversa, permitindo análise fatorial e testes de hipótese;
     \item comparar cidades com e sem exigência legal de cardápio físico, para observar o efeito da regulação sobre a experiência dos clientes;
-    \item prototipar uma solução de cardápio digital orientada pelo catálogo de requisitos deste trabalho e avaliá-la com gestores e clientes.
+    \item estender a prova de conceito a outros requisitos, integrar o estoque e avaliá-la com gestores e clientes.
 \end{itemize}

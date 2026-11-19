@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Demonstração acadêmica da disponibilidade de itens de um cardápio fictício.">
+    <title>Cardápio de demonstração | Requisito R02</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script type="module" src="./app.mjs"></script>
+  </head>
+  <body>
+    <header class="masthead">
+      <div class="wrap masthead-inner">
+        <a href="#cardapio">Caderno de mesa <span aria-hidden="true">/</span> <small>R02</small></a>
+        <span>Prova de conceito fictícia</span>
+      </div>
+    </header>
+
+    <main id="cardapio" class="wrap">
+      <div class="intro">
+        <p class="eyebrow">01 / Especificar &rarr; implementar &rarr; verificar</p>
+        <h1>O que acabou<br><em>não pode ser pedido.</em></h1>
+        <p>Esta página demonstra uma regra: ao marcar um item como esgotado,
+          ele sai imediatamente das opções de pedido nesta aba.</p>
+      </div>
+
+      <div class="section-head">
+        <h2 id="itens">Cardápio fictício</h2>
+        <p>Itens no pedido: <strong data-order-count>0</strong></p>
+      </div>
+
+      <section class="menu" aria-labelledby="itens" data-catalog>
+        <article class="dish" data-item-id="entrada" data-available="true">
+          <div class="dish-head"><span class="number">01</span><span class="status" data-status>Disponível</span></div>
+          <h3>Croquete da casa</h3>
+          <p>Abóbora assada, ervas frescas e aioli de limão.</p>
+          <div class="order-row">
+            <span class="price">R$ 18</span>
+            <button type="button" data-action="add" data-order>Adicionar</button>
+          </div>
+          <div class="operator">
+            <span>Controle de demonstração</span>
+            <button type="button" data-action="toggle" data-toggle>Marcar como esgotado</button>
+          </div>
+        </article>
+
+        <article class="dish" data-item-id="bebida" data-available="true">
+          <div class="dish-head"><span class="number">02</span><span class="status" data-status>Disponível</span></div>
+          <h3>Limonada da horta</h3>
+          <p>Limão espremido, hortelã e água com gás.</p>
+          <div class="order-row">
+            <span class="price">R$ 14</span>
+            <button type="button" data-action="add" data-order>Adicionar</button>
+          </div>
+          <div class="operator">
+            <span>Controle de demonstração</span>
+            <button type="button" data-action="toggle" data-toggle>Marcar como esgotado</button>
+          </div>
+        </article>
+      </section>
+
+      <p class="announcement" role="status" data-announcement>Selecione um item ou altere sua disponibilidade para testar a regra.</p>
+      <aside class="scope">
+        <h2>O que este teste não mostra</h2>
+        <p>Os itens e os valores são inventados. O controle do operador fica na mesma tela
+          apenas para facilitar a demonstração. Não há estoque, sincronização entre celulares,
+          cadastro nem pedidos enviados a um restaurante.</p>
+      </aside>
+    </main>
+
+    <footer class="footer wrap">TCC &middot; Aplicação exploratória do requisito R02</footer>
+  </body>
+</html>

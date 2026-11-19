@@ -1,0 +1,95 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[brazilian]{babel}
+\usepackage{lmodern}
+\usepackage[margin=2.1cm]{geometry}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\small TCC, César Hoffmann}
+\rhead{\small UNISINOS \textbullet{} Perfil B}
+\cfoot{\small\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.4em}
+\setlist[enumerate]{label=\textbf{\arabic*.},leftmargin=*,itemsep=0.55em,topsep=0.2em}
+\newcommand{\aprofundar}[1]{\par{\small\color{gray}\textit{Se couber: #1}}}
+\newcommand{\marcar}{$\square$\ }
+
+\begin{document}
+\begin{center}
+  {\Large\bfseries Entrevista com gestor, perfil B}\\[0.3em]
+  {\small Estabelecimento anterior a 2020 que não adotou pedido digital no salão}\\[0.3em]
+  Cardápios digitais em bares e restaurantes de Porto Alegre
+\end{center}
+
+\textbf{Casa:} \rule{7cm}{0.4pt}\quad
+\textbf{Data/local:} \rule{4cm}{0.4pt}
+
+\textbf{Pessoa e função:} \rule{9cm}{0.4pt}
+
+\textbf{Antes de gravar:} \marcar levar o TCLE em duas vias e colher a assinatura; \marcar confirmar a gravação e a opção de identificação da casa; \marcar pedir autorização específica para fotos ou documentos. Não divulgar o nome pessoal. Perguntas podem ser puladas. Não solicitar contratos, dados de clientes nem senhas.
+
+\textbf{Tempo:} cerca de 30 a 45 minutos; reservar até 60 se houver disponibilidade. Não presumir que a casa rejeita tecnologia: verificar se usa cardápio para consulta, pedidos no delivery ou sistemas internos. Pedir exemplos reais, não apenas opiniões hipotéticas.
+
+\section*{1. A casa e o atendimento}
+\begin{enumerate}
+  \item Quando a casa abriu e qual é o seu papel na operação?
+    \aprofundar{Número aproximado de mesas, equipe e perfil dos clientes, se a pessoa souber.}
+  \item Como o cliente consulta o cardápio, faz o pedido e paga hoje no salão?
+    \aprofundar{Existe também PDF, link, QR Code só para consulta ou outra opção?}
+  \item Como funcionavam o cardápio e o pedido antes de 2020? O que mudou depois?
+    \aprofundar{Separar salão, retirada e delivery, se houver.}
+\end{enumerate}
+
+\section*{2. A decisão sobre o pedido digital}
+\begin{enumerate}[resume]
+  \item Vocês já consideraram permitir que o cliente faça o pedido pelo próprio celular, tablet ou totem? O que aconteceu?
+    \aprofundar{Quem participou da decisão? Houve teste, proposta de fornecedor ou custo estimado?}
+  \item O que pesou para manter o formato atual no salão?
+    \aprofundar{Não sugerir custo ou resistência como resposta; perguntar o que foi decisivo para a casa.}
+  \item Existe algo que faria vocês reconsiderarem o pedido digital? E algo que precisaria ser preservado no atendimento?
+    \aprofundar{Pedir uma condição concreta; talvez a decisão não mude.}
+\end{enumerate}
+
+\section*{3. Tecnologia que a casa já usa}
+\begin{enumerate}[resume]
+  \item Que sistemas vocês usam no caixa, na cozinha, no estoque ou no delivery?
+    \aprofundar{O que cada sistema faz na prática, mesmo que o cliente não use uma interface digital.}
+  \item Como o pedido chega à cozinha? Como atualizam preços e itens que acabaram?
+    \aprofundar{Há retrabalho ou integração? Pedir um exemplo observado.}
+  \item Já houve falha de internet ou de algum sistema? Como continuaram atendendo?
+    \aprofundar{Distinguir falhas internas das dificuldades que o cliente percebe.}
+\end{enumerate}
+
+\section*{4. Clientes e necessidades}
+\begin{enumerate}[resume]
+  \item Que comentários vocês recebem sobre o cardápio e o atendimento atuais?
+    \aprofundar{Pedir um comentário concreto, sem identificar o cliente.}
+  \item Há clientes para quem consultar ou pedir é mais difícil? Como a equipe ajuda?
+    \aprofundar{Não pressupor idade, deficiência ou preferência pelo papel.}
+  \item Se tivessem de avaliar um sistema de pedido digital para o salão, o que ele precisaria fazer bem?
+    \aprofundar{Pedir três prioridades; qual problema real cada uma resolveria?}
+  \item Que risco ou desvantagem precisaria ser evitado?
+    \aprofundar{Efeito na equipe, no contato com o cliente ou na operação, apenas se surgir.}
+\end{enumerate}
+
+\section*{5. Conferência de requisitos e encerramento}
+\begin{enumerate}[resume]
+  \item Para a casa, qual é a importância de atualizar itens imediatamente, ter alternativa sem internet e permitir comparar opções sem rolagem? Algum desses pontos não faz sentido aqui?
+    \aprofundar{Perguntar quais têm evidência na operação e quais seriam só hipótese.}
+  \item Tem alguma situação importante que eu não perguntei? Posso pedir depois um esclarecimento sobre um trecho da entrevista?
+\end{enumerate}
+
+\textbf{Depois:} anotar pontos contraditórios, exemplos e o que foi visto diretamente; registrar se fotos foram autorizadas. Guardar o áudio e o TCLE fora do repositório do trabalho.
+
+\vspace{0.6em}
+\textbf{Anotações:}\par
+\newcount\linhas \linhas=0
+\loop\ifnum\linhas<7 \rule{\linewidth}{0.25pt}\par\vspace{0.55em}\advance\linhas by 1 \repeat
+\end{document}
