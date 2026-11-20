@@ -9,6 +9,7 @@ const cards = new Map(
 const catalog = document.querySelector('[data-catalog]');
 const orderCount = document.querySelector('[data-order-count]');
 const announcement = document.querySelector('[data-announcement]');
+const textSize = document.querySelector('[data-text-size]');
 
 let state = {
   items: [...cards.keys()].map((id) => ({ id, available: true })),
@@ -18,18 +19,27 @@ let state = {
 function render() {
   for (const item of state.items) {
     const card = cards.get(item.id);
+    const name = card.querySelector('h3').textContent;
+    const addButton = card.querySelector('[data-order]');
+    const toggleButton = card.querySelector('[data-toggle]');
     card.dataset.available = String(item.available);
     card.querySelector('[data-status]').textContent = item.available
       ? 'Disponível'
       : 'Esgotado';
-    card.querySelector('[data-order]').disabled = !item.available;
-    card.querySelector('[data-toggle]').textContent = item.available
+    addButton.disabled = !item.available;
+    addButton.setAttribute('aria-label', `Adicionar ${name}`);
+    toggleButton.textContent = item.available
       ? 'Marcar como esgotado'
       : 'Voltar a disponibilizar';
+    toggleButton.setAttribute('aria-label', `${toggleButton.textContent}: ${name}`);
   }
 
   orderCount.textContent = String(state.order.length);
 }
+
+textSize.addEventListener('change', () => {
+  document.documentElement.style.fontSize = `${textSize.value}%`;
+});
 
 catalog.addEventListener('click', (event) => {
   const button = event.target.closest('button[data-action]');

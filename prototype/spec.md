@@ -1,4 +1,4 @@
-# R02: disponibilidade de itens (demonstracao)
+# R02: disponibilidade de itens (demonstracao) e extensao R09
 
 O catalogo do TCC registra relatos sobre a vantagem de retirar itens esgotados
 e sobre informacoes desatualizadas. A regra abaixo e uma **proposta de projeto**
@@ -44,3 +44,23 @@ O estado existe somente na memoria desta aba. Nao ha estoque real, API,
 sincronizacao entre aparelhos, persistencia, pagamento nem medicao de atraso
 em producao. Assim, este demonstrador verifica **parte** do comportamento R02,
 nao a atualizacao em tempo real em um sistema de restaurante.
+
+## R09: ampliacao do texto (extensao do prototipo)
+
+Esta extensao nao constava da demonstracao documentada no PDF anterior.
+Ela permite experimentar parte do requisito de acessibilidade com dados
+ficticios, sem afirmar conformidade completa com as WCAG.
+
+**Criterio proposto:** dado o cardapio aberto no celular, quando o usuario
+selecionar texto a 200% ou ampliar a pagina no navegador, os itens, precos,
+estados e controles devem continuar legiveis e operaveis, sem corte de conteudo.
+Os controles de itens distintos devem ter nomes acessiveis que incluam o item.
+
+**Plano:** incluir um seletor nativo de tamanho de texto, usar unidades
+relativas e permitir que cabecalhos, precos e controles se rearranjem em
+telas estreitas. Preservar o zoom do navegador e a navegacao por teclado.
+
+**Verificacao:** testar manualmente as opcoes 100%, 150% e 200% e o zoom do
+navegador, com viewport de 320 CSS px, navegando so com teclado. Executar
+uma auditoria automatica para apontar problemas que a inspecao manual nao
+captura. A auditoria nao substitui testes com usuarios ou leitores de tela.

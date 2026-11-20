@@ -3,25 +3,37 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Demonstração acadêmica da disponibilidade de itens de um cardápio fictício.">
-    <title>Cardápio de demonstração | Requisito R02</title>
+    <meta name="description" content="Demonstração acadêmica fictícia de disponibilidade de itens e ampliação de texto.">
+    <title>Cardápio de demonstração | R02 e R09</title>
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg">
     <link rel="stylesheet" href="./styles.css">
     <script type="module" src="./app.mjs"></script>
   </head>
   <body>
     <header class="masthead">
       <div class="wrap masthead-inner">
-        <a href="#cardapio">Caderno de mesa <span aria-hidden="true">/</span> <small>R02</small></a>
+        <a href="#cardapio">Caderno de mesa <span aria-hidden="true">/</span> <small>R02 + R09</small></a>
         <span>Prova de conceito fictícia</span>
       </div>
     </header>
 
     <main id="cardapio" class="wrap">
+      <p class="demo-note"><strong>Protótipo fictício.</strong> Itens e preços são inventados; nenhum pedido é enviado.</p>
       <div class="intro">
         <p class="eyebrow">01 / Especificar &rarr; implementar &rarr; verificar</p>
         <h1>O que acabou<br><em>não pode ser pedido.</em></h1>
         <p>Esta página demonstra uma regra: ao marcar um item como esgotado,
           ele sai imediatamente das opções de pedido nesta aba.</p>
+      </div>
+
+      <div class="text-tools">
+        <label for="text-size">Tamanho do texto</label>
+        <select id="text-size" data-text-size aria-describedby="text-size-hint">
+          <option value="100">Padrão (100%)</option>
+          <option value="150">150%</option>
+          <option value="200">200%</option>
+        </select>
+        <small id="text-size-hint">O zoom do navegador também está disponível.</small>
       </div>
 
       <div class="section-head">
@@ -68,6 +80,6 @@
       </aside>
     </main>
 
-    <footer class="footer wrap">TCC &middot; Aplicação exploratória do requisito R02</footer>
+    <footer class="footer wrap">TCC &middot; Aplicação exploratória de R02 e R09</footer>
   </body>
 </html>
