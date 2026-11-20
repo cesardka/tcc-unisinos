@@ -64,3 +64,19 @@ telas estreitas. Preservar o zoom do navegador e a navegacao por teclado.
 navegador, com viewport de 320 CSS px, navegando so com teclado. Executar
 uma auditoria automatica para apontar problemas que a inspecao manual nao
 captura. A auditoria nao substitui testes com usuarios ou leitores de tela.
+
+## Cesta e cozinha de demonstracao (extensao posterior ao PDF)
+
+Ao adicionar itens, a pessoa pode abrir o painel lateral da cesta para
+conferir quantidades, precos por unidade e total. Os controles "Mais" e
+"Menos" alteram uma unidade por vez. Um item que se esgote depois de
+adicionado permanece visivel na cesta,
+mas deve ser retirado ou voltar a estar disponivel antes da finalizacao.
+A regra tambem impede finalizar uma cesta vazia.
+
+O botao "Enviar para cozinha" copia o pedido para a lista "Pedidos na cozinha
+de demonstracao", visivel apenas nesta aba, e esvazia a cesta. Nao ha API,
+servidor, pagamento, persistencia nem envio a um restaurante: nenhuma cozinha
+real recebe o pedido.
+Essa extensao demonstra um fluxo de interface, nao verifica uma integracao
+entre o cardapio e a operacao dos estabelecimentos pesquisados.

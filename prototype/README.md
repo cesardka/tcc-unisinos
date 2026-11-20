@@ -1,8 +1,10 @@
 # Prova de conceito documental e tecnica - R02 e R09
 
 Esta pasta acompanha o artigo do TCC. Os itens, os precos e a operacao sao
-ficticios; um aviso no inicio da pagina deixa isso explicito. O demonstrador
-nao foi usado por nenhum estabelecimento estudado.
+ficticios; o aviso expansivel no inicio da pagina deixa isso explicito.
+O demonstrador nao foi usado por nenhum estabelecimento estudado.
+As imagens em `assets/` sao ilustracoes de referencia, nao fotografias
+dos pratos nem dos restaurantes pesquisados.
 
 ## Reproduzir
 
@@ -38,6 +40,23 @@ automaticas de acessibilidade (pontuacao 100). Isso nao substitui uma
 avaliacao manual com leitor de tela: o zoom nativo do navegador e o uso
 por participantes ainda nao foram testados.
 
+## Experimentar a cesta
+
+Adicione duas unidades de um item e uma de outro. Use "Ver cesta" para abrir
+o painel lateral, conferir quantidades, precos unitarios e total, e alterar
+as unidades com "Mais" e "Menos". "Enviar para cozinha" cria um pedido local
+e limpa a cesta.
+O pedido aparece em "Pedidos na cozinha de demonstracao" nesta mesma aba;
+nao e enviado a um restaurante. Se um item for marcado como esgotado depois
+de adicionado, a cesta continua a mostrar o item, mas impede a finalizacao
+ate que ele seja retirado ou volte a estar disponivel. Fechar e abrir a aba apaga
+o pedido, pois nao existe servidor nem armazenamento.
+
+Essa extensao e posterior ao PDF atual e nao comprova integracao com cozinha
+real. Os testes automatizados cobrem a regra de disponibilidade e a rejeicao
+de cestas vazias ou com itens esgotados; a interface precisa de conferencia
+manual no navegador.
+
 ## Rastreabilidade
 
 | Etapa | Artefato |
@@ -45,8 +64,8 @@ por participantes ainda nao foram testados.
 | Necessidade empirica e limite | Tabela R02 e matriz do Apendice G do TCC |
 | Especificacao, plano e tarefas | `spec.md` (R02 e extensao R09) |
 | Implementacao da regra | `availability.mjs` |
-| Demonstracao visual de R02 e ampliacao de R09 | `index.html`, `app.mjs`, `styles.css` |
-| Verificacao automatizada de R02 | `tests/availability.test.mjs` |
+| Demonstracao visual de R02, R09 e cesta local | `index.html`, `app.mjs`, `styles.css` |
+| Verificacao automatizada de R02 e da finalizacao local | `tests/availability.test.mjs` |
 
 Os testes de Node.js verificam a regra de negocio. A verificacao visual e
 manual, no navegador. R06 continua sem medicao nesta prova de conceito.

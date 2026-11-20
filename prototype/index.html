@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Demonstração acadêmica fictícia de disponibilidade de itens e ampliação de texto.">
+    <meta name="description" content="Demonstração acadêmica fictícia de disponibilidade de itens, ampliação de texto e cesta de pedidos.">
     <title>Cardápio de demonstração | R02 e R09</title>
     <link rel="icon" type="image/svg+xml" href="./favicon.svg">
     <link rel="stylesheet" href="./styles.css">
@@ -18,7 +18,15 @@
     </header>
 
     <main id="cardapio" class="wrap">
-      <p class="demo-note"><strong>Protótipo fictício.</strong> Itens e preços são inventados; nenhum pedido é enviado.</p>
+      <details class="demo-note">
+        <summary><strong>Protótipo fictício.</strong></summary>
+        <div class="demo-note-content">
+          <p class="demo-note-title">O que este teste não mostra</p>
+          <p>Os itens e os valores são inventados. O controle do operador fica na mesma tela
+            apenas para facilitar a demonstração. A cozinha também aparece apenas nesta aba;
+            não há estoque, sincronização entre celulares, cadastro nem envio real de pedidos.</p>
+        </div>
+      </details>
       <div class="intro">
         <p class="eyebrow">01 / Especificar &rarr; implementar &rarr; verificar</p>
         <h1>O que acabou<br><em>não pode ser pedido.</em></h1>
@@ -38,14 +46,27 @@
 
       <div class="section-head">
         <h2 id="itens">Cardápio fictício</h2>
-        <p>Itens no pedido: <strong data-order-count>0</strong></p>
+        <button type="button" data-open-cart>
+          <svg class="cart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+            aria-hidden="true" focusable="false">
+            <path d="M4.5 8.5h15l-1.2 12H5.7L4.5 8.5Z"/>
+            <path d="M8.5 9V7a3.5 3.5 0 0 1 7 0v2"/>
+          </svg>
+          <span>Ver cesta (<span data-order-count>0</span>)</span>
+        </button>
       </div>
 
       <section class="menu" aria-labelledby="itens" data-catalog>
-        <article class="dish" data-item-id="entrada" data-available="true">
+        <article class="dish" data-item-id="entrada" data-price-cents="1800" data-available="true">
           <div class="dish-head"><span class="number">01</span><span class="status" data-status>Disponível</span></div>
           <h3>Croquete da casa</h3>
           <p>Abóbora assada, ervas frescas e aioli de limão.</p>
+          <figure class="dish-media">
+            <img src="./assets/croquete.svg" width="600" height="400" loading="lazy" decoding="async"
+              alt="Ilustração de três croquetes com ervas em um prato.">
+            <figcaption>Ilustração · não é foto real</figcaption>
+          </figure>
           <div class="order-row">
             <span class="price">R$ 18</span>
             <button type="button" data-action="add" data-order>Adicionar</button>
@@ -56,10 +77,15 @@
           </div>
         </article>
 
-        <article class="dish" data-item-id="bebida" data-available="true">
+        <article class="dish" data-item-id="bebida" data-price-cents="1400" data-available="true">
           <div class="dish-head"><span class="number">02</span><span class="status" data-status>Disponível</span></div>
           <h3>Limonada da horta</h3>
           <p>Limão espremido, hortelã e água com gás.</p>
+          <figure class="dish-media">
+            <img src="./assets/limonada.svg" width="600" height="400" loading="lazy" decoding="async"
+              alt="Ilustração de um copo de limonada com limão e folhas de hortelã.">
+            <figcaption>Ilustração · não é foto real</figcaption>
+          </figure>
           <div class="order-row">
             <span class="price">R$ 14</span>
             <button type="button" data-action="add" data-order>Adicionar</button>
@@ -71,13 +97,31 @@
         </article>
       </section>
 
+      <dialog class="cart" aria-labelledby="cart-title" data-cart>
+        <div class="cart-head">
+          <div>
+            <p class="eyebrow">Conferir antes de finalizar</p>
+            <h2 id="cart-title">Sua cesta</h2>
+          </div>
+          <form method="dialog">
+            <button type="submit" class="cart-back" autofocus>Fechar cesta</button>
+          </form>
+        </div>
+        <p data-cart-empty>A cesta está vazia. Adicione itens no cardápio.</p>
+        <ul class="cart-items" data-cart-items></ul>
+        <p class="cart-total">Total <strong data-cart-total>R$ 0,00</strong></p>
+        <p id="cart-help" data-cart-help>Simulação: o pedido aparece somente nesta aba. Nenhuma cozinha real o recebe.</p>
+        <p class="cart-feedback" role="status" data-cart-feedback></p>
+        <button type="button" data-close-order aria-describedby="cart-help" disabled>Enviar para cozinha</button>
+      </dialog>
+
       <p class="announcement" role="status" data-announcement>Selecione um item ou altere sua disponibilidade para testar a regra.</p>
-      <aside class="scope">
-        <h2>O que este teste não mostra</h2>
-        <p>Os itens e os valores são inventados. O controle do operador fica na mesma tela
-          apenas para facilitar a demonstração. Não há estoque, sincronização entre celulares,
-          cadastro nem pedidos enviados a um restaurante.</p>
-      </aside>
+      <section class="kitchen" aria-labelledby="kitchen-title" data-kitchen hidden>
+        <p class="eyebrow">02 / Área de demonstração</p>
+        <h2 id="kitchen-title" tabindex="-1">Pedidos na cozinha de demonstração</h2>
+        <p>Os pedidos abaixo aparecem apenas nesta aba. Nada é transmitido a um restaurante.</p>
+        <ol data-kitchen-orders></ol>
+      </section>
     </main>
 
     <footer class="footer wrap">TCC &middot; Aplicação exploratória de R02 e R09</footer>
