@@ -8,6 +8,7 @@ const initialState = () => ({
     { id: 'bebida', available: true },
   ],
   order: [],
+  orders: [],
 });
 
 test('R02: esgotar um item impede novas adicoes, mesmo fora do botao', () => {
@@ -41,7 +42,7 @@ test('R02: item inexistente nao pode entrar no pedido', () => {
   assert.throws(() => addToOrder(initialState(), 'outro'), RangeError);
 });
 
-test('cesta: retirar uma unidade preserva as demais', () => {
+test('R01: retirar uma unidade da cesta preserva as demais', () => {
   const first = addToOrder(initialState(), 'entrada').state;
   const second = addToOrder(first, 'entrada').state;
   const updated = removeFromOrder(second, 'entrada');
@@ -50,7 +51,7 @@ test('cesta: retirar uma unidade preserva as demais', () => {
   assert.deepEqual(second.order, ['entrada', 'entrada']);
 });
 
-test('cesta: nao finaliza vazia ou com item esgotado apos a adicao', () => {
+test('R01: cesta vazia ou com item esgotado nao gera pedido', () => {
   const empty = initialState();
   assert.equal(closeOrder(empty).accepted, false);
 
@@ -60,9 +61,10 @@ test('cesta: nao finaliza vazia ou com item esgotado apos a adicao', () => {
 
   assert.equal(result.accepted, false);
   assert.deepEqual(result.state.order, ['entrada']);
+  assert.deepEqual(result.state.orders, []);
 });
 
-test('cesta: apos retirar o item esgotado, finaliza e limpa somente o pedido atual', () => {
+test('R01: enviar registra o pedido como recebido e esvazia a cesta', () => {
   const withEntry = addToOrder(initialState(), 'entrada').state;
   const withDrink = addToOrder(withEntry, 'bebida').state;
   const unavailable = setAvailability(withDrink, 'entrada', false);
@@ -70,8 +72,16 @@ test('cesta: apos retirar o item esgotado, finaliza e limpa somente o pedido atu
   const result = closeOrder(ready);
 
   assert.equal(result.accepted, true);
-  assert.deepEqual(result.order, ['bebida']);
+  assert.deepEqual(result.order, { number: 1, items: ['bebida'], status: 'recebido' });
   assert.deepEqual(result.state.order, []);
+  assert.deepEqual(result.state.orders, [result.order]);
   assert.equal(result.state.items[0].available, false);
   assert.equal(closeOrder(result.state).accepted, false);
+});
+
+test('R01: pedidos seguintes recebem numeros sequenciais', () => {
+  const first = closeOrder(addToOrder(initialState(), 'bebida').state).state;
+  const second = closeOrder(addToOrder(first, 'entrada').state);
+
+  assert.deepEqual(second.state.orders.map(({ number }) => number), [1, 2]);
 });

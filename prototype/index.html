@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Demonstração acadêmica fictícia de disponibilidade de itens, ampliação de texto e cesta de pedidos.">
-    <title>Cardápio de demonstração | R02 e R09</title>
+    <meta name="description" content="Prova de conceito acadêmica, com itens fictícios, de requisitos para cardápios digitais.">
+    <title>Cardápio de demonstração | R01, R02, R06 e R09</title>
     <link rel="icon" type="image/svg+xml" href="./favicon.svg">
     <link rel="stylesheet" href="./styles.css">
     <script type="module" src="./app.mjs"></script>
@@ -12,8 +12,7 @@
   <body>
     <header class="masthead">
       <div class="wrap masthead-inner">
-        <a href="#cardapio">Caderno de mesa <span aria-hidden="true">/</span> <small>R02 + R09</small></a>
-        <span>Prova de conceito fictícia</span>
+        <a href="#cardapio">Caderno de mesa</a>
       </div>
     </header>
 
@@ -28,14 +27,32 @@
         </div>
       </details>
       <div class="intro">
-        <p class="eyebrow">01 / Especificar &rarr; implementar &rarr; verificar</p>
-        <h1>O que acabou<br><em>não pode ser pedido.</em></h1>
-        <p>Esta página demonstra uma regra: ao marcar um item como esgotado,
-          ele sai imediatamente das opções de pedido nesta aba.</p>
+        <p class="eyebrow">Especificar &rarr; implementar &rarr; verificar</p>
+        <h1>Cardápio de demonstração</h1>
+        <p>Cada recurso desta página corresponde a um requisito do catálogo do TCC.
+          A etiqueta ao lado do recurso indica o requisito.</p>
+        <dl class="requirements">
+          <div>
+            <dt><span class="req">R01</span> Confirmação do pedido</dt>
+            <dd>Envie a cesta e confira o número e o estado do pedido em &ldquo;Seus pedidos&rdquo;.</dd>
+          </div>
+          <div>
+            <dt><span class="req">R02</span> Itens esgotados</dt>
+            <dd>Marque um item como esgotado; ele deixa de poder ser adicionado.</dd>
+          </div>
+          <div>
+            <dt><span class="req">R06</span> Carregamento</dt>
+            <dd>Página estática, sem bibliotecas, com tempo de carregamento medido.</dd>
+          </div>
+          <div>
+            <dt><span class="req">R09</span> Ampliação</dt>
+            <dd>Amplie o texto até 200% ou use o zoom do navegador.</dd>
+          </div>
+        </dl>
       </div>
 
       <div class="text-tools">
-        <label for="text-size">Tamanho do texto</label>
+        <label for="text-size"><span class="req">R09</span> Tamanho do texto</label>
         <select id="text-size" data-text-size aria-describedby="text-size-hint">
           <option value="100">Padrão (100%)</option>
           <option value="150">150%</option>
@@ -72,7 +89,7 @@
             <button type="button" data-action="add" data-order>Adicionar</button>
           </div>
           <div class="operator">
-            <span>Controle de demonstração</span>
+            <span><span class="req">R02</span> Controle do operador</span>
             <button type="button" data-action="toggle" data-toggle>Marcar como esgotado</button>
           </div>
         </article>
@@ -91,7 +108,7 @@
             <button type="button" data-action="add" data-order>Adicionar</button>
           </div>
           <div class="operator">
-            <span>Controle de demonstração</span>
+            <span><span class="req">R02</span> Controle do operador</span>
             <button type="button" data-action="toggle" data-toggle>Marcar como esgotado</button>
           </div>
         </article>
@@ -100,7 +117,7 @@
       <dialog class="cart" aria-labelledby="cart-title" data-cart>
         <div class="cart-head">
           <div>
-            <p class="eyebrow">Conferir antes de finalizar</p>
+            <p class="eyebrow"><span class="req">R01</span> Conferir antes de enviar</p>
             <h2 id="cart-title">Sua cesta</h2>
           </div>
           <form method="dialog">
@@ -117,13 +134,13 @@
 
       <p class="announcement" role="status" data-announcement>Selecione um item ou altere sua disponibilidade para testar a regra.</p>
       <section class="kitchen" aria-labelledby="kitchen-title" data-kitchen hidden>
-        <p class="eyebrow">02 / Área de demonstração</p>
-        <h2 id="kitchen-title" tabindex="-1">Pedidos na cozinha de demonstração</h2>
-        <p>Os pedidos abaixo aparecem apenas nesta aba. Nada é transmitido a um restaurante.</p>
+        <p class="eyebrow"><span class="req">R01</span> Confirmação</p>
+        <h2 id="kitchen-title" tabindex="-1">Seus pedidos</h2>
+        <p>Simulação: os pedidos aparecem apenas nesta aba. Nada é transmitido a um restaurante.</p>
         <ol data-kitchen-orders></ol>
       </section>
     </main>
 
-    <footer class="footer wrap">TCC &middot; Aplicação exploratória de R02 e R09</footer>
+    <footer class="footer wrap">TCC &middot; Prova de conceito de R01, R02, R06 e R09</footer>
   </body>
 </html>

@@ -164,10 +164,16 @@ A variação entre as três execuções foi pequena nas métricas de carregament
 
 LCP e TBT oferecem evidência de eficiência de desempenho, com impacto potencial na espera pela consulta. O bloqueio de zoom e as falhas de contraste apontam barreiras de acessibilidade verificáveis nas páginas, mesmo quando a pontuação geral de acessibilidade é alta. Essas medições permitem fundamentar R06 e R09 sem depender somente da opinião dos respondentes; não avaliam o fluxo de pedido, a arquitetura interna nem o desempenho em uso real.
 
-\section{Demonstração técnica do requisito R02}
+\section{Demonstração técnica de requisitos selecionados}
 \label{sec:res-demonstracao}
 
-Uma prova de conceito local transforma parte de R02 em uma regra de disponibilidade de itens (Apêndice~\ref{ap:requisitos}, Tabela~\ref{tab:demonstracao-requisitos}). A especificação precedeu o plano, a implementação em JavaScript e os testes. Ao marcar um item fictício como esgotado na mesma página, a interface mostrou ``Esgotado'' e desabilitou ``Adicionar''. Outro item continuou disponível; ao restaurar o primeiro, ele pôde ser adicionado. Quatro testes automatizados da regra passaram com \texttt{node --test}; a interface foi conferida manualmente no navegador. O código e as instruções estão em \texttt{prototype/README.md}. Não houve estoque real, sincronização entre aparelhos, medição de R06 nem avaliação de R09.
+Uma prova de conceito implementa parte de quatro requisitos do catálogo, com itens fictícios (Apêndice~\ref{ap:requisitos}, Tabela~\ref{tab:demonstracao-requisitos}). Para cada requisito, a especificação precedeu o plano, a implementação em JavaScript e a verificação. Cada recurso da página traz a etiqueta do requisito correspondente.
+
+Para R02, ao marcar um item como esgotado na mesma página, a interface mostrou ``Esgotado'' e desabilitou ``Adicionar''. Outro item continuou disponível; ao restaurar o primeiro, ele pôde ser adicionado. Para R01, a cesta mostrou quantidade, preço unitário e total. Ao enviar, a cesta ficou vazia e a página exibiu o número do pedido e o estado ``Recebido''. Cesta vazia ou com item esgotado não gerou pedido. Oito testes automatizados passaram com \texttt{node -{}-test}, quatro para cada requisito. Os dois fluxos também foram conferidos no navegador, com mouse e teclado.
+
+Para R09, em tela de 320~CSS~px, o texto ampliado a 150\% e 200\% não causou rolagem horizontal nem ocultou controles. O Lighthouse não apontou falhas automáticas de acessibilidade, e as auditorias \texttt{meta-viewport} e \texttt{color-contrast} passaram. Para R06, nas condições das auditorias da Seção~\ref{sec:res-avaliacao-tecnica}, o LCP foi de 1,28~s nas três execuções, abaixo da meta de 2,5~s. A página transferiu 31~KB. A medição usou servidor local, sem a latência de um servidor real. O resultado não é comparável diretamente ao das páginas auditadas, que têm mais itens e dependem de serviços externos.
+
+Esses resultados verificam a página de demonstração, não um cardápio em operação. Não houve envio a uma cozinha real, estoque, sincronização entre aparelhos, teste com leitor de tela nem avaliação com participantes. O estado do pedido não evolui depois de ``Recebido''. A origem de R01 ainda não tem trecho verificado (Apêndice~\ref{ap:requisitos}). O código e as instruções estão em \texttt{prototype/\allowbreak README.md}; os relatórios do Lighthouse, em \texttt{analysis/\allowbreak auditoria/\allowbreak relatorios/}.
 
 \section{Integração das fontes}
 \label{sec:res-integracao}

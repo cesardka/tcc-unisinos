@@ -37,31 +37,30 @@ Os relatórios citados estão em \texttt{analysis/auditoria/relatorios/}, com tr
 \section{Refinamento e aplicação exploratória dos requisitos}
 \label{sec:requisitos-aplicacao}
 
-Os critérios abaixo refinam três requisitos em condições verificáveis. São \textbf{propostas do autor}, não requisitos aceitos pelos participantes. Somente a parte de R02 referente ao estado de um item na mesma página foi implementada e testada; R06 e R09 continuam sem avaliação na prova de conceito.
+Os critérios abaixo refinam quatro requisitos em condições verificáveis. São \textbf{propostas do autor}, não requisitos aceitos pelos participantes. Todos foram implementados em parte na prova de conceito, com itens fictícios. A Tabela~\ref{tab:demonstracao-requisitos} indica o que foi verificado e o que ficou fora.
 
 \begin{description}
-    \item[R02, disponibilidade.] Dado um item disponível no cardápio fictício, quando o operador o marca como esgotado, então, sem recarregar a mesma página, o item deve indicar ``Esgotado'', desabilitar ``Adicionar'' e recusar novas adições mesmo se a ação for chamada diretamente. Os demais itens continuam disponíveis. Ao voltar a disponibilizar o item, uma nova adição deve ser aceita. Não se especificou atualização entre dispositivos nem conexão com estoque real.
-    \item[R06, desempenho.] Dada a abertura do cardápio em perfil móvel com rede 4G lenta simulada (150~ms, 1,6~Mbps) e CPU quatro vezes mais lenta, medir o LCP em três execuções e registrar a mediana. A meta proposta é até 2,5~segundos, conforme \citeonline{google2026webvitals}; ela não foi testada no protótipo.
-    \item[R09, ampliação.] Dada uma página aberta no celular, deve ser possível ampliar o texto até 200\% sem perder sua leitura ou uso, conforme WCAG~2.2, critério 1.4.4 \cite{wcag22}. O \texttt{meta-viewport} não deve bloquear o zoom. Uma inspeção manual e uma verificação automática seriam necessárias para avaliar o critério; não foram feitas no protótipo.
+    \item[R01, confirmação.] Dada uma cesta com itens disponíveis, quando o cliente toca ``Enviar para cozinha'', então a cesta fica vazia e a página mostra o número do pedido e o estado ``Recebido''. Antes do envio, a cesta mostra quantidade, preço unitário e total. Cesta vazia ou com item esgotado não gera pedido. A origem de R01 ainda não tem trecho verificado. O estado não evolui depois de ``Recebido'', porque não há cozinha real.
+    \item[R02, disponibilidade.] Dado um item disponível no cardápio fictício, quando o operador o marca como esgotado, então, sem recarregar a mesma página, o item deve indicar ``Esgotado'', desabilitar ``Adicionar'' e recusar novas adições mesmo se a ação for chamada diretamente. Os demais itens continuam disponíveis. Ao voltar a disponibilizar o item, uma nova adição deve ser aceita. Se o item já estiver na cesta, o envio fica bloqueado até que ele seja retirado. Não se especificou atualização entre dispositivos nem conexão com estoque real.
+    \item[R06, desempenho.] Dada a abertura do cardápio em perfil móvel com rede 4G lenta simulada (150~ms, 1,6~Mbps) e CPU quatro vezes mais lenta, medir o LCP em três execuções e registrar a mediana. A meta proposta é até 2,5~segundos, conforme \citeonline{google2026webvitals}.
+    \item[R09, ampliação.] Dada uma página aberta no celular, deve ser possível ampliar o texto até 200\% sem perder sua leitura ou uso, conforme WCAG~2.2, critério 1.4.4 \cite{wcag22}. O \texttt{meta-viewport} não deve bloquear o zoom. A verificação combina inspeção manual em 320~CSS~px e auditoria automática, que não substitui teste com leitor de tela nem com participantes.
 \end{description}
 
-\begin{table}[!ht]
-    \caption{Rastreabilidade da demonstração técnica e lacunas de verificação}
-    \label{tab:demonstracao-requisitos}
-    \centering
-    \small
-    \begin{tabular}{@{}p{1.2cm}p{6.2cm}p{6.5cm}@{}}
-        \toprule
-        \textbf{ID} & \textbf{Especificação e implementação} & \textbf{Verificação nesta versão} \\
-        \midrule
-        R02 & \texttt{prototype/spec.md}; regra em \texttt{availability.mjs}; interface local em \texttt{index.html} & Quatro testes automatizados de transição e bloqueio; inspeção manual do estado do botão na mesma página \\
-        R06 & Mediana do LCP em três execuções sob rede e CPU simuladas & Critério proposto; sem medição do protótipo \\
-        R09 & Ampliação até 200\% sem bloquear uso ou leitura & Critério proposto; sem verificação do protótipo \\
-        \bottomrule
-    \end{tabular}
-    \fonte{Elaborado pelo autor; os caminhos são relativos à pasta \texttt{prototype/}.}
-\end{table}
+{\small
+\begin{longtable}{@{}p{1.2cm}>{\raggedright\arraybackslash}p{6.2cm}>{\raggedright\arraybackslash}p{6.5cm}@{}}
+\caption{Rastreabilidade da demonstração técnica e lacunas de verificação}
+\label{tab:demonstracao-requisitos}\\
+\toprule
+\textbf{ID} & \textbf{Especificação e implementação} & \textbf{Verificação nesta versão} \\
+\midrule
+        R01 & Regra \texttt{closeOrder} em \texttt{availability.mjs}; cesta e lista ``Seus pedidos'' em \texttt{index.html} & Quatro testes automatizados; inspeção manual com mouse e teclado \\
+        R02 & Regra \texttt{setAvailability} em \texttt{availability.mjs}; controle do operador em \texttt{index.html} & Quatro testes automatizados de transição e bloqueio; inspeção manual do estado do botão na mesma página \\
+        R06 & Página estática, sem bibliotecas; ilustrações SVG com carregamento adiado & LCP de 1,28~s nas três execuções, com Lighthouse 13.5.0 em servidor local \\
+        R09 & Seletor de tamanho do texto; CSS em unidades relativas & Sem rolagem horizontal a 200\% em 320~CSS~px; Lighthouse sem falhas automáticas; gesto de pinça e leitor de tela não testados \\
+\bottomrule
+\multicolumn{3}{@{}p{\linewidth}@{}}{\fonte{Elaborado pelo autor; os caminhos são relativos à pasta \texttt{prototype/}.}}
+\end{longtable}}
 
-O arquivo \texttt{prototype/README.md} explica como abrir a página local e executar os testes. A prova de conceito não foi disponibilizada em endereço público nesta versão. Ela não verifica a atualização simultânea no celular de clientes nem substitui a revisão do catálogo por profissionais.
+O arquivo \texttt{prototype/README.md} explica como abrir a página e executar os testes. A prova de conceito está disponível em \url{https://cade-o-cardapio-tcc.vercel.app}. Ela não verifica a atualização simultânea no celular de clientes, não envia pedidos a um restaurante e não substitui a revisão do catálogo por profissionais.
 
 \pendente{conferir os trechos originais das respostas abertas; revisar a matriz com o caso A, se ocorrer; registrar eventual segunda opinião de colegas sem qualificá-la como validação formal}

@@ -34,8 +34,8 @@ const currency = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: '
 let state = {
   items: [...cards.keys()].map((id) => ({ id, available: true })),
   order: [],
+  orders: [],
 };
-let nextOrderNumber = 1;
 
 function formatPrice(cents) {
   return currency.format(cents / 100);
@@ -76,12 +76,15 @@ function renderCart() {
 
     const controls = document.createElement('div');
     controls.className = 'cart-quantity';
-    for (const [action, label] of [['remove', 'Menos'], ['add', 'Mais']]) {
-      const button = textElement('button', label);
+    for (const [action, symbol, label] of [
+      ['remove', '−', 'Remover uma unidade de'],
+      ['add', '+', 'Adicionar uma unidade de'],
+    ]) {
+      const button = textElement('button', symbol);
       button.type = 'button';
       button.dataset.cartAction = action;
       button.dataset.itemId = id;
-      button.setAttribute('aria-label', `${label}: ${name}`);
+      button.setAttribute('aria-label', `${label} ${name}`);
       button.disabled = action === 'add' && !available;
       if (action === 'add') controls.append(textElement('span', `${quantity} un.`));
       controls.append(button);
@@ -127,11 +130,16 @@ function render() {
   renderCart();
 }
 
-function showKitchenOrder(order) {
+const statusLabels = { recebido: 'Recebido' };
+
+function showKitchenOrder({ number, items: order, status }) {
   const lines = orderLines(order);
   const receipt = document.createElement('li');
   receipt.className = 'kitchen-order';
-  receipt.append(textElement('h3', `Pedido ${nextOrderNumber++}`));
+  receipt.append(
+    textElement('h3', `Pedido ${number}`),
+    textElement('p', `Estado: ${statusLabels[status]}`, 'order-status')
+  );
 
   const list = document.createElement('ul');
   for (const { name, quantity, priceCents } of lines) {
@@ -185,7 +193,7 @@ closeOrderButton.addEventListener('click', () => {
   showKitchenOrder(result.order);
   render();
   cart.close();
-  announcement.textContent = 'Pedido registrado na cozinha de demonstração nesta aba; nenhum envio real foi feito.';
+  announcement.textContent = `Pedido ${result.order.number} recebido. Simulação: nenhum restaurante recebeu o pedido.`;
   kitchenTitle.focus();
 });
 

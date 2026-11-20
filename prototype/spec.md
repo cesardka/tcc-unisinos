@@ -1,82 +1,102 @@
-# R02: disponibilidade de itens (demonstracao) e extensao R09
+# Especificacao da prova de conceito: R01, R02, R06 e R09
 
-O catalogo do TCC registra relatos sobre a vantagem de retirar itens esgotados
-e sobre informacoes desatualizadas. A regra abaixo e uma **proposta de projeto**
-derivada de R02, nao uma funcionalidade verificada nos estabelecimentos.
+Cada secao abaixo refina um requisito do catalogo do TCC (Tabela de requisitos
+e Apendice G). Os criterios sao **propostas do autor**, nao requisitos aceitos
+pelos participantes. Os itens, os precos e a operacao sao ficticios. A pagina
+implementa somente o que esta descrito aqui; ilustracoes e textos de apoio nao
+correspondem a requisitos.
 
-## Escopo e criterio de aceitacao
+Os cenarios usam a estrutura Dado-Quando-Entao documentada pelo Cucumber, mas
+**nao** sao executados pelo Cucumber: os testes usam o executor nativo do Node.js.
 
-Em um cardapio ficticio, uma pessoa com acesso ao controle demonstrativo marca
-um item como esgotado. Na **mesma pagina aberta**, sem recarregar:
+## R01: confirmacao do pedido (parcial)
 
-1. O item passa a exibir o texto "Esgotado" e o botao "Adicionar" fica desabilitado.
-2. Mesmo se a acao de adicionar for chamada diretamente, a quantidade no
-   pedido nao aumenta para um item esgotado.
+Requisito do catalogo: confirmar ao cliente, de forma visivel, que o pedido foi
+recebido e em que estado ele esta. A matriz do Apendice G ainda nao tem trecho
+original verificado para R01; implementar o criterio nao confirma sua origem.
+
+**Criterio:**
+
+1. Na cesta, o cliente confere quantidade, preco unitario, subtotal e total
+   antes de enviar. Os botoes "+" e "-" alteram uma unidade por vez.
+2. Cesta vazia ou com item esgotado nao gera pedido; o botao "Enviar para
+   cozinha" fica desabilitado e a cesta explica o motivo.
+3. Ao enviar, a cesta e esvaziada e o pedido recebe um numero sequencial e o
+   estado "Recebido".
+4. A pagina mostra o numero e o estado em "Seus pedidos", move o foco para essa
+   area e anuncia a confirmacao a leitores de tela.
+
+```text
+Dado uma cesta com itens disponiveis
+Quando o cliente toca "Enviar para cozinha"
+Entao a cesta fica vazia
+E "Seus pedidos" mostra "Pedido 1" com o estado "Recebido"
+```
+
+**Limites:** nao ha envio a um restaurante, servidor nem persistencia. O estado
+nao evolui depois de "Recebido" (por exemplo, "Em preparo"), porque nao existe
+cozinha real para informa-lo.
+
+## R02: disponibilidade de itens (parcial)
+
+Requisito do catalogo: refletir em tempo real a indisponibilidade de itens.
+
+**Criterio:** quando o operador marca um item como esgotado, na **mesma pagina
+aberta** e sem recarregar:
+
+1. O item exibe "Esgotado" e o botao "Adicionar" fica desabilitado.
+2. Mesmo se a acao de adicionar for chamada diretamente, o item nao entra na cesta.
 3. Os demais itens continuam disponiveis.
 4. Ao voltar a disponibilizar o item, ele pode ser adicionado novamente.
-
-O primeiro e o quarto pontos verificam a apresentacao; o segundo verifica a
-regra de negocio independentemente da interface. Os cenarios usam a estrutura
-Dado-Quando-Entao documentada pelo Cucumber, mas **nao** sao executados pelo
-Cucumber: os testes automatizados usam o executor nativo do Node.js.
+5. Se o item ja estava na cesta, ele continua visivel, mas impede o envio (R01).
 
 ```text
 Dado que um item esta disponivel no cardapio ficticio
 Quando o operador o marca como esgotado
 Entao a pagina mostra "Esgotado" e desabilita "Adicionar"
-E nenhuma nova adicao desse item entra no pedido
+E nenhuma nova adicao desse item entra na cesta
 ```
 
-## Plano e tarefas
+**Limites:** o controle do operador fica na mesma pagina do cliente, sem login.
+Nao ha estoque real nem sincronizacao entre aparelhos; a "atualizacao em tempo
+real" foi verificada apenas dentro da mesma aba.
 
-1. Representar a disponibilidade e o pedido em memoria, sem servidor.
-2. Exibir os itens e um controle de esgotamento na mesma pagina.
-3. Impedir a adicao tanto no controle visual quanto na regra de negocio.
-4. Testar transicoes disponivel/esgotado/disponivel e isolamento dos itens.
+## R06: carregamento em conexoes lentas
 
-O codigo fica em `availability.mjs` (regra) e `app.mjs` (interface); a evidencia
-de teste reproduzivel fica em `tests/availability.test.mjs`.
+Requisito do catalogo: carregar rapidamente em conexoes lentas, evitando
+arquivos pesados.
 
-## Limites
+**Criterio:** com o Lighthouse 13.5.0 em perfil movel e limitacao simulada
+(RTT de 150 ms, 1,6 Mbps e CPU quatro vezes mais lenta), a mediana do LCP em
+tres execucoes deve ser de ate 2,5 s. Sao as mesmas condicoes das auditorias
+das quatro paginas analisadas no TCC.
 
-O controle do operador e visivel na mesma pagina do cliente; nao ha login.
-O estado existe somente na memoria desta aba. Nao ha estoque real, API,
-sincronizacao entre aparelhos, persistencia, pagamento nem medicao de atraso
-em producao. Assim, este demonstrador verifica **parte** do comportamento R02,
-nao a atualizacao em tempo real em um sistema de restaurante.
+**Plano:** pagina estatica, sem bibliotecas, fontes do sistema e ilustracoes
+SVG pequenas com carregamento adiado.
 
-## R09: ampliacao do texto (extensao do prototipo)
+**Limites:** a medicao foi feita em servidor local, o que elimina a latencia
+real do servidor. Ela nao representa uso em rede real nem em aparelhos lentos.
 
-Esta extensao nao constava da demonstracao documentada no PDF anterior.
-Ela permite experimentar parte do requisito de acessibilidade com dados
-ficticios, sem afirmar conformidade completa com as WCAG.
+## R09: ampliacao do texto (parcial)
 
-**Criterio proposto:** dado o cardapio aberto no celular, quando o usuario
-selecionar texto a 200% ou ampliar a pagina no navegador, os itens, precos,
-estados e controles devem continuar legiveis e operaveis, sem corte de conteudo.
-Os controles de itens distintos devem ter nomes acessiveis que incluam o item.
+Requisito do catalogo: permitir ajuste de tamanho de fonte, ampliacao da tela
+e contraste adequado.
 
-**Plano:** incluir um seletor nativo de tamanho de texto, usar unidades
-relativas e permitir que cabecalhos, precos e controles se rearranjem em
-telas estreitas. Preservar o zoom do navegador e a navegacao por teclado.
+**Criterio:** no celular, com texto a 100%, 150% e 200%, itens, precos, estados
+e controles continuam legiveis e operaveis, sem rolagem horizontal em 320 CSS px.
+O `meta-viewport` nao bloqueia o zoom. Controles de itens distintos tem nomes
+acessiveis que incluem o item. Nao ha falha automatica de contraste.
 
-**Verificacao:** testar manualmente as opcoes 100%, 150% e 200% e o zoom do
-navegador, com viewport de 320 CSS px, navegando so com teclado. Executar
-uma auditoria automatica para apontar problemas que a inspecao manual nao
-captura. A auditoria nao substitui testes com usuarios ou leitores de tela.
+**Verificacao:** inspecao manual em 320 CSS px, navegacao por teclado e
+auditoria automatica do Lighthouse. Isso nao demonstra conformidade completa
+com as WCAG, nao substitui teste com leitor de tela nem com participantes.
+O gesto de pinca nao foi testado manualmente.
 
-## Cesta e cozinha de demonstracao (extensao posterior ao PDF)
+## Plano e arquivos
 
-Ao adicionar itens, a pessoa pode abrir o painel lateral da cesta para
-conferir quantidades, precos por unidade e total. Os controles "Mais" e
-"Menos" alteram uma unidade por vez. Um item que se esgote depois de
-adicionado permanece visivel na cesta,
-mas deve ser retirado ou voltar a estar disponivel antes da finalizacao.
-A regra tambem impede finalizar uma cesta vazia.
-
-O botao "Enviar para cozinha" copia o pedido para a lista "Pedidos na cozinha
-de demonstracao", visivel apenas nesta aba, e esvazia a cesta. Nao ha API,
-servidor, pagamento, persistencia nem envio a um restaurante: nenhuma cozinha
-real recebe o pedido.
-Essa extensao demonstra um fluxo de interface, nao verifica uma integracao
-entre o cardapio e a operacao dos estabelecimentos pesquisados.
+| Requisito | Regra | Interface | Verificacao |
+| --- | --- | --- | --- |
+| R01 | `closeOrder`, `removeFromOrder` em `availability.mjs` | cesta e "Seus pedidos" em `index.html`, `app.mjs` | testes `R01` e inspecao manual |
+| R02 | `setAvailability`, `addToOrder` em `availability.mjs` | controle do operador em `index.html`, `app.mjs` | testes `R02` e inspecao manual |
+| R06 | nao se aplica | `index.html`, `styles.css`, `assets/` | Lighthouse, tres execucoes |
+| R09 | nao se aplica | seletor de texto e CSS em unidades relativas | inspecao manual e Lighthouse |

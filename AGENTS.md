@@ -10,6 +10,7 @@ Orientador: Prof. Dr. Guilherme Lacerda. **Entrega: 23/11/2026 (prazo fixo).**
 - Commits só quando o César pedir; push só quando ele pedir. Mensagens de commit em português, explicando o porquê.
 
 ## Comandos
+- Protótipo (`prototype/`, publicado em https://cade-o-cardapio-tcc.vercel.app a cada push em `main`): `node --test prototype/tests/availability.test.mjs`. Implementa somente R01, R02, R06 e R09 (`prototype/spec.md`); recursos sem requisito do catálogo não entram. R06: `npx -y lighthouse@13.5.0 <url> --output=json` três vezes, relatórios em `analysis/auditoria/relatorios/prototipo_*.json`.
 - Compilar: `latexmk -pdf -interaction=nonstopmode main.tex` (gera `César Hoffmann - TCC.pdf`).
 - Questionário: `python3 analysis/analise_questionario.py "<csv>"` → relatório + `analysis/tabelas/*.tex` (lidas com `\inputtabela{}`).
 - Auditorias Lighthouse: `python3 analysis/medianas_lighthouse.py` (relatórios em `analysis/auditoria/relatorios/`).
@@ -32,7 +33,7 @@ Orientador: Prof. Dr. Guilherme Lacerda. **Entrega: 23/11/2026 (prazo fixo).**
 ## Estado do artigo e próximas tarefas
 - A versão anterior à conversão está preservada na branch remota `monografia` (commit `c7b65f1`). A branch `main` contém o artigo em elaboração. Push somente quando o César pedir.
 - `main.tex` usa a opção `artigo` de `UNISINOSmonografia.cls`: capa, folha de rosto, sete seções corridas, referências, apêndices e anexos. O cronograma não é incluído. Os complementos teóricos, os procedimentos e a rastreabilidade estão nos Apêndices E, F e G.
-- O PDF compila com `latexmk`. As referências terminam na página 30 do artigo na versão com o caso B e a demonstração R02; a meta do orientador é **25 a 30 páginas até o fim das referências**. Não ajustar a fonte só para atingir o limite: priorizar cortes editoriais e apêndices.
+- O PDF compila com `latexmk` (63 páginas em 20/11). As referências terminam na página 30 do artigo; a meta do orientador é **25 a 30 páginas até o fim das referências**. Não ajustar a fonte só para atingir o limite: priorizar cortes editoriais e apêndices.
 - O feedback do orientador foi incorporado parcialmente: pergunta e objetivo alinhados às contribuições técnicas; modalidades de cardápio delimitadas; quadro de lentes teóricas; matriz preliminar de integração; correlações tratadas como descritivas; decisões técnicas dos gestores separadas da arquitetura interna não observada. O resumo e a conclusão são explicitamente provisórios.
 - Prioridade de pesquisa: concluir ou redimensionar formalmente o caso A. A entrevista com fornecedor fica para trabalho futuro. Não preencher células vazias ou atribuir às plataformas arquiteturas não verificadas. O questionário não foi aplicado especificamente aos clientes dos casos.
 - Para cada requisito R01--R15, registrar fonte identificável (trecho anonimizado de entrevista, item/resposta do questionário ou relatório de auditoria), justificativa, conflito entre gestores e clientes e eventual revisão. Conferir as categorias abertas antes de consolidar a matriz das três fontes. Se viável, revisar os três artefatos com um ou dois colegas de profissão (ver orientações de 20/11); se não, declarar a ausência de revisão.

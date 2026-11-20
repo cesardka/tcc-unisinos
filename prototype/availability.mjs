@@ -43,9 +43,11 @@ export function closeOrder(state) {
   );
   if (!accepted) return { state, accepted: false };
 
+  const orders = state.orders ?? [];
+  const placed = { number: orders.length + 1, items: [...state.order], status: 'recebido' };
   return {
-    state: { ...state, order: [] },
-    order: [...state.order],
+    state: { ...state, order: [], orders: [...orders, placed] },
+    order: placed,
     accepted: true,
   };
 }
