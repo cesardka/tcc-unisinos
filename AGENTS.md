@@ -5,7 +5,7 @@ Orientador: Prof. Dr. Guilherme Lacerda. **Entrega: 23/11/2026 (prazo fixo).**
 
 ## Regras de trabalho
 - Usar apenas dados reais coletados; nunca inventar resultados ou entrevistas. Pendências vão com `\pendente{...}` (texto vermelho).
-- Tom de graduação: impessoal ("este trabalho"), frases curtas, uma ideia por frase, exemplos concretos, sem termos rebuscados nem travessões.
+- Tom de graduação, com a cadência do César (referência: posts em `~/Projects/cesardka/jornada-do-baralho/posts/`): impessoal ("este trabalho", "o autor"), mas sem soar como cientista. Variar o tamanho das frases, ligar as ideias com conectivos ("mas", "ainda assim", "por isso", "apesar de"), explicar termos técnicos em linguagem simples e com exemplos concretos. Dizer cada limite uma vez, de forma direta, e concentrar as ressalvas em Limitações em vez de repeti-las em todo parágrafo. Sem emojis, ironia, caixa alta, termos rebuscados nem travessões. A motivação do trabalho é a curiosidade do autor como frequentador de bares e restaurantes; não usar o tempo de experiência profissional como motivação.
 - Dados pessoais (CSVs do questionário, áudios, transcrições, TCLEs assinados) ficam FORA do Git, em `~/Documents/UNISINOS/TCC II - Entrevistas/`. `*.csv` e `*.xlsx` estão no `.gitignore`.
 - Commits só quando o César pedir; push só quando ele pedir. Mensagens de commit em português, explicando o porquê.
 
