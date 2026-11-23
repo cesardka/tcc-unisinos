@@ -11,9 +11,11 @@ Os cenarios usam a estrutura Dado-Quando-Entao documentada pelo Cucumber, mas
 
 ## R01: confirmacao do pedido (parcial)
 
-Requisito do catalogo: confirmar ao cliente, de forma visivel, que o pedido foi
-recebido e em que estado ele esta. A matriz do Apendice G ainda nao tem trecho
-original verificado para R01; implementar o criterio nao confirma sua origem.
+Requisito do catalogo: ao enviar o pedido, mostrar ao cliente a confirmacao de
+recebimento, com numero e estado. Fontes (Apendice G): o caso A valoriza que o
+sistema "so informa quando o pedido e feito"; tres relatos de frustracao
+descrevem duvida sobre a conclusao do pedido (Q010, Q040, Q075); heuristica de
+visibilidade do estado do sistema (Nielsen).
 
 **Criterio:**
 
@@ -39,7 +41,11 @@ cozinha real para informa-lo.
 
 ## R02: disponibilidade de itens (parcial)
 
-Requisito do catalogo: refletir em tempo real a indisponibilidade de itens.
+Requisito do catalogo: ao esgotar ou incluir um item, refletir a mudanca em todos
+os aparelhos de consulta e pedido, sem atualizar cada um, e recusar pedidos de
+itens esgotados. Esta prova de conceito cobre apenas o esgotamento de itens na
+mesma aba; a inclusao de itens novos e a propagacao entre aparelhos nao foram
+implementadas.
 
 **Criterio:** quando o operador marca um item como esgotado, na **mesma pagina
 aberta** e sem recarregar:
@@ -63,8 +69,8 @@ real" foi verificada apenas dentro da mesma aba.
 
 ## R06: carregamento em conexoes lentas
 
-Requisito do catalogo: carregar rapidamente em conexoes lentas, evitando
-arquivos pesados.
+Requisito do catalogo: exibir o conteudo principal (LCP) em ate 2,5 s em perfil
+movel com rede 4G lenta simulada, sem depender de PDF.
 
 **Criterio:** com o Lighthouse 13.5.0 em perfil movel e limitacao simulada
 (RTT de 150 ms, 1,6 Mbps e CPU quatro vezes mais lenta), a mediana do LCP em
@@ -79,13 +85,14 @@ real do servidor. Ela nao representa uso em rede real nem em aparelhos lentos.
 
 ## R09: ampliacao do texto (parcial)
 
-Requisito do catalogo: permitir ajuste de tamanho de fonte, ampliacao da tela
-e contraste adequado.
+Requisito do catalogo: permitir ampliar o texto ate 200% sem perda de conteudo
+ou funcao, sem bloquear o zoom, com contraste minimo de 4,5:1.
 
 **Criterio:** no celular, com texto a 100%, 150% e 200%, itens, precos, estados
 e controles continuam legiveis e operaveis, sem rolagem horizontal em 320 CSS px.
 O `meta-viewport` nao bloqueia o zoom. Controles de itens distintos tem nomes
-acessiveis que incluem o item. Nao ha falha automatica de contraste.
+acessiveis que incluem o item. O texto tem contraste minimo de 4,5:1, conferido
+pela auditoria `color-contrast` do Lighthouse.
 
 **Verificacao:** inspecao manual em 320 CSS px, navegacao por teclado e
 auditoria automatica do Lighthouse. Isso nao demonstra conformidade completa

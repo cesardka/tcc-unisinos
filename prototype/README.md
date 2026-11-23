@@ -25,6 +25,8 @@ importar os modulos ES no navegador.
 
 - **R02:** em "Controle do operador", marque um item como esgotado. Ele exibe
   "Esgotado" e nao pode ser adicionado; o outro item continua disponivel.
+  A inclusao de itens novos e a propagacao entre aparelhos, que tambem fazem
+  parte de R02 no catalogo atual, nao foram implementadas.
 - **R01:** adicione itens, abra "Ver cesta", ajuste as unidades com "+" e "-"
   e toque "Enviar para cozinha". A cesta fica vazia e "Seus pedidos" mostra o
   numero e o estado "Recebido". Com um item esgotado na cesta, o envio fica
